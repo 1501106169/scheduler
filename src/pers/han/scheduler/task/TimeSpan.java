@@ -3,7 +3,7 @@ package pers.han.scheduler.task;
 // import java.util.Iterator;
 
 /**
- * 表示任务的一段时间
+ * 表示任务的下一个执行时间段
  * FileName: TimeSpan.java
  * 
  * @author	hanYG

@@ -24,9 +24,9 @@ public interface BaseSchedulerCheck {
 	
 	/**
 	 * 输出算法
-	 * @param timeSpan	调度的时间片
+	 * @param timeBlock	调度的时间片
 	 */
-	public abstract void outputSchedulerResult(ArrayList<TimeSpan> timeSpan);
+	public abstract void outputSchedulerResult(ArrayList<TimeBlock> timeBlock);	
 	
 	/**
 	 * 校验算法

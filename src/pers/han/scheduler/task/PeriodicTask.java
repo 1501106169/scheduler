@@ -12,7 +12,7 @@ package pers.han.scheduler.task;
 public class PeriodicTask extends Task {
 	
 	/** 任务周期 */
-	private double taskPeriodic;
+	protected double taskPeriodic;
 	
 	/**
 	 * 构造函数
