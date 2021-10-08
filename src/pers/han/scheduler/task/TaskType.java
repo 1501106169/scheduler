@@ -4,9 +4,10 @@ package pers.han.scheduler.task;
  * 任务类型枚举
  * FileName: TaskTye.java
  * 
- * @author	hanYG
- * @date	2021.06.17
- * @version	1.0
+ * @author		hanYG
+ * @createDate	2021.06.17
+ * @alterDate	2021.06.17
+ * @version		1.0
  * 
  */
 public enum TaskType {

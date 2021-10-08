@@ -1,5 +1,5 @@
 package pers.han.scheduler.task;
 
-public class AperiodicTask {
+public final class AperiodicTask {
 
 }

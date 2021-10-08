@@ -6,24 +6,25 @@ package pers.han.scheduler.task;
  * 表示任务的下一个执行时间段
  * FileName: TimeSpan.java
  * 
- * @author	hanYG
- * @date	2021.09.14
- * @version	2.0
+ * @author		hanYG
+ * @createDate	2021.06.18
+ * @alterDate	2021.09.14
+ * @version		2.0
  *
  */
 public final class TimeSpan {
 	
 	/** 任务编号 */
-	// private int id;
+	// protected int id;
 	
 	/** 开始时间 */
-	private double startTime;
+	protected double startTime;
 	
 	/** 结束时间 */
-	private double endTime;
+	protected double endTime;
 	
 	/** 任务周期 */
-	private double periodic;
+	protected double periodic;
 	
 	/**
 	 * 构造函数

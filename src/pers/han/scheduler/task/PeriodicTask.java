@@ -4,12 +4,13 @@ package pers.han.scheduler.task;
  * 不可抢占的周期性任务
  * FileName: PeriodicTask.java
  * 
- * @author	hanYG
- * @date	2021.06.17
- * @version	1.0
+ * @author		hanYG
+ * @createDate	2021.06.17
+ * @alterDate	2021.10.08
+ * @version		1.1
  *
  */
-public class PeriodicTask extends Task {
+public final class PeriodicTask extends Task {
 	
 	/** 任务周期 */
 	protected double taskPeriodic;

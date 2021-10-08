@@ -1,5 +1,5 @@
 package pers.han.scheduler.task;
 
-public class SporadicTask {
+public final class SporadicTask {
 
 }

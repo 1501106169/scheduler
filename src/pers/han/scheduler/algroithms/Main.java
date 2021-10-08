@@ -1,6 +1,7 @@
 package pers.han.scheduler.algroithms;
 
 import pers.han.scheduler.task.*;
+import pers.han.scheduler.framework.*;
 import java.util.ArrayList;
 // import java.util.Iterator;
 
@@ -28,6 +29,13 @@ public class Main {
 		*/
 
 		System.out.println(CheckAlgroithmsResult.checkPeriodicTask(periodicTaskList, timeAxis));
+		
+		BaseSchedulerFrame baseScheduler = new BaseSchedulerFrame();
+		System.out.println(baseScheduler.getVisable());
+		
+		
+		
+		
 		
 	}
 

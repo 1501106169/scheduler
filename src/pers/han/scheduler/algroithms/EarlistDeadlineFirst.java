@@ -9,9 +9,10 @@ import java.util.ArrayList;
  * 最早时限优先算法 
  * FileName: EarlistDeadlineFirst.java
  * 
- * @author	hanYG
- * @date	2021.06.18
- * @version	1.0
+ * @author		hanYG
+ * @createDate	2021.06.18
+ * @alterDate	2021.06.18
+ * @version		1.0
  *
  */
 public class EarlistDeadlineFirst {

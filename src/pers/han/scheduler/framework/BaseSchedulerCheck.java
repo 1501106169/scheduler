@@ -8,12 +8,19 @@ import java.util.ArrayList;
  * 
  * FileName: BaseSchedulerCheck.java
  * 
- * @author	hanYG
- * @date	2021.09.28
- * @version	1.0
+ * @author		hanYG
+ * @createDate	2021.10.08
+ * @alterDate	2021.10.08
+ * @version		2.0
  *
  */
 public interface BaseSchedulerCheck {
+	
+	/**
+	 * 读入测试用例
+	 * @return 一组调度任务
+	 */
+	public abstract ArrayList inputTestCase();
 	
 	/**
 	 * 调度算法

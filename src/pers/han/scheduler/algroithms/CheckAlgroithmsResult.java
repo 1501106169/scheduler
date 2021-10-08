@@ -10,9 +10,10 @@ import java.util.ArrayList;
  * 对调度算法的结果进行校验
  * FileName: CheckAlgroithmsResult.java
  * 
- * @author	hanYG
- * @date	2021.09.10
- * @version	1.0
+ * @author		hanYG
+ * @createDate	2021.09.10
+ * @alterDate	2021.09.10
+ * @version		1.0
  *
  */
 public class CheckAlgroithmsResult {

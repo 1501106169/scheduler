@@ -4,9 +4,10 @@ package pers.han.scheduler.task;
  * 所有任务的基类
  * FileName: Task.java
  * 
- * @author	hanYG
- * @date	2021.05.17
- * @version	1.0
+ * @author		hanYG
+ * @createDate	2021.05.17
+ * @alterDate	2021.05.17
+ * @version		1.0
  *
  */
 public abstract class Task {
