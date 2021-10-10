@@ -8,7 +8,7 @@ package pers.han.scheduler.task;
  * 
  * @author		hanYG
  * @createDate	2021.06.18
- * @alterDate	2021.09.14
+ * @alterDate	2021.10.10	修改时间类型double->int
  * @version		2.0
  *
  */
@@ -18,13 +18,13 @@ public final class TimeSpan {
 	// protected int id;
 	
 	/** 开始时间 */
-	protected double startTime;
+	protected int startTime;
 	
 	/** 结束时间 */
-	protected double endTime;
+	protected int endTime;
 	
 	/** 任务周期 */
-	protected double periodic;
+	protected int periodic;
 	
 	/**
 	 * 构造函数
@@ -32,7 +32,7 @@ public final class TimeSpan {
 	 * @param endTime		结束时间
 	 * @param periodic		任务周期
 	 */
-	public TimeSpan(double startTime, double endTime, double periodic) {
+	public TimeSpan(int startTime, int endTime, int periodic) {
 		// this.id = id;
 		this.startTime = startTime;
 		this.endTime = endTime;
@@ -73,17 +73,17 @@ public final class TimeSpan {
 	
 	/**
 	 * 获取任务的释放时间
-	 * @return	Double
+	 * @return	Integer
 	 */
-	public double getStartTime() {
+	public int getStartTime() {
 		return this.startTime;
 	}
 	
 	/**
 	 * 获取任务的时限
-	 * @return	Double
+	 * @return	Integer
 	 */
-	public double getEndTime() {
+	public int getEndTime() {
 		return this.endTime;
 	}
 	

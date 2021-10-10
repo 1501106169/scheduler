@@ -10,7 +10,7 @@ import java.util.ArrayList;
  * 
  * @author		hanYG
  * @createDate	2021.10.08
- * @alterDate	2021.10.08
+ * @alterDate	2021.10.10	修改类型ArrayList->ArrayList<Task>
  * @version		2.0
  *
  */
@@ -20,14 +20,14 @@ public interface BaseSchedulerCheck {
 	 * 读入测试用例
 	 * @return 一组调度任务
 	 */
-	public abstract ArrayList inputTestCase();
+	public abstract ArrayList<Task> inputTestCase();
 	
 	/**
 	 * 调度算法
 	 * @param taskList	原始ArrayList，一组任务
 	 * @return	调度结果
 	 */
-	public abstract ArrayList<TimeBlock> schedulerAlgroithm(ArrayList taskList);
+	public abstract ArrayList<TimeBlock> schedulerAlgroithm(ArrayList<Task> taskList);
 	
 	/**
 	 * 输出算法
@@ -41,6 +41,6 @@ public interface BaseSchedulerCheck {
 	 * @param timeBlock	调度结果
 	 * @return	算法的正确性
 	 */
-	public abstract boolean checkSchedulerAlgroithm(ArrayList taskList, ArrayList<TimeBlock> timeBlock);
+	public abstract boolean checkSchedulerAlgroithm(ArrayList<Task> taskList, ArrayList<TimeBlock> timeBlock);
 	
 }

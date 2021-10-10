@@ -6,37 +6,38 @@ package pers.han.scheduler.task;
  * 
  * @author		hanYG
  * @createDate	2021.05.17
- * @alterDate	2021.05.17
- * @version		1.0
+ * @alterDate	2021.10.10	取消任务类型的使用
+ * 							修改时间类型double->int，1表示单位时间不可拆分
+ * @version		2.0
  *
  */
 public abstract class Task {
 	
 	/** 任务类型 */
-	protected TaskType taskType;
+	// protected TaskType taskType;
 	
 	/** 任务中作业的抢占 */
 	protected JobPreemption jobPreempt;
 	
 	/** 作业执行时间 */
-	protected double jobExecTime;
+	protected int jobExecTime;
 	
 	/** 作业时限 */
-	protected double jobDeadline;
+	protected int jobDeadline;
 	
 	/** 作业释放时间 */
-	protected double jobReleaseTime;
+	protected int jobReleaseTime;
 	
 	/** 优先级 */
-	protected double taskPriority = 0;
+	protected int taskPriority = 0;
 	
 	/** 周期 */
 	
 	/**
 	 * 获取任务优先级
-	 * @return Double
+	 * @return Integer
 	 */
-	public double getTaskPriority() {
+	public int getTaskPriority() {
 		return this.taskPriority;
 	}
 	
@@ -44,9 +45,9 @@ public abstract class Task {
 	 * 获取任务类型
 	 * @return	枚举类型
 	 */
-	public TaskType getTaskType() {
-		return this.taskType;
-	}
+	// public TaskType getTaskType() {
+		// return this.taskType;
+	// }
 	
 	/**
 	 * 获取作业可抢占
@@ -58,25 +59,25 @@ public abstract class Task {
 	
 	/**
 	 * 获取作业执行时间
-	 * @return	Double
+	 * @return	Integer
 	 */
-	public double getJobExecTime() {
+	public int getJobExecTime() {
 		return this.jobExecTime;
 	}
 	
 	/**
 	 * 获取作业时限
-	 * @return	Double
+	 * @return	Integer
 	 */
-	public double getJobDeadline() {
+	public int getJobDeadline() {
 		return this.jobDeadline;
 	}
 	
 	/**
 	 * 获取作业释放时间
-	 * @return	Double
+	 * @return	Integer
 	 */
-	public double getJobReleaseTime() {
+	public int getJobReleaseTime() {
 		return this.jobReleaseTime;
 	}
 	

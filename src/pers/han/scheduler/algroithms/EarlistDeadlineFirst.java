@@ -35,17 +35,17 @@ public class EarlistDeadlineFirst {
 		
 		//  π”√Queue¥Ê¥¢TimeBlock
 		
-		timeAxis.add(new TimeBlock(0, 0, 1));
-		timeAxis.add(new TimeBlock(1, 1, 1.8));
-		timeAxis.add(new TimeBlock(2, 3, 1));
-		timeAxis.add(new TimeBlock(0, 4, 1));
-		timeAxis.add(new TimeBlock(1, 5, 1.8));
-		timeAxis.add(new TimeBlock(3, 7, 2));
-		timeAxis.add(new TimeBlock(0, 9, 1));
-		timeAxis.add(new TimeBlock(1, 10, 2));
-		timeAxis.add(new TimeBlock(0, 12, 1));
-		timeAxis.add(new TimeBlock(1, 15, 1.8));
-		timeAxis.add(new TimeBlock(0, 17, 1));
+		timeAxis.add(new TimeBlock(0, 0, 10));
+		timeAxis.add(new TimeBlock(1, 10, 18));
+		timeAxis.add(new TimeBlock(2, 30, 10));
+		timeAxis.add(new TimeBlock(0, 40, 10));
+		timeAxis.add(new TimeBlock(1, 50, 18));
+		timeAxis.add(new TimeBlock(3, 70, 20));
+		timeAxis.add(new TimeBlock(0, 90, 10));
+		timeAxis.add(new TimeBlock(1, 100, 20));
+		timeAxis.add(new TimeBlock(0, 120, 10));
+		timeAxis.add(new TimeBlock(1, 150, 18));
+		timeAxis.add(new TimeBlock(0, 170, 10));
 		
 		return timeAxis;
 	}

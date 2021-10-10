@@ -6,8 +6,8 @@ package pers.han.scheduler.task;
  * 
  * @author		hanYG
  * @createDate	2021.06.18
- * @alterDate	2021.06.17
- * @version		1.0
+ * @alterDate	2021.10.10	修改时间类型double->int
+ * @version		2.0
  *
  */
 public final class TimeBlock {
@@ -16,10 +16,10 @@ public final class TimeBlock {
 	protected int id;
 	
 	/** 开始时间 */
-	protected double startTime;
+	protected int startTime;
 	
 	/** 执行时间 */
-	protected double execTime;
+	protected int execTime;
 	
 	/**
 	 * 构造函数
@@ -27,7 +27,7 @@ public final class TimeBlock {
 	 * @param startTime	开始时间
 	 * @param execTime	执行时间
 	 */
-	public TimeBlock(int id, double startTime, double execTime) {
+	public TimeBlock(int id, int startTime, int execTime) {
 		this.id = id;
 		this.startTime = startTime;
 		this.execTime = execTime;
@@ -43,17 +43,17 @@ public final class TimeBlock {
 	
 	/**
 	 * 获取任务开始时间
-	 * @return	Double
+	 * @return	Integer
 	 */
-	public double getStartTime() {
+	public int getStartTime() {
 		return this.startTime;
 	}
 	
 	/**
 	 * 获取任务执行时间
-	 * @return	Double
+	 * @return	Integer
 	 */
-	public double getExecTime() {
+	public int getExecTime() {
 		return this.execTime;
 	}
 }

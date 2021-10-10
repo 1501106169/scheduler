@@ -12,8 +12,8 @@ import java.util.ArrayList;
  * 
  * @author		hanYG
  * @createDate	2021.09.10
- * @alterDate	2021.09.10
- * @version		1.0
+ * @alterDate	2021.10.10	修改时间轴类型double->int
+ * @version		1.1
  *
  */
 public class CheckAlgroithmsResult {
@@ -33,7 +33,7 @@ public class CheckAlgroithmsResult {
 	 */
 	public static boolean checkPeriodicTask(ArrayList<PeriodicTask> periodicTaskList, ArrayList<TimeBlock> timeAxis) {
 		// 验证调度任务的时间轴
-		double axis = 0;
+		int axis = 0;
 		// 记录每一个周期性任务在当前周期的释放时间和时限
 		ArrayList<TimeSpan> nextStopTaskTime = new ArrayList<TimeSpan>();
 		// Iterator<PeriodicTask> periodicTaskListIterator = periodicTaskList.iterator();

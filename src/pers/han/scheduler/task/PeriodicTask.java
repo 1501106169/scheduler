@@ -6,14 +6,14 @@ package pers.han.scheduler.task;
  * 
  * @author		hanYG
  * @createDate	2021.06.17
- * @alterDate	2021.10.08
- * @version		1.1
+ * @alterDate	2021.10.10	将任务类型取消
+ * @version		2.0
  *
  */
 public final class PeriodicTask extends Task {
 	
 	/** 任务周期 */
-	protected double taskPeriodic;
+	protected int taskPeriodic;
 	
 	/**
 	 * 构造函数
@@ -22,9 +22,9 @@ public final class PeriodicTask extends Task {
 	 * @param jobExecTime	周期性任务的执行时间
 	 * @param jobDeadline	周期性任务的时限
 	 */
-	public PeriodicTask(double taskPhase, double taskPeriodic, double jobExecTime, double jobDeadline) {
+	public PeriodicTask(int taskPhase, int taskPeriodic, int jobExecTime, int jobDeadline) {
 		// 周期性任务
-		this.taskType = TaskType.PERIODIC;
+		//this.taskType = TaskType.PERIODIC;
 		// 不可抢占
 		this.jobPreempt = JobPreemption.NONPREEMPTABLE;
 		// 时限
@@ -43,9 +43,9 @@ public final class PeriodicTask extends Task {
 	 * @param jobExecTime	周期性任务的执行时间
 	 * @param jobDeadline	周期性任务的时限
 	 */
-	public PeriodicTask(double taskPeriodic, double jobExecTime, double jobDeadline) {
+	public PeriodicTask(int taskPeriodic, int jobExecTime, int jobDeadline) {
 		// 周期性任务
-		this.taskType = TaskType.PERIODIC;
+		// this.taskType = TaskType.PERIODIC;
 		// 不可抢占
 		this.jobPreempt = JobPreemption.NONPREEMPTABLE;
 		// 时限
@@ -63,9 +63,9 @@ public final class PeriodicTask extends Task {
 	 * @param taskPeriodic	周期性任务的周期
 	 * @param jobExecTime	周期性任务的执行时间
 	 */
-	public PeriodicTask(double taskPeriodic, double jobExecTime) {
+	public PeriodicTask(int taskPeriodic, int jobExecTime) {
 		// 周期性任务
-		this.taskType = TaskType.PERIODIC;
+		// this.taskType = TaskType.PERIODIC;
 		// 不可抢占
 		this.jobPreempt = JobPreemption.NONPREEMPTABLE;
 		// 时限等于周期
@@ -80,9 +80,9 @@ public final class PeriodicTask extends Task {
 	
 	/**
 	 * 获取周期性任务周期
-	 * @return	Double
+	 * @return	Integer
 	 */
-	public double getTaskPeriodic() {
+	public int getTaskPeriodic() {
 		return this.taskPeriodic;
 	}
 
