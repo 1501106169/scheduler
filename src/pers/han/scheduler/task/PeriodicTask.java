@@ -6,8 +6,8 @@ package pers.han.scheduler.task;
  * 
  * @author		hanYG
  * @createDate	2021.06.17
- * @alterDate	2021.10.10	将任务类型取消
- * @version		2.0
+ * @alterDate	2021.10.10
+ * @version		1.0
  *
  */
 public final class PeriodicTask extends Task {
@@ -24,7 +24,7 @@ public final class PeriodicTask extends Task {
 	 */
 	public PeriodicTask(int taskPhase, int taskPeriodic, int jobExecTime, int jobDeadline) {
 		// 周期性任务
-		//this.taskType = TaskType.PERIODIC;
+		this.taskType = TaskType.PERIODIC;
 		// 不可抢占
 		this.jobPreempt = JobPreemption.NONPREEMPTABLE;
 		// 时限
@@ -45,7 +45,7 @@ public final class PeriodicTask extends Task {
 	 */
 	public PeriodicTask(int taskPeriodic, int jobExecTime, int jobDeadline) {
 		// 周期性任务
-		// this.taskType = TaskType.PERIODIC;
+		this.taskType = TaskType.PERIODIC;
 		// 不可抢占
 		this.jobPreempt = JobPreemption.NONPREEMPTABLE;
 		// 时限
@@ -65,7 +65,7 @@ public final class PeriodicTask extends Task {
 	 */
 	public PeriodicTask(int taskPeriodic, int jobExecTime) {
 		// 周期性任务
-		// this.taskType = TaskType.PERIODIC;
+		this.taskType = TaskType.PERIODIC;
 		// 不可抢占
 		this.jobPreempt = JobPreemption.NONPREEMPTABLE;
 		// 时限等于周期

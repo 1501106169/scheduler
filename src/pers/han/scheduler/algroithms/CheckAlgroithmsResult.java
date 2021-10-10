@@ -19,14 +19,14 @@ import java.util.ArrayList;
 public class CheckAlgroithmsResult {
 	
 	/**
-	 * 构造函数
+	 * 私有构造函数
 	 */
-	public CheckAlgroithmsResult() {
+	private CheckAlgroithmsResult() {
 		
 	}
 	
 	/**
-	 * 静态函数，校验不可抢占的周期性任务调度算法产生的结果
+	 * 静态方法，校验不可抢占的周期性任务调度算法产生的结果
 	 * @param periodicTaskList	一组周期性任务
 	 * @param timeAxis			调度算法产生的调度结果
 	 * @return					Boolean

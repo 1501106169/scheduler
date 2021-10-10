@@ -2,7 +2,7 @@ package pers.han.scheduler.algroithms;
 
 import pers.han.scheduler.task.*;
 import java.util.ArrayList;
-// import java.util.Iterator;
+import java.util.Iterator;
 // import java.util.Queue;
 
 /**
@@ -29,12 +29,11 @@ public class EarlistDeadlineFirst {
 	public static ArrayList<TimeBlock> periodicEDF(ArrayList<PeriodicTask> periodicTaskList) {
 		// 任务执行的时间段
 		ArrayList<TimeBlock> timeAxis = new ArrayList<TimeBlock>();
-		// 当前时刻
-		// double nowTime = 0;
+		
 		// timeAxis.add(new TimeBlock(1, nowTime, periodicTaskList.get(1).getJobExecTime()));
 		
 		// 使用Queue存储TimeBlock
-		
+		/*
 		timeAxis.add(new TimeBlock(0, 0, 10));
 		timeAxis.add(new TimeBlock(1, 10, 18));
 		timeAxis.add(new TimeBlock(2, 30, 10));
@@ -46,9 +45,35 @@ public class EarlistDeadlineFirst {
 		timeAxis.add(new TimeBlock(0, 120, 10));
 		timeAxis.add(new TimeBlock(1, 150, 18));
 		timeAxis.add(new TimeBlock(0, 170, 10));
+		*/
+		
+		// 时间轴
+		int axis = 0;
+		
+		// 获得一组任务的超周期
+		int hyperperiod = getHyperperiod(periodicTaskList);
+		
+		// 存储下一个任务执行的释放时刻、执行时间、时限
+		ArrayList<TimeSpan> nextStopTaskTime = new ArrayList<TimeSpan>();
+		
+		// System.out.println(getHyperperiod(periodicTaskList));
+		
+		for (PeriodicTask periodicTask : periodicTaskList) {
+			nextStopTaskTime.add(new TimeSpan(periodicTask));
+		}
+		
+		
 		
 		return timeAxis;
 	}
 	
+	
+	private static int getHyperperiod(ArrayList<PeriodicTask> periodicTaskList) {
+		ArrayList<Integer> digitalList = new ArrayList<Integer>();
+		for (PeriodicTask periodicTask : periodicTaskList) {
+			digitalList.add(periodicTask.getTaskPeriodic());
+		}
+		return numeric.leastCommonMultiple(digitalList);
+	}
 	
 }

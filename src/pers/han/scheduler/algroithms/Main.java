@@ -8,6 +8,14 @@ import java.util.ArrayList;
 public class Main {
 	
 	public static void main(String[] args) {
+		ArrayList<Integer> list = new ArrayList<Integer>();
+		list.add(2);
+		list.add(3);
+		list.add(4);
+		list.add(5);
+		list.add(8);
+		System.out.println(numeric.leastCommonMultiple(list));
+		
 		// 按照 periodicTaskList 给任务排序，即任务编号
 		ArrayList<PeriodicTask> periodicTaskList = new ArrayList<PeriodicTask>();
 		periodicTaskList.add(new PeriodicTask(40, 10));
@@ -28,7 +36,7 @@ public class Main {
 		}
 		*/
 
-		System.out.println(CheckAlgroithmsResult.checkPeriodicTask(periodicTaskList, timeAxis));
+//		System.out.println(CheckAlgroithmsResult.checkPeriodicTask(periodicTaskList, timeAxis));
 		
 		BaseSchedulerFrame baseScheduler = new BaseSchedulerFrame();
 		System.out.println(baseScheduler.getVisable());
