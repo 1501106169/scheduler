@@ -66,6 +66,13 @@ public final class TimeSpan {
 		return;
 	}
 	
+	/**
+	 * 获取作业执行时间
+	 * @return	Integer
+	 */
+	public int getExecTime() {
+		return this.execTime;
+	}
 	
 	/**
 	 * 获取任务编号

@@ -32,6 +32,7 @@ public class CheckAlgroithmsResult {
 	 * @return					Boolean
 	 */
 	public static boolean checkPeriodicTask(ArrayList<PeriodicTask> periodicTaskList, ArrayList<TimeBlock> timeAxis) {
+		// 需要校验，各个任务执行的次数
 		// 验证调度任务的时间轴
 		int axis = 0;
 		// 记录每一个周期性任务在当前周期的释放时间和时限
