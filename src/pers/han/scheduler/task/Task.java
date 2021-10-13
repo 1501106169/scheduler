@@ -13,7 +13,7 @@ package pers.han.scheduler.task;
 public abstract class Task {
 	
 	/** 任务类型 */
-	protected TaskType taskType;
+	// protected TaskType taskType;
 	
 	/** 任务中作业的抢占 */
 	protected JobPreemption jobPreempt;
@@ -44,9 +44,9 @@ public abstract class Task {
 	 * 获取任务类型
 	 * @return	枚举类型
 	 */
-	public TaskType getTaskType() {
-		return this.taskType;
-	}
+	// public TaskType getTaskType() {
+		// return this.taskType;
+	// }
 	
 	/**
 	 * 获取作业可抢占

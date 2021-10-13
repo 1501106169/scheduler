@@ -33,6 +33,23 @@ public class Main {
 		// BaseSchedulerFrame baseScheduler = new BaseSchedulerFrame();
 		// System.out.println(baseScheduler.getVisable());
 		
+		 ArrayList<Task> a = new ArrayList<Task>();
+		 a.add(new PeriodicTask(1, 1));
+		 a.add(new AperiodicTask());
+		 
+		 System.out.println(a.get(0).getClass());
+		 System.out.println(a.get(1).getClass());
+		 
+		 try {
+			 // 运行时，获取对象类型
+			 a.get(0).getClass().cast(a.get(0));
+			 System.out.println(a.get(0).getClass());
+			 System.out.println(a.get(0).getJobDeadline());
+			 
+		 } catch (Exception e) {
+			 System.out.println(e);
+		 }
+		 
 	}
 
 }
