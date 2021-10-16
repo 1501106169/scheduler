@@ -12,11 +12,11 @@ import java.util.ArrayList;
  * @version		1.0
  *
  */
-public class numeric {
+public class Numeric {
 	/**
 	 * 私有构造函数，该类不可实例化
 	 */
-	private numeric() {
+	private Numeric() {
 		
 	}
 	

@@ -85,12 +85,13 @@ public class EarlistDeadlineFirst {
 		for (PeriodicTask periodicTask : periodicTaskList) {
 			digitalList.add(periodicTask.getTaskPeriodic());
 		}
-		return numeric.leastCommonMultiple(digitalList);
+		return Numeric.leastCommonMultiple(digitalList);
 	}
 	
 	/**
 	 * 获取一组周期任务中在释放时间之后的最小时限最短任务的索引
 	 * @param timeSpanList	一组周期性任务的下一个执行阶段
+	 * @param axis	当前时间轴时间
 	 * @return	Integer
 	 */
 	private static int getLeastDeadlineIndex(ArrayList<TimeSpan> timeSpanList, int axis) {
