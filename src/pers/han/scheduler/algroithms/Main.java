@@ -15,7 +15,7 @@ public class Main {
 		periodicTaskList.add(new PeriodicTask(50, 18));
 		periodicTaskList.add(new PeriodicTask(200, 10));
 		periodicTaskList.add(new PeriodicTask(200, 20));
-		
+
 		ArrayList<TimeBlock> timeAxis = EarlistDeadlineFirst.periodicEDF(periodicTaskList);
 		
 		System.out.print("该算法调度结果为：");

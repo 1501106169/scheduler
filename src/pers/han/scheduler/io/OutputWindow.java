@@ -8,6 +8,16 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
+/**
+ * 创建窗体绘制调度图
+ * FileName: OutputWindow.java
+ * 
+ * @author		hanYG
+ * @createDate	2021.10.14
+ * @alterDate	2021.10.19
+ * @version		1.0
+ *
+ */
 public class OutputWindow extends JFrame {
 
 	/**
@@ -49,7 +59,7 @@ public class OutputWindow extends JFrame {
 		// this.scroll.setSize(450, 270);
 		// JScrollPane滚动条高度18个单位
 		this.scroll.setBounds(150, 150, 450, this.canvas.getHeight() + 18);
-//		System.out.println(this.scroll.getVerticalScrollBar().getMaximum());
+		// System.out.println(this.scroll.getVerticalScrollBar().getMaximum());
 		this.scroll.getVerticalScrollBar().setValue(1000);
 		this.panel.add(scroll);
 		this.getContentPane().add(this.panel);
