@@ -6,7 +6,7 @@ package pers.han.scheduler.io;
  * 
  * @author		hanYG
  * @createDate	2021.10.15
- * @alterDate	2021.10.15
+ * @alterDate	2021.10.19
  * @version		1.0
  *
  */
@@ -47,6 +47,9 @@ public final class ChartColor {
 			// "#FFFFFF"	// 白色
 			"#000000"	// 黑色
 	};
+	
+	/** windows 默认颜色 r=51 g=51 b=51 */
+	public static final String defaultColorStr = "#515151";
 	
 	/** 红色 */
 	public static final String redStr = "#FF0000";

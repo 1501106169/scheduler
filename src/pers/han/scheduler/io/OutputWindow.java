@@ -1,20 +1,12 @@
 package pers.han.scheduler.io;
 
 import pers.han.scheduler.task.*;
-
-import java.awt.BorderLayout;
-import java.awt.Canvas;
 import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.FlowLayout;
 import java.awt.Graphics;
 import java.util.ArrayList;
-import javax.swing.JEditorPane;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
-import javax.swing.ScrollPaneConstants;
 
 public class OutputWindow extends JFrame {
 
@@ -24,7 +16,7 @@ public class OutputWindow extends JFrame {
 	private static final long serialVersionUID = 1L;
 	
 	/** 绘制图表的控件 */
-	private Canvas canvas;
+	private JPanel canvas;
 	
 	/** 滚动条 */
 	private JScrollPane scroll;
@@ -51,8 +43,14 @@ public class OutputWindow extends JFrame {
 		this.canvas = new Chart(timeAxis);
 		this.scroll = new JScrollPane();
 		this.scroll.setViewportView(this.canvas);
-		this.scroll.setLocation(150, 150);
-		this.scroll.setSize(450, 270);
+		// this.scroll.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+		// this.scroll.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
+		// this.scroll.setLocation(150, 150);
+		// this.scroll.setSize(450, 270);
+		// JScrollPane滚动条高度18个单位
+		this.scroll.setBounds(150, 150, 450, this.canvas.getHeight() + 18);
+//		System.out.println(this.scroll.getVerticalScrollBar().getMaximum());
+		this.scroll.getVerticalScrollBar().setValue(1000);
 		this.panel.add(scroll);
 		this.getContentPane().add(this.panel);
 		
@@ -67,7 +65,7 @@ public class OutputWindow extends JFrame {
 		// 设置窗体创建时显示
 		this.setVisible(true);
 		// 设置窗体大小不可改变
-//		this.setResizable(false);
+		this.setResizable(false);
 		// this.setLayout(null);
 		this.setLocation(150, 150);
 		// this.setSize(this.getWidth(), this.getHeight());
@@ -79,7 +77,6 @@ public class OutputWindow extends JFrame {
 	public void paint(Graphics g) {
 		// 根据JFrame修改panel的大小，panel始终填充JFrame
 		this.panel.setSize(this.getWidth(), this.getHeight());
-		// this.rootPanel.setSize(this.getWidth(), this.getHeight());
 		this.panel.repaint();
 		this.canvas.repaint();
 		this.scroll.repaint();

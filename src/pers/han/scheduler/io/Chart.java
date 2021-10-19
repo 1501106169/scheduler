@@ -1,10 +1,12 @@
 package pers.han.scheduler.io;
 
 import pers.han.scheduler.task.*;
-import java.awt.Canvas;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Graphics;
 import java.util.ArrayList;
+import javax.swing.JButton;
+import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
 /**
@@ -13,18 +15,19 @@ import javax.swing.JScrollPane;
  * 
  * @author		hanYG
  * @createDate	2021.10.14
- * @alterDate	2021.10.14
+ * @alterDate	2021.10.19
  * @version		1.0
  *
  */
-public class Chart extends Canvas {
+public class Chart extends JPanel {
 	
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	JScrollPane scroll;
+	
+	/** chart的大小 */
+	private Dimension dime;
 	
 	/** 任务数 */
 	private int taskNum;
@@ -39,10 +42,18 @@ public class Chart extends Canvas {
 	private int BAR_HEIGHT = 30;
 	
 	/** 每个进度条间隔20个单位 */
-	private int BAR_BORDER = 20;
+	private int BAR_BAR_BORDER = 20;
 	
 	/** 进度条和canvas的间隔10个单位 */
 	private int BAR_CANVAS_BORDER = 10;
+	
+	/** 每个时间单位的长度为3个单位 */
+	private int PER_DATE_LEN = 3;
+	
+	/** 调度图距离左边界 */
+	
+	/** 调度图距离右边界 */
+	
 	
 	/**
 	 * 构造函数
@@ -50,29 +61,55 @@ public class Chart extends Canvas {
 	 */
 	public Chart(ArrayList<TimeBlock> timeAxis) {
 		super();
-		this.setBackground(Color.PINK);
 		this.timeAxis = timeAxis;
-		this.setSize(1000, 1000);
-		if (timeAxis.size() == 0) { return; }
+		if (timeAxis.isEmpty()) {
+			this.taskNum = -1;
+			return;
+		}
 		this.taskNum = 0;
 		for (TimeBlock timeBlock : timeAxis) {
 			if (timeBlock.getId() > this.taskNum) {
 				this.taskNum = timeBlock.getId();
 			}
 		}
+		// 设置画板的首选大小
+		this.dime = new Dimension(
+				(timeAxis.get(timeAxis.size() - 1).getStartTime() + timeAxis.get(timeAxis.size() - 1).getExecTime()) * this.PER_DATE_LEN,
+				this.BAR_CANVAS_BORDER * 2 + this.BAR_BAR_BORDER * this.taskNum + this.BAR_HEIGHT * (this.taskNum + 1)
+		);
+		this.setPreferredSize(this.dime);
+		this.setSize(this.dime);
 	}
 
 	/**
 	 * 绘制图表
 	 */
 	public void paint(Graphics g) {
-		// g.setColor(Color.RED);
-		// g.setColor(Color.decode("#ff0000"));		
-		int width = this.getWidth();
-		int height = this.getHeight();
-		// drawFrame(g);
-		g.drawLine(100, 100, 900, 900);
-		g.drawLine(100, 900, 900, 100);
+		// 绘制调度图的框架
+		drawFrame(g);
+		
+		/** 画边框，填充矩形效果更好 */
+		
+		for (TimeBlock timeBlock : timeAxis) {
+			// 根据任务编号，设置任务所使用的颜色
+			int taskId = timeBlock.getId(); 
+			// 设置画笔颜色
+			g.setColor(Color.decode(ChartColor.getPeriodicTaskColorStr(taskId)));
+			g.fillRect(
+					timeBlock.getStartTime() * this.PER_DATE_LEN,
+					this.getHeight() - this.BAR_CANVAS_BORDER - this.BAR_HEIGHT * (taskId + 1) - this.BAR_BAR_BORDER * taskId,
+					timeBlock.getExecTime() * this.PER_DATE_LEN,
+					this.BAR_HEIGHT
+			);
+			g.setColor(Color.decode(ChartColor.defaultColorStr));
+			g.drawRect(
+					timeBlock.getStartTime() * this.PER_DATE_LEN,
+					this.getHeight() - this.BAR_CANVAS_BORDER - this.BAR_HEIGHT * (taskId + 1) - this.BAR_BAR_BORDER * taskId,
+					timeBlock.getExecTime() * this.PER_DATE_LEN,
+					this.BAR_HEIGHT
+			);
+		}
+		
 	}
 	
 	/**
@@ -80,20 +117,13 @@ public class Chart extends Canvas {
 	 * @param g
 	 */
 	private void drawFrame(Graphics g) {
-		int width = this.getWidth();
-		int height = this.getHeight();
-		
-		/** 画边框，填充矩形效果更好 */
-		
-		// 第一个条形图
-		
-		g.setColor(Color.RED);
-		for (int i = 0; i < 5; ++i) {
-			g.drawRect(
-					50, 
-					height - this.BAR_CANVAS_BORDER - this.BAR_HEIGHT * (i + 1) - this.BAR_BORDER * i, 
-					600, 
-					this.BAR_HEIGHT
+		g.setColor(Color.decode(ChartColor.defaultColorStr));
+		for (int i = 0; i <= this.taskNum; ++i) {
+			g.drawLine(
+					0,
+					this.getHeight() - this.BAR_CANVAS_BORDER - this.BAR_HEIGHT * i - this.BAR_BAR_BORDER * i,
+					this.getWidth(),
+					this.getHeight() - this.BAR_CANVAS_BORDER - this.BAR_HEIGHT * i - this.BAR_BAR_BORDER * i
 			);
 		}
 	}
