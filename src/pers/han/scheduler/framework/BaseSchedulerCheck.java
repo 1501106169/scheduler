@@ -5,7 +5,6 @@ import java.util.ArrayList;
 
 /**
  * 包含输入、算法、输出的接口
- * 
  * FileName: BaseSchedulerCheck.java
  * 
  * @author		hanYG

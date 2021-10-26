@@ -80,7 +80,6 @@ public class BaseSchedulerFrame implements BaseSchedulerCheck {
 	@Override
 	public void outputSchedulerResult(ArrayList<TimeBlock> timeBlock) {
 		// TODO Auto-generated method stub
-		
 	}
 
 	@Override

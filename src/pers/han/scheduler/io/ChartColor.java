@@ -60,13 +60,13 @@ public final class ChartColor {
 	/** 蓝色 */
 	public static final String blueStr = "#0000FF";
 
-	/** 执向偶发性任务颜色的标记 */
+	/** 指向偶发性任务颜色的标记 */
 	private int sporadicTaskColorStrArrayIndex = 0;
 	
-	/** 执向非周期性任务颜色的标记 */
+	/** 指向非周期性任务颜色的标记 */
 	private int aperiodicTaskColorStrArrayIndex = 0;
 	
-	/** 执向周期性任务颜色的标记 */
+	/** 指向周期性任务颜色的标记 */
 	private int periodicTaskColorStrArrayIndex = 0;
 	
 	/**

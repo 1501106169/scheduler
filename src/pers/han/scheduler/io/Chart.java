@@ -5,9 +5,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.util.ArrayList;
-import javax.swing.JButton;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
 
 /**
  * 绘制进程调度图表
@@ -53,7 +51,6 @@ public class Chart extends JPanel {
 	/** 调度图距离左边界 */
 	
 	/** 调度图距离右边界 */
-	
 	
 	/**
 	 * 构造函数
