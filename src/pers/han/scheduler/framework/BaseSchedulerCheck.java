@@ -27,7 +27,7 @@ public interface BaseSchedulerCheck {
 	 * @return	调度结果
 	 */
 	public abstract ArrayList<TimeBlock> schedulerAlgroithm(ArrayList<Task> taskList);
-	x
+	
 	/**
 	 * 输出算法
 	 * @param timeBlock	调度的时间片
