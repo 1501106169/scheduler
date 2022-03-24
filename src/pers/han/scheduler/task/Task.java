@@ -7,13 +7,14 @@ package pers.han.scheduler.task;
  * @author		hanYG
  * @createDate	2021.05.17
  * @alterDate	2021.10.10	修改时间类型double->int，1表示单位时间不可拆分
- * @version		2.0
+ * 				2022.03.24  修改使用任务类型
+ * @version		2.1
  *
  */
 public abstract class Task {
 	
 	/** 任务类型 */
-	// protected TaskType taskType;
+	protected TaskType taskType;
 	
 	/** 任务中作业的抢占 */
 	protected JobPreemption jobPreempt;
@@ -44,9 +45,9 @@ public abstract class Task {
 	 * 获取任务类型
 	 * @return	枚举类型
 	 */
-	// public TaskType getTaskType() {
-		// return this.taskType;
-	// }
+	public TaskType getTaskType() {
+		return this.taskType;
+	}
 	
 	/**
 	 * 获取作业可抢占

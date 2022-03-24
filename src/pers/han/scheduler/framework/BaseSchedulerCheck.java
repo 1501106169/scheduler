@@ -14,7 +14,7 @@ import java.util.ArrayList;
  *
  */
 public interface BaseSchedulerCheck {
-	
+
 	/**
 	 * 读入测试用例
 	 * @return 一组调度任务
@@ -27,7 +27,7 @@ public interface BaseSchedulerCheck {
 	 * @return	调度结果
 	 */
 	public abstract ArrayList<TimeBlock> schedulerAlgroithm(ArrayList<Task> taskList);
-	
+	x
 	/**
 	 * 输出算法
 	 * @param timeBlock	调度的时间片
