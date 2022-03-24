@@ -25,7 +25,7 @@ public class EarlistDeadlineFirst {
 	/**
 	 * 基于EDF的周期性任务调度算法，最小时限最短执行时间优先
 	 * @param periodicTaskList	周期性任务数组
-	 * @return	ArrayList<TimeBlock> 时间轴，每段时间内执行的任务
+	 * @return ArrayList<TimeBlock> 时间轴，每段时间内执行的任务
 	 */
 	public static ArrayList<TimeBlock> periodicEDF(ArrayList<PeriodicTask> periodicTaskList) {
 		// 任务执行的时间段

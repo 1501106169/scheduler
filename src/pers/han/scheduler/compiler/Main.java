@@ -15,9 +15,10 @@ ClassLoader classLoader = ClassLoader.getSystemClassLoader();
 		DynamicCompiler dynamicCompiler = new DynamicCompiler(classLoader);
 		
 		// 添加到动态编译器其的待编译源文件中
-		dynamicCompiler.addSource("Man", "import java.util.List; import java.util.ArrayList; public class Man { public List<String> hello () { List<String> lis = new ArrayList<String>(); lis.add(\"hello\"); System.out.println(\"hello world\"); return lis; }}");
+		dynamicCompiler.addSource("Man", "import pers.han.scheduler.task.*; public class Man { public PeriodicTask hello () { PeriodicTask p = new PeriodicTask(2, 3); System.out.println(\"hello world\"); return p; }}");
 		
 		System.out.println(dynamicCompiler.build());
+		dynamicCompiler.getBuildError();
 		
 		Map<String, Class<?>> classes = dynamicCompiler.getClasses();
 		System.out.println(classes);
@@ -36,8 +37,7 @@ ClassLoader classLoader = ClassLoader.getSystemClassLoader();
 		}
 		
 		try {
-			List<String> obj = (List<String>) method.invoke(cls.newInstance());
-			System.out.println(obj);
+			System.out.println(method.invoke(cls.newInstance()));
 		} catch (IllegalAccessException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

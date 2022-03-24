@@ -13,6 +13,16 @@ import javax.tools.JavaFileObject;
 import javax.tools.StandardJavaFileManager;
 import javax.tools.ToolProvider;
 
+/**
+ * 自定义的Java源代码编译器，实现对源代码的编译
+ * FileName: DynamicCompiler.java
+ * 
+ * @author		hanYG
+ * @createDate	2021.10.26
+ * @alterDate	2021.10.26
+ * @version		1.0
+ * 
+ */
 public class DynamicCompiler {
 	
 	/** 获取系统的Java编译器 */
@@ -96,11 +106,11 @@ public class DynamicCompiler {
 	
 	/**
 	 * 获取报错信息
-	 * @return List<Diagnostic<? extends JavaFileObject>>
+	 * @return String
 	 */
-	public List<Diagnostic<? extends JavaFileObject>> getBuildError() {
+	public String getBuildError() {
 		System.out.println(this.collector.getDiagnostics());
-		return this.collector.getDiagnostics();
+		return this.collector.getDiagnostics().toString();
 	}
 	
 }

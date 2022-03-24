@@ -31,7 +31,6 @@ public class Test extends BaseSchedulerFrame {
 		for (Task task : taskList) {
 			periodicTaskList.add((PeriodicTask)task);
 		}
-		
 		return EarlistDeadlineFirst.periodicEDF(periodicTaskList);
 	}
 

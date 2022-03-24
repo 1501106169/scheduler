@@ -6,7 +6,7 @@ import javax.tools.SimpleJavaFileObject;
 
 /**
  * 输入的源文件对象
- * FileName: DynamicSourceFile
+ * FileName: DynamicSourceFile.java
  * 
  * @author		hanYG
  * @createDate	2021.10.26
