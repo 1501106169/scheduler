@@ -8,8 +8,8 @@ import java.util.Map;
 public class Main {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-ClassLoader classLoader = ClassLoader.getSystemClassLoader();
+
+		ClassLoader classLoader = ClassLoader.getSystemClassLoader();
 		
 		// ¶¯Ì¬±àÒëÆ÷
 		DynamicCompiler dynamicCompiler = new DynamicCompiler(classLoader);

@@ -51,9 +51,9 @@ public class Test extends BaseSchedulerFrame {
 		return CheckAlgroithmsResult.checkPeriodicTask(periodicTaskList, timeBlock);
 	}
 	
-	public static void main(String[] args) {
-		BaseSchedulerFrame bsf = new Test();
-		System.out.println(bsf.getVisable());
-	}
+//	public static void main(String[] args) {
+//		BaseSchedulerFrame bsf = new Test();
+//		System.out.println(bsf.getVisable());
+//	}
 	
 }
