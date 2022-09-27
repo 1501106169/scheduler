@@ -2,6 +2,8 @@ package pers.han.scheduler.task;
 
 // import java.util.Iterator;
 
+// 弃用
+
 /**
  * 表示任务的下一个执行时间段
  * FileName: TimeSpan.java

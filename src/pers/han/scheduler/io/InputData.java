@@ -1,10 +1,10 @@
 package pers.han.scheduler.io;
 
-import pers.han.scheduler.task.*;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
+
+import pers.han.scheduler.task.*;
 
 /**
  * 读取测试用例数据

@@ -1,12 +1,12 @@
 package pers.han.scheduler.framework;
 
+import java.util.ArrayList;
+
 import pers.han.scheduler.algroithms.CheckAlgroithmsResult;
 import pers.han.scheduler.algroithms.EarlistDeadlineFirst;
 import pers.han.scheduler.io.InputData;
 import pers.han.scheduler.io.OutputWindow;
 import pers.han.scheduler.task.*;
-import pers.han.scheduler.framework.*;
-import java.util.ArrayList;
 
 public class Test extends BaseSchedulerFrame {
 
@@ -51,9 +51,9 @@ public class Test extends BaseSchedulerFrame {
 		return CheckAlgroithmsResult.checkPeriodicTask(periodicTaskList, timeBlock);
 	}
 	
-//	public static void main(String[] args) {
-//		BaseSchedulerFrame bsf = new Test();
-//		System.out.println(bsf.getVisable());
-//	}
+	public static void main(String[] args) {
+		BaseSchedulerFrame bsf = new Test();
+		System.out.println(bsf.getVisable());
+	}
 	
 }

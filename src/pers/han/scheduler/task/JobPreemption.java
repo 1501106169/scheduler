@@ -2,11 +2,10 @@ package pers.han.scheduler.task;
 
 /**
  * 作业抢占类型枚举
- * FileName: JobPreemption.java
  * 
  * @author		hanYG
- * @createDate	2021.05.17
- * @alterDate	2021.05.17
+ * @createDate	2021年5月17日
+ * @alterDate	2021年5月17日
  * @version		1.0
  *
  */

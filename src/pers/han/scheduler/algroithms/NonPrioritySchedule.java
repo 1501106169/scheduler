@@ -1,7 +1,8 @@
 package pers.han.scheduler.algroithms;
 
-import pers.han.scheduler.task.*;
 import java.util.ArrayList;
+
+import pers.han.scheduler.task.*;
 
 /**
  * 无优先级算法

@@ -1,11 +1,12 @@
 package pers.han.scheduler.io;
 
-import pers.han.scheduler.task.*;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.util.ArrayList;
 import javax.swing.JPanel;
+
+import pers.han.scheduler.task.*;
 
 /**
  * 绘制进程调度图表
@@ -89,7 +90,7 @@ public class Chart extends JPanel {
 		
 		for (TimeBlock timeBlock : timeAxis) {
 			// 根据任务编号，设置任务所使用的颜色
-			int taskId = timeBlock.getId(); 
+			int taskId = timeBlock.getId();
 			// 设置画笔颜色
 			g.setColor(Color.decode(ChartColor.getPeriodicTaskColorStr(taskId)));
 			g.fillRect(
