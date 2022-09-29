@@ -30,9 +30,16 @@ public class Runner {
 		// 执行校验算法
 		algorithmCase.runCheckAlgorithm();
 		
+		// 计算调度算法性能
+		PerformanceTest pt = new PerformanceTest(algorithmCase);
+		System.out.println(pt.calcTimeUtilization());
+		
 		// 输出
 		OutputSchedulingResult out = new OutputForTerminal(algorithmCase);
 		out.outSchedulingResult();
+		
+		System.out.println((taskSuit.get(0).get(0).getClass() == pers.han.scheduler.task.PeriodicTask.class));
+		
 	}
 
 }

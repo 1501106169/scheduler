@@ -7,6 +7,7 @@ package pers.han.scheduler.task;
  * @createDate	2021年6月17日
  * @alterDate	2021年10月10日
  * 				2022年6月19日	添加属性cycleStartTime
+ * 				2022年09月28日 添加拷贝函数
  * @version		1.0
  *
  */
@@ -99,7 +100,7 @@ public class PeriodicTask extends Task {
 	}
 	
 	/**
-	 * 移动构造函数
+	 * 拷贝构造函数
 	 * @param periodicTask 周期性任务
 	 */
 	public PeriodicTask(PeriodicTask periodicTask) {
@@ -132,6 +133,12 @@ public class PeriodicTask extends Task {
 	 */
 	public void nextCycle() {
 		this.cycleStartTime += this.taskPeriodic;
+	}
+
+	@Override
+	public Task clone() {
+		PeriodicTask task = new PeriodicTask(this.jobReleaseTime, this.taskPeriodic, this.jobExecTime, this.jobDeadline, this.taskPriority, this.jobPreempt);
+		return task;
 	}
 
 }

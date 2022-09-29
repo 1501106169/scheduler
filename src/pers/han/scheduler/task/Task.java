@@ -4,8 +4,9 @@ package pers.han.scheduler.task;
  * 所有实时任务类的基类
  * 
  * @author		hanYG
- * @createDate	2022年5月17日
- * @alterDate	2022年10月10日 修改时间类型double->int，表示单位时间不可拆分
+ * @createDate	2021年5月17日
+ * @alterDate	2021年10月10日 修改时间类型double->int，表示单位时间不可拆分
+ * 				2022年09年28日 添加拷贝函数
  * @version		21.0
  *
  */
@@ -77,5 +78,10 @@ public abstract class Task {
 		String clsName = this.getClass().getName();
 		return clsName.substring(clsName.lastIndexOf(".") + 1);
 	}
+	
+	/**
+	 * 拷贝构造函数
+	 */
+	public abstract Task clone();
 
 }

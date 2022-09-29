@@ -43,4 +43,10 @@ public class PeriodicCheckAlgorithm extends CheckAlgorithm {
 		return CheckResultEnum.FEASIBLE;
 	}
 
+	@Override
+	public void tearDown() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

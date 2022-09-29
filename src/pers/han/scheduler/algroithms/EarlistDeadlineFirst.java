@@ -7,6 +7,8 @@ import java.util.Iterator;
 
 import pers.han.scheduler.task.*;
 
+// 弃用
+
 /**
  * 最早时限优先算法 
  * FileName: EarlistDeadlineFirst.java

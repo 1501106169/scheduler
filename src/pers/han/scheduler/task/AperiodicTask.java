@@ -6,6 +6,7 @@ package pers.han.scheduler.task;
  * @author		hanYG
  * @createDate	2022年5月29日
  * @alterDate	2022年5月29日
+ * 				2022年09年28日 添加拷贝函数，拷贝构造函数
  * @version		1.0
  *
  */
@@ -39,6 +40,23 @@ public class AperiodicTask extends Task {
 		this.jobDeadline = jobDeadline;
 		this.jobPreempt = JobPreemption.NONPREEMPTABLE;
 		this.taskPriority = 0;
+	}
+	
+	/**
+	 * 拷贝构造函数
+	 * @param task
+	 */
+	public AperiodicTask(AperiodicTask task) {
+		this.jobReleaseTime = task.getJobReleaseTime();
+		this.jobExecTime = task.getJobExecTime();
+		this.jobDeadline = task.getJobDeadline();
+		this.taskPriority = task.getTaskPriority();
+		this.jobPreempt = task.getJobPreemption();
+	}
+
+	@Override
+	public Task clone() {
+		return new AperiodicTask(this.jobReleaseTime, this.jobExecTime, this.jobDeadline, this.taskPriority, this.jobPreempt);
 	}
 	
 }

@@ -1,5 +1,7 @@
 package pers.han.scheduler.task;
 
+// 弃用
+
 /**
  * 周期性任务的下一个周期
  * 
@@ -8,6 +10,7 @@ package pers.han.scheduler.task;
  * @alterDate	2022年5月29日
  * 				2022年6月5日		添加taskId
  * 				2022年6月29日	弃用
+ * 				2022年09月28日 添加拷贝函数，仍然弃用
  * @version		1.1
  *
  */
@@ -66,6 +69,12 @@ public class NextCycle extends Task {
 	 */
 	public int getTaskId() {
 		return this.taskId;
+	}
+
+	@Override
+	public Task clone() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 }

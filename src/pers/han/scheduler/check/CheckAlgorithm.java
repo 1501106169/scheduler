@@ -12,6 +12,7 @@ import pers.han.scheduler.task.TimeBlock;
  * @author		hanYG
  * @createDate	2022年6月1日
  * @alterDate	2022年6月1日
+ * 				2022年09年28日 添加tearDown设为虚函数
  * @version		1.0
  *
  */
@@ -46,9 +47,7 @@ public abstract class CheckAlgorithm {
 	/**
 	 * 在doCheck方法后执行
 	 */
-	public void tearDown() {
-		
-	}
+	public abstract void tearDown();
 	
 	/**
 	 * 执行校验算法

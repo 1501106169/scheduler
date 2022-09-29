@@ -7,6 +7,9 @@ import pers.han.scheduler.task.TimeBlock;
 import pers.han.scheduler.task.*;
 // import java.util.Iterator;
 
+// 弃用
+
+
 /**
  * 对调度算法的结果进行校验
  * FileName: CheckAlgroithmsResult.java

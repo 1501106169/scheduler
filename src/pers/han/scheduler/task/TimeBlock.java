@@ -7,6 +7,7 @@ package pers.han.scheduler.task;
  * @createDate	2022年5月29日
  * @alterDate	2022年5月29日
  * 				2022年6月5日 修改task 为 taskId 
+ * 				2022年09月28日 添加拷贝函数，拷贝构造函数
  * @version		2.0
  *
  */
@@ -32,6 +33,16 @@ public class TimeBlock {
 		this.startTime = startTime;
 		this.execTime = execTime;
 	}
+	
+	/**
+	 * 拷贝构造函数
+	 * @param tb
+	 */
+	public TimeBlock(TimeBlock tb) {
+		this.taskId = tb.getTaskId();
+		this.startTime = tb.getStartTime();
+		this.execTime = tb.getExecTime();
+	}
 
 	/**
 	 * 获取任务
@@ -56,4 +67,13 @@ public class TimeBlock {
 	public int getExecTime() {
 		return this.execTime;
 	}
+	
+	/**
+	 * 拷贝构造
+	 */
+	public TimeBlock clone() {
+		TimeBlock tb = new TimeBlock(this.taskId, this.startTime, this.execTime);
+		return tb;
+	}
+	
 }
