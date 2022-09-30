@@ -1,23 +1,23 @@
-package pers.han.scheduler.io;
+ï»¿package pers.han.scheduler.io;
 
 import pers.han.scheduler.algroithms.SchedulingAlgorithm;
 
 /**
- * ´ÓÎÄ¼şÖĞ»ñÈ¡µ÷¶ÈËã·¨
+ * ä»æ–‡ä»¶ä¸­è·å–è°ƒåº¦ç®—æ³•
  * 
  * @author		hanYG
- * @createDate	2022Äê5ÔÂ29ÈÕ
- * @alterDate	2022Äê5ÔÂ29ÈÕ
+ * @createDate	2022å¹´5æœˆ29æ—¥
+ * @alterDate	2022å¹´5æœˆ29æ—¥
  * @version		1.0
  *
  */
 public class InputAlgorithmFromFile implements InputAlgorithm {
-	/** ÎÄ¼şÂ·¾¶ */
+	/** æ–‡ä»¶è·¯å¾„ */
 	String filePath;
 	
 	/**
-	 * ¹¹Ôìº¯Êı
-	 * @param filePath ÎÄ¼şÂ·¾¶
+	 * æ„é€ å‡½æ•°
+	 * @param filePath æ–‡ä»¶è·¯å¾„
 	 */
 	public InputAlgorithmFromFile(String filePath) {
 		this.filePath = filePath;
@@ -30,8 +30,8 @@ public class InputAlgorithmFromFile implements InputAlgorithm {
 	}
 	
 	/**
-	 * ¸ù¾İÔ´´úÂë´´½¨¶ÔÏó
-	 * @param algorithmCodeStr Ô´´úÂë
+	 * æ ¹æ®æºä»£ç åˆ›å»ºå¯¹è±¡
+	 * @param algorithmCodeStr æºä»£ç 
 	 * @return SchedulingAlgorithm
 	 */
 	public SchedulingAlgorithm getAlgorithm(String algorithmCodeStr) {

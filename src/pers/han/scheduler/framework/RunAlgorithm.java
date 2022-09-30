@@ -1,43 +1,43 @@
-package pers.han.scheduler.framework;
+ï»¿package pers.han.scheduler.framework;
 
 import pers.han.scheduler.check.CheckAlgorithm;
 import pers.han.scheduler.scheduling.SchedulingAlgorithm;
 
 /**
- * Ìá¹©Ò»×éÖ´ĞĞĞ£Ñéµ÷¶ÈËã·¨µÄ·½·¨
+ * æä¾›ä¸€ç»„æ‰§è¡Œæ ¡éªŒè°ƒåº¦ç®—æ³•çš„æ–¹æ³•
  * 
  * @author		hanYG
- * @createDate	2022Äê6ÔÂ1ÈÕ
- * @alterDate	2022Äê6ÔÂ1ÈÕ
+ * @createDate	2022å¹´6æœˆ1æ—¥
+ * @alterDate	2022å¹´6æœˆ1æ—¥
  * @version		1.0
  *
  */
 public interface RunAlgorithm {
 	
 	/**
-	 * ÉèÖÃµ÷¶ÈËã·¨
-	 * @param schedulingAlgorithm µ÷¶ÈËã·¨ÊµÀı
+	 * è®¾ç½®è°ƒåº¦ç®—æ³•
+	 * @param schedulingAlgorithm è°ƒåº¦ç®—æ³•å®ä¾‹
 	 */
 	public void setSchedulingAlgorithm(SchedulingAlgorithm schedulingAlgorithm);
 	
 	/**
-	 * ÉèÖÃµ÷¶ÈËã·¨
-	 * @param checkAlgorithm Ğ£ÑéËã·¨ÊµÀı
+	 * è®¾ç½®è°ƒåº¦ç®—æ³•
+	 * @param checkAlgorithm æ ¡éªŒç®—æ³•å®ä¾‹
 	 */
 	public void setCheckAlgorithm(CheckAlgorithm checkAlgorithm);
 	
 	/**
-	 * ÔËĞĞµ÷¶ÈËã·¨²¢Ğ£Ñé
+	 * è¿è¡Œè°ƒåº¦ç®—æ³•å¹¶æ ¡éªŒ
 	 */
 	public void run();
 	
 	/**
-	 * ÔËĞĞµ÷¶ÈËã·¨
+	 * è¿è¡Œè°ƒåº¦ç®—æ³•
 	 */
 	public void runSchedulingAlgorithm();
 	
 	/**
-	 * ÔËĞĞĞ£ÑéËã·¨
+	 * è¿è¡Œæ ¡éªŒç®—æ³•
 	 */
 	public void runCheckAlgorithm();
 	

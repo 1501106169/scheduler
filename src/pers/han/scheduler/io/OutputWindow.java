@@ -1,4 +1,4 @@
-package pers.han.scheduler.io;
+ï»¿package pers.han.scheduler.io;
 
 import pers.han.scheduler.task.*;
 import java.awt.Color;
@@ -9,7 +9,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
 /**
- * ´´½¨´°Ìå»æÖÆµ÷¶ÈÍ¼
+ * åˆ›å»ºçª—ä½“ç»˜åˆ¶è°ƒåº¦å›¾
  * FileName: OutputWindow.java
  * 
  * @author		hanYG
@@ -25,24 +25,24 @@ public class OutputWindow extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	/** »æÖÆÍ¼±íµÄ¿Ø¼ş */
+	/** ç»˜åˆ¶å›¾è¡¨çš„æ§ä»¶ */
 	private JPanel canvas;
 	
-	/** ¹ö¶¯Ìõ */
+	/** æ»šåŠ¨æ¡ */
 	private JScrollPane scroll;
 	
-	/** rootPanelÈİÆ÷ */
+	/** rootPanelå®¹å™¨ */
 	// private JPanel rootPanel;
 	
-	/** »æÍ¼µÄpanel */
+	/** ç»˜å›¾çš„panel */
 	private JPanel panel;
 	
-	/** »æÖÆÍ¼±íµÄÊı¾İ */
+	/** ç»˜åˆ¶å›¾è¡¨çš„æ•°æ® */
 	private ArrayList<TimeBlock> timeAxis;
 	
 	/**
-	 * ¹¹Ôìº¯Êı£¬´´½¨Í¼±í´°¿Ú
-	 * @param timeAxis	»æÖÆÍ¼±íµÄÊı¾İ
+	 * æ„é€ å‡½æ•°ï¼Œåˆ›å»ºå›¾è¡¨çª—å£
+	 * @param timeAxis	ç»˜åˆ¶å›¾è¡¨çš„æ•°æ®
 	 */
 	public OutputWindow(ArrayList<TimeBlock> timeAxis) {
 		super();
@@ -57,24 +57,24 @@ public class OutputWindow extends JFrame {
 		// this.scroll.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
 		// this.scroll.setLocation(150, 150);
 		// this.scroll.setSize(450, 270);
-		// JScrollPane¹ö¶¯Ìõ¸ß¶È18¸öµ¥Î»
+		// JScrollPaneæ»šåŠ¨æ¡é«˜åº¦18ä¸ªå•ä½
 		this.scroll.setBounds(150, 150, 450, this.canvas.getHeight() + 18);
 		// System.out.println(this.scroll.getVerticalScrollBar().getMaximum());
 		this.scroll.getVerticalScrollBar().setValue(1000);
 		this.panel.add(scroll);
 		this.getContentPane().add(this.panel);
 		
-		// ÉèÖÃ´°Ìå´óĞ¡
+		// è®¾ç½®çª—ä½“å¤§å°
 		this.setSize(800, 600);
-		// ÉèÖÃ´°Ìå¹Ø±ÕÊ±£¬³ÌĞò½áÊø
+		// è®¾ç½®çª—ä½“å…³é—­æ—¶ï¼Œç¨‹åºç»“æŸ
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		// ÉèÖÃ´°Ìå±êÌâ
+		// è®¾ç½®çª—ä½“æ ‡é¢˜
 		this.setTitle("CHART");
-		// ÉèÖÃ´°Ìå³õÊ¼Î»ÖÃ
+		// è®¾ç½®çª—ä½“åˆå§‹ä½ç½®
 		this.setLocation(200, 200);
-		// ÉèÖÃ´°Ìå´´½¨Ê±ÏÔÊ¾
+		// è®¾ç½®çª—ä½“åˆ›å»ºæ—¶æ˜¾ç¤º
 		this.setVisible(true);
-		// ÉèÖÃ´°Ìå´óĞ¡²»¿É¸Ä±ä
+		// è®¾ç½®çª—ä½“å¤§å°ä¸å¯æ”¹å˜
 		this.setResizable(false);
 		// this.setLayout(null);
 		this.setLocation(150, 150);
@@ -82,10 +82,10 @@ public class OutputWindow extends JFrame {
 	}
 	
 	/**
-	 * ¸ù¾İJFrameµÄ±ä»¯ÖØ»æJFrameÉÏµÄÍ¼Ïñ
+	 * æ ¹æ®JFrameçš„å˜åŒ–é‡ç»˜JFrameä¸Šçš„å›¾åƒ
 	 */
 	public void paint(Graphics g) {
-		// ¸ù¾İJFrameĞŞ¸ÄpanelµÄ´óĞ¡£¬panelÊ¼ÖÕÌî³äJFrame
+		// æ ¹æ®JFrameä¿®æ”¹panelçš„å¤§å°ï¼Œpanelå§‹ç»ˆå¡«å……JFrame
 		this.panel.setSize(this.getWidth(), this.getHeight());
 		this.panel.repaint();
 		this.canvas.repaint();

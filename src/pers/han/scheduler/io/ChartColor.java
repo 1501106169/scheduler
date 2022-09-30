@@ -1,7 +1,7 @@
-package pers.han.scheduler.io;
+ï»¿package pers.han.scheduler.io;
 
 /**
- * Í¼±íÖĞ¸÷ÀàĞÍÈÎÎñµÄÑÕÉ«
+ * å›¾è¡¨ä¸­å„ç±»å‹ä»»åŠ¡çš„é¢œè‰²
  * FileName: ChartColor.java
  * 
  * @author		hanYG
@@ -12,65 +12,65 @@ package pers.han.scheduler.io;
  */
 public final class ChartColor {
 
-	/** Å¼·¢ĞÔÈÎÎñµÄ±íÊ¾ÑÕÉ« */
+	/** å¶å‘æ€§ä»»åŠ¡çš„è¡¨ç¤ºé¢œè‰² */
 	private static final String[] sporadicTaskColorStrArray = {
-			"#FF0000",	// ºìÉ«
-			"#00FF00",	// ÂÌÉ«
-			"#0000FF",	// À¶É«
-			"#FF00FF",	// ×ÏÉ«
-			"#FFFF00",	// »ÆÉ«
+			"#FF0000",	// çº¢è‰²
+			"#00FF00",	// ç»¿è‰²
+			"#0000FF",	// è“è‰²
+			"#FF00FF",	// ç´«è‰²
+			"#FFFF00",	// é»„è‰²
 			"#00FFFF",	// 
-			// "#FFFFFF"	// °×É«
-			"#000000"	// ºÚÉ«
+			// "#FFFFFF"	// ç™½è‰²
+			"#000000"	// é»‘è‰²
 	};
 	
-	/** ·ÇÖÜÆÚĞÔÈÎÎñµÄ±íÊ¾ÑÕÉ« */
+	/** éå‘¨æœŸæ€§ä»»åŠ¡çš„è¡¨ç¤ºé¢œè‰² */
 	private static final String[] aperiodicTaskColorStrArray = {
-			"#FF0000",	// ºìÉ«
-			"#00FF00",	// ÂÌÉ«
-			"#0000FF",	// À¶É«
-			"#FF00FF",	// ×ÏÉ«
-			"#FFFF00",	// »ÆÉ«
+			"#FF0000",	// çº¢è‰²
+			"#00FF00",	// ç»¿è‰²
+			"#0000FF",	// è“è‰²
+			"#FF00FF",	// ç´«è‰²
+			"#FFFF00",	// é»„è‰²
 			"#00FFFF",	// 
-			// "#FFFFFF"	// °×É«
-			"#000000"	// ºÚÉ«
+			// "#FFFFFF"	// ç™½è‰²
+			"#000000"	// é»‘è‰²
 	};
 	
-	/** ÖÜÆÚĞÔÈÎÎñµÄ±íÊ¾ÑÕÉ« */
+	/** å‘¨æœŸæ€§ä»»åŠ¡çš„è¡¨ç¤ºé¢œè‰² */
 	private static final String[] periodicTaskColorStrArray = {
-			"#FF0000",	// ºìÉ«
-			"#00FF00",	// ÂÌÉ«
-			"#0000FF",	// À¶É«
-			"#FF00FF",	// ×ÏÉ«
-			"#FFFF00",	// »ÆÉ«
+			"#FF0000",	// çº¢è‰²
+			"#00FF00",	// ç»¿è‰²
+			"#0000FF",	// è“è‰²
+			"#FF00FF",	// ç´«è‰²
+			"#FFFF00",	// é»„è‰²
 			"#00FFFF",	// 
-			// "#FFFFFF"	// °×É«
-			"#000000"	// ºÚÉ«
+			// "#FFFFFF"	// ç™½è‰²
+			"#000000"	// é»‘è‰²
 	};
 	
-	/** windows Ä¬ÈÏÑÕÉ« r=51 g=51 b=51 */
+	/** windows é»˜è®¤é¢œè‰² r=51 g=51 b=51 */
 	public static final String defaultColorStr = "#515151";
 	
-	/** ºìÉ« */
+	/** çº¢è‰² */
 	public static final String redStr = "#FF0000";
 	
-	/** ÂÌÉ« */
+	/** ç»¿è‰² */
 	public static final String greenStr = "#00FF00";
 	
-	/** À¶É« */
+	/** è“è‰² */
 	public static final String blueStr = "#0000FF";
 
-	/** Ö¸ÏòÅ¼·¢ĞÔÈÎÎñÑÕÉ«µÄ±ê¼Ç */
+	/** æŒ‡å‘å¶å‘æ€§ä»»åŠ¡é¢œè‰²çš„æ ‡è®° */
 	private int sporadicTaskColorStrArrayIndex = 0;
 	
-	/** Ö¸Ïò·ÇÖÜÆÚĞÔÈÎÎñÑÕÉ«µÄ±ê¼Ç */
+	/** æŒ‡å‘éå‘¨æœŸæ€§ä»»åŠ¡é¢œè‰²çš„æ ‡è®° */
 	private int aperiodicTaskColorStrArrayIndex = 0;
 	
-	/** Ö¸ÏòÖÜÆÚĞÔÈÎÎñÑÕÉ«µÄ±ê¼Ç */
+	/** æŒ‡å‘å‘¨æœŸæ€§ä»»åŠ¡é¢œè‰²çš„æ ‡è®° */
 	private int periodicTaskColorStrArrayIndex = 0;
 	
 	/**
-	 * »ñÈ¡Å¼·¢ÈÎÎñµÄÏÂÒ»¸ö±íÊ¾ÑÕÉ«
+	 * è·å–å¶å‘ä»»åŠ¡çš„ä¸‹ä¸€ä¸ªè¡¨ç¤ºé¢œè‰²
 	 * @return	String
 	 */
 	public String getSporadicTaskColorStr() {
@@ -81,7 +81,7 @@ public final class ChartColor {
 	}
 	
 	/**
-	 * »ñÈ¡·ÇÖÜÆÚĞÔÈÎÎñµÄÏÂÒ»¸ö±íÊ¾ÑÕÉ«
+	 * è·å–éå‘¨æœŸæ€§ä»»åŠ¡çš„ä¸‹ä¸€ä¸ªè¡¨ç¤ºé¢œè‰²
 	 * @return	String
 	 */
 	public String getAperiodicTaskColorStr() {
@@ -92,7 +92,7 @@ public final class ChartColor {
 	}
 	
 	/**
-	 * »ñÈ¡ÖÜÆÚĞÔÈÎÎñµÄÏÂÒ»¸ö±íÊ¾ÑÕÉ«
+	 * è·å–å‘¨æœŸæ€§ä»»åŠ¡çš„ä¸‹ä¸€ä¸ªè¡¨ç¤ºé¢œè‰²
 	 * @return	String
 	 */
 	public String getPeriodicTaskColorStr() {
@@ -103,8 +103,8 @@ public final class ChartColor {
 	}
 	
 	/**
-	 * »ñÈ¡Å¼·¢ĞÔÈÎÎñ±íÊ¾µÄÑÕÉ«
-	 * @param index	Ë÷Òı
+	 * è·å–å¶å‘æ€§ä»»åŠ¡è¡¨ç¤ºçš„é¢œè‰²
+	 * @param index	ç´¢å¼•
 	 * @return	String
 	 */
 	public static String getSporadicTaskColorStr(int index) {
@@ -112,8 +112,8 @@ public final class ChartColor {
 	}
 	
 	/**
-	 * »ñÈ¡·ÇÖÜÆÚÈÎÎñ±íÊ¾µÄÑÕÉ«
-	 * @param index	Ë÷Òı
+	 * è·å–éå‘¨æœŸä»»åŠ¡è¡¨ç¤ºçš„é¢œè‰²
+	 * @param index	ç´¢å¼•
 	 * @return	String
 	 */
 	public static String getAperiodicTaskColorStr(int index) {
@@ -121,8 +121,8 @@ public final class ChartColor {
 	}
 	
 	/**
-	 * »ñÈ¡ÖÜÆÚĞÔÈÎÎñ±íÊ¾µÄÑÕÉ«
-	 * @param index	Ë÷Òı
+	 * è·å–å‘¨æœŸæ€§ä»»åŠ¡è¡¨ç¤ºçš„é¢œè‰²
+	 * @param index	ç´¢å¼•
 	 * @return	String
 	 */
 	public static String getPeriodicTaskColorStr(int index) {
@@ -131,7 +131,7 @@ public final class ChartColor {
 	
 	
 	/**
-	 * ¹¹Ôìº¯Êı
+	 * æ„é€ å‡½æ•°
 	 */
 	public ChartColor() { }
 	

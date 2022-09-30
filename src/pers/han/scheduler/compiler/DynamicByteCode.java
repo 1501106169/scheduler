@@ -1,4 +1,4 @@
-package pers.han.scheduler.compiler;
+ï»¿package pers.han.scheduler.compiler;
 
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStream;
@@ -7,7 +7,7 @@ import java.net.URI;
 import javax.tools.SimpleJavaFileObject;
 
 /**
- * Ô´´úÂë×Ö½ÚÁ÷Êä³ö¶ÔÏó
+ * æºä»£ç å­—èŠ‚æµè¾“å‡ºå¯¹è±¡
  * FileName: DynamicByteCode.java
  * 
  * @author		hanYG
@@ -18,7 +18,7 @@ import javax.tools.SimpleJavaFileObject;
  */
 public class DynamicByteCode extends SimpleJavaFileObject {
 	
-	/** Ô´´úÂë±àÒëºóµÄ×Ö½ÚÂë */
+	/** æºä»£ç ç¼–è¯‘åçš„å­—èŠ‚ç  */
 	private ByteArrayOutputStream byteArrayOutputStream;
 	
 	public DynamicByteCode(String className) {
@@ -26,9 +26,9 @@ public class DynamicByteCode extends SimpleJavaFileObject {
 	}
 	
 	/**
-	 * ÓÃÀ´Êä³ö×Ö½ÚÂëµÄ¹¹Ôìº¯Êı
-	 * @param className	ÀàÃû
-	 * @param byteArrayOutputStream	×Ö½ÚÂë
+	 * ç”¨æ¥è¾“å‡ºå­—èŠ‚ç çš„æ„é€ å‡½æ•°
+	 * @param className	ç±»å
+	 * @param byteArrayOutputStream	å­—èŠ‚ç 
 	 */
 	public DynamicByteCode(String className, ByteArrayOutputStream byteArrayOutputStream) {
 		this(className);
@@ -44,7 +44,7 @@ public class DynamicByteCode extends SimpleJavaFileObject {
 	}
 	
 	/**
-	 * »ñÈ¡×Ö½ÚÂë
+	 * è·å–å­—èŠ‚ç 
 	 * @return Byte[]
 	 */
 	public byte[] getByteCode() {
@@ -52,7 +52,7 @@ public class DynamicByteCode extends SimpleJavaFileObject {
 	}
 	
 	/**
-	 * »ñÈ¡ÀàÃû
+	 * è·å–ç±»å
 	 * @return String
 	 */
 	public String getClassName() {

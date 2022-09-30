@@ -1,4 +1,4 @@
-package pers.han.scheduler.scheduling;
+ï»¿package pers.han.scheduler.scheduling;
 
 import java.util.Vector;
 
@@ -7,11 +7,11 @@ import pers.han.scheduler.task.Task;
 import pers.han.scheduler.task.TimeBlock;
 
 /**
- * µ÷¶ÈÖÜÆÚĞÔÈÎÎñµÄËã·¨
+ * è°ƒåº¦å‘¨æœŸæ€§ä»»åŠ¡çš„ç®—æ³•
  * 
  * @author		hanYG
- * @createDate	2022Äê6ÔÂ2ÈÕ
- * @alterDate	2022Äê6ÔÂ2ÈÕ
+ * @createDate	2022å¹´6æœˆ2æ—¥
+ * @alterDate	2022å¹´6æœˆ2æ—¥
  * @version		1.0
  *
  */
@@ -40,9 +40,9 @@ public class PeriodicSchedulingAlgorithm extends SchedulingAlgorithm {
 	}
 	
 	/**
-	 * ´Ó¾ÍĞ÷µÄÈÎÎñÖĞÑ¡Ôñ½ØÖÁÊ±¼ä×îĞ¡µÄÈÎÎñ
-	 * @param periodicTaskSet ÖÜÆÚĞÔÈÎÎñ¼¯
-	 * @param nowTime ÏÖÔÚµÄÊ±¼ä
+	 * ä»å°±ç»ªçš„ä»»åŠ¡ä¸­é€‰æ‹©æˆªè‡³æ—¶é—´æœ€å°çš„ä»»åŠ¡
+	 * @param periodicTaskSet å‘¨æœŸæ€§ä»»åŠ¡é›†
+	 * @param nowTime ç°åœ¨çš„æ—¶é—´
 	 * @return int
 	 */
 	private int getEarlistTask(Vector<PeriodicTask> periodicTaskSet, int nowTime) {
@@ -58,13 +58,13 @@ public class PeriodicSchedulingAlgorithm extends SchedulingAlgorithm {
 	}
 	
 	/**
-	 * »ñÈ¡×÷ÒµµÄ×îÔçÊÍ·ÅÊ±¼ä
-	 * @param periodicTaskSet ÖÜÆÚĞÔÈÎÎñ¼¯
+	 * è·å–ä½œä¸šçš„æœ€æ—©é‡Šæ”¾æ—¶é—´
+	 * @param periodicTaskSet å‘¨æœŸæ€§ä»»åŠ¡é›†
 	 * @return int
 	 */
 	private int getEarlistRealseTime(Vector<PeriodicTask> periodicTaskSet) {
 		if (periodicTaskSet.isEmpty()) {
-			// -1 ±íÊ¾×÷ÒµÎª¿Õ
+			// -1 è¡¨ç¤ºä½œä¸šä¸ºç©º
 			return -1;
 		}
 		int realseTime =  periodicTaskSet.get(0).getCycleStartTime() + periodicTaskSet.get(0).getJobReleaseTime();

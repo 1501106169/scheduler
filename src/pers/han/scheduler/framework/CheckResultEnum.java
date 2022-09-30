@@ -1,19 +1,19 @@
-package pers.han.scheduler.framework;
+ï»¿package pers.han.scheduler.framework;
 
 /**
- * Ğ£Ñé½á¹ûµÄ±íÊ¾
+ * æ ¡éªŒç»“æœçš„è¡¨ç¤º
  * FileName: CheckResult.java
  * 
  * @author		hanYG
- * @createDate	2022Äê5ÔÂ24ÈÕ
- * @alterDate	2022Äê5ÔÂ24ÈÕ
+ * @createDate	2022å¹´5æœˆ24æ—¥
+ * @alterDate	2022å¹´5æœˆ24æ—¥
  * @version		1.0
  *
  */
 public enum CheckResultEnum {
-	/** ¿ÉĞĞµÄ */
+	/** å¯è¡Œçš„ */
 	FEASIBLE,
-	/** ²»¿ÉĞĞµÄ */
+	/** ä¸å¯è¡Œçš„ */
 	INFEASIBLE,
 
 }

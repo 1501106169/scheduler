@@ -1,24 +1,24 @@
-package pers.han.scheduler.task;
+ï»¿package pers.han.scheduler.task;
 
 /**
- * ·ÇÖÜÆÚĞÔÈÎÎñ
+ * éå‘¨æœŸæ€§ä»»åŠ¡
  * 
  * @author		hanYG
- * @createDate	2022Äê5ÔÂ29ÈÕ
- * @alterDate	2022Äê5ÔÂ29ÈÕ
- * 				2022Äê09Äê28ÈÕ Ìí¼Ó¿½±´º¯Êı£¬¿½±´¹¹Ôìº¯Êı
+ * @createDate	2022å¹´5æœˆ29æ—¥
+ * @alterDate	2022å¹´5æœˆ29æ—¥
+ * 				2022å¹´09å¹´28æ—¥ æ·»åŠ æ‹·è´å‡½æ•°ï¼Œæ‹·è´æ„é€ å‡½æ•°
  * @version		1.0
  *
  */
 public class AperiodicTask extends Task {
 	
 	/**
-	 * ¹¹Ôìº¯Êı
-	 * @param jobReleaseTime ÊÍ·ÅÊ±¼ä
-	 * @param jobExecTime Ö´ĞĞÊ±¼ä
-	 * @param jobDeadline ½ØÖ¹Ê±¼ä
-	 * @param taskPriority ÓÅÏÈ¼¶
-	 * @param jobPreempt ÊÇ·ñ¿ÉÇÀÕ¼
+	 * æ„é€ å‡½æ•°
+	 * @param jobReleaseTime é‡Šæ”¾æ—¶é—´
+	 * @param jobExecTime æ‰§è¡Œæ—¶é—´
+	 * @param jobDeadline æˆªæ­¢æ—¶é—´
+	 * @param taskPriority ä¼˜å…ˆçº§
+	 * @param jobPreempt æ˜¯å¦å¯æŠ¢å 
 	 */
 	public AperiodicTask(int jobReleaseTime, int jobExecTime, int jobDeadline, int taskPriority, JobPreemption jobPreempt) {
 		this.jobReleaseTime = jobReleaseTime;
@@ -29,10 +29,10 @@ public class AperiodicTask extends Task {
 	}
 	
 	/**
-	 * ¹¹Ôìº¯Êı£¬×÷ÒµÎŞÓÅÏÈ¼¶¡¢²»¿ÉÇÀÕ¼
-	 * @param jobReleaseTime ÊÍ·ÅÊ±¼ä
-	 * @param jobExecTime Ö´ĞĞÊ±¼ä
-	 * @param jobDeadline ½ØÖ¹Ê±¼ä
+	 * æ„é€ å‡½æ•°ï¼Œä½œä¸šæ— ä¼˜å…ˆçº§ã€ä¸å¯æŠ¢å 
+	 * @param jobReleaseTime é‡Šæ”¾æ—¶é—´
+	 * @param jobExecTime æ‰§è¡Œæ—¶é—´
+	 * @param jobDeadline æˆªæ­¢æ—¶é—´
 	 */
 	public AperiodicTask(int jobReleaseTime, int jobExecTime, int jobDeadline) {
 		this.jobReleaseTime = jobReleaseTime;
@@ -43,7 +43,7 @@ public class AperiodicTask extends Task {
 	}
 	
 	/**
-	 * ¿½±´¹¹Ôìº¯Êı
+	 * æ‹·è´æ„é€ å‡½æ•°
 	 * @param task
 	 */
 	public AperiodicTask(AperiodicTask task) {

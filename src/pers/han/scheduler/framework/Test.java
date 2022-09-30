@@ -1,4 +1,4 @@
-package pers.han.scheduler.framework;
+锘縫ackage pers.han.scheduler.framework;
 
 import java.util.ArrayList;
 
@@ -27,7 +27,7 @@ public class Test extends BaseSchedulerFrame {
 	public ArrayList<TimeBlock> schedulerAlgroithm(ArrayList<Task> taskList) {
 		
 		ArrayList<PeriodicTask> periodicTaskList = new ArrayList<PeriodicTask>();
-		// Task转换为PeriodicTask
+		// Task杞崲涓篜eriodicTask
 		for (Task task : taskList) {
 			periodicTaskList.add((PeriodicTask)task);
 		}
@@ -44,7 +44,7 @@ public class Test extends BaseSchedulerFrame {
 	public boolean checkSchedulerAlgroithm(ArrayList<Task> taskList, ArrayList<TimeBlock> timeBlock) {
 		// TODO Auto-generated method stub
 		ArrayList<PeriodicTask> periodicTaskList = new ArrayList<PeriodicTask>();
-		// Task转换为PeriodicTask
+		// Task杞崲涓篜eriodicTask
 		for (Task task : taskList) {
 			periodicTaskList.add((PeriodicTask)task);
 		}

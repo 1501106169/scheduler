@@ -1,37 +1,37 @@
-package pers.han.scheduler.task;
+ï»¿package pers.han.scheduler.task;
 
 /**
- * ËùÓĞÊµÊ±ÈÎÎñÀàµÄ»ùÀà
+ * æ‰€æœ‰å®æ—¶ä»»åŠ¡ç±»çš„åŸºç±»
  * 
  * @author		hanYG
- * @createDate	2021Äê5ÔÂ17ÈÕ
- * @alterDate	2021Äê10ÔÂ10ÈÕ ĞŞ¸ÄÊ±¼äÀàĞÍdouble->int£¬±íÊ¾µ¥Î»Ê±¼ä²»¿É²ğ·Ö
- * 				2022Äê09Äê28ÈÕ Ìí¼Ó¿½±´º¯Êı
+ * @createDate	2021å¹´5æœˆ17æ—¥
+ * @alterDate	2021å¹´10æœˆ10æ—¥ ä¿®æ”¹æ—¶é—´ç±»å‹double->intï¼Œè¡¨ç¤ºå•ä½æ—¶é—´ä¸å¯æ‹†åˆ†
+ * 				2022å¹´09å¹´28æ—¥ æ·»åŠ æ‹·è´å‡½æ•°
  * @version		21.0
  *
  */
 public abstract class Task {
 	
-	/** ÈÎÎñÀàĞÍ */
+	/** ä»»åŠ¡ç±»å‹ */
 	// protected TaskType taskType;
 	
-	/** ÈÎÎñÖĞ×÷ÒµµÄÇÀÕ¼ */
+	/** ä»»åŠ¡ä¸­ä½œä¸šçš„æŠ¢å  */
 	protected JobPreemption jobPreempt;
 	
-	/** ×÷ÒµÖ´ĞĞÊ±¼ä */
+	/** ä½œä¸šæ‰§è¡Œæ—¶é—´ */
 	protected int jobExecTime;
 	
-	/** ×÷ÒµÊ±ÏŞ */
+	/** ä½œä¸šæ—¶é™ */
 	protected int jobDeadline;
 	
-	/** ×÷ÒµÊÍ·ÅÊ±¼ä */
+	/** ä½œä¸šé‡Šæ”¾æ—¶é—´ */
 	protected int jobReleaseTime;
 	
-	/** ÓÅÏÈ¼¶ */
+	/** ä¼˜å…ˆçº§ */
 	protected int taskPriority = 0;
 	
 	/**
-	 * »ñÈ¡ÈÎÎñÓÅÏÈ¼¶
+	 * è·å–ä»»åŠ¡ä¼˜å…ˆçº§
 	 * @return int
 	 */
 	public int getTaskPriority() {
@@ -39,7 +39,7 @@ public abstract class Task {
 	}
 	
 	/**
-	 * »ñÈ¡×÷Òµ¿ÉÇÀÕ¼
+	 * è·å–ä½œä¸šå¯æŠ¢å 
 	 * @return JobPreemption
 	 */
 	public JobPreemption getJobPreemption() {
@@ -47,7 +47,7 @@ public abstract class Task {
 	}
 	
 	/**
-	 * »ñÈ¡×÷ÒµÖ´ĞĞÊ±¼ä
+	 * è·å–ä½œä¸šæ‰§è¡Œæ—¶é—´
 	 * @return int
 	 */
 	public int getJobExecTime() {
@@ -55,7 +55,7 @@ public abstract class Task {
 	}
 	
 	/**
-	 * »ñÈ¡×÷ÒµÊ±ÏŞ
+	 * è·å–ä½œä¸šæ—¶é™
 	 * @return int
 	 */
 	public int getJobDeadline() {
@@ -63,7 +63,7 @@ public abstract class Task {
 	}
 	
 	/**
-	 * »ñÈ¡×÷ÒµÊÍ·ÅÊ±¼ä
+	 * è·å–ä½œä¸šé‡Šæ”¾æ—¶é—´
 	 * @return int
 	 */
 	public int getJobReleaseTime() {
@@ -71,7 +71,7 @@ public abstract class Task {
 	}
 	
 	/**
-	 * »ñÈ¡ÀàÃû£¬²»°üº¬°üÃû
+	 * è·å–ç±»åï¼Œä¸åŒ…å«åŒ…å
 	 * @return String
 	 */
 	public String getClassName() {
@@ -80,7 +80,7 @@ public abstract class Task {
 	}
 	
 	/**
-	 * ¿½±´¹¹Ôìº¯Êı
+	 * æ‹·è´æ„é€ å‡½æ•°
 	 */
 	public abstract Task clone();
 

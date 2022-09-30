@@ -1,4 +1,4 @@
-package pers.han.scheduler.scheduling;
+ï»¿package pers.han.scheduler.scheduling;
 
 import java.util.Vector;
 
@@ -6,34 +6,34 @@ import pers.han.scheduler.task.Task;
 import pers.han.scheduler.task.TimeBlock;
 
 /**
- * µ÷¶ÈËã·¨µÄ»ùÀà
+ * è°ƒåº¦ç®—æ³•çš„åŸºç±»
  * 
  * @author		hanYG
- * @createDate	2022Äê6ÔÂ1ÈÕ
- * @alterDate	2022Äê6ÔÂ1ÈÕ
+ * @createDate	2022å¹´6æœˆ1æ—¥
+ * @alterDate	2022å¹´6æœˆ1æ—¥
  * @version		1.0
  *
  */
 public abstract class SchedulingAlgorithm {
-	/** Ò»×éÊµÊ±ÈÎÎñ */
+	/** ä¸€ç»„å®æ—¶ä»»åŠ¡ */
 	Vector<Task> taskSet;
-	/** Ëã·¨ÔËĞĞ½áÊøÊ±¼ä */
+	/** ç®—æ³•è¿è¡Œç»“æŸæ—¶é—´ */
 	int runEndTime;
-	/** Ëã·¨ÔËĞĞµÄÊ±¼äÖá */
+	/** ç®—æ³•è¿è¡Œçš„æ—¶é—´è½´ */
 	int timeAxis = 0;
-	/** µ÷¶È½á¹û */
+	/** è°ƒåº¦ç»“æœ */
 	Vector<TimeBlock> schedulingResult = new Vector<TimeBlock>();
 	
 	/**
-	 * ¹¹Ôìº¯Êı
+	 * æ„é€ å‡½æ•°
 	 */
 	public SchedulingAlgorithm() {
 	}
 	
 	/**
-	 * ³õÊ¼»¯³ÉÔ±±äÁ¿£¬ÔÚdoSchedule·½·¨Ö´ĞĞÇ°Ö´ĞĞ
-	 * @param taskSet Ò»×éÊµÊ±ÈÎÎñ
-	 * @param runEndTime Ëã·¨Ö´ĞĞ½áÊøÊ±¼ä
+	 * åˆå§‹åŒ–æˆå‘˜å˜é‡ï¼Œåœ¨doScheduleæ–¹æ³•æ‰§è¡Œå‰æ‰§è¡Œ
+	 * @param taskSet ä¸€ç»„å®æ—¶ä»»åŠ¡
+	 * @param runEndTime ç®—æ³•æ‰§è¡Œç»“æŸæ—¶é—´
 	 */
 	public void setUp(Vector<Task> taskSet, int runEndTime) {
 		this.taskSet = taskSet;
@@ -41,29 +41,29 @@ public abstract class SchedulingAlgorithm {
 	}
 	
 	/**
-	 * ÔÚdoSchedule·½·¨Ö´ĞĞºóÖ´ĞĞ
+	 * åœ¨doScheduleæ–¹æ³•æ‰§è¡Œåæ‰§è¡Œ
 	 */
 	public void tearDown() {
 		
 	}
 	
 	/**
-	 * Ö´ĞĞµ÷¶ÈËã·¨
+	 * æ‰§è¡Œè°ƒåº¦ç®—æ³•
 	 * @return Vector<TimeBlock>
 	 */
 	public abstract Vector<TimeBlock> doSchedule();
 	
 	/**
-	 * ÏòÊµÊ±ÈÎÎñÖĞÌí¼ÓÒ»¸öÅ¼·¢ÈÎÎñ£¬µ÷¶ÈÅ¼·¢ÈÎÎñµÄµ÷¶ÈËã·¨ĞèÒªÖØĞ´´Ë·½·¨
-	 * @param sporadicTask Å¼·¢ÈÎÎñ
-	 * @param runEndTime Ìí¼ÓÅ¼·¢ÈÎÎñºó£¬Ëã·¨Ö´ĞĞ½ØÖ¹Ê±¼ä
+	 * å‘å®æ—¶ä»»åŠ¡ä¸­æ·»åŠ ä¸€ä¸ªå¶å‘ä»»åŠ¡ï¼Œè°ƒåº¦å¶å‘ä»»åŠ¡çš„è°ƒåº¦ç®—æ³•éœ€è¦é‡å†™æ­¤æ–¹æ³•
+	 * @param sporadicTask å¶å‘ä»»åŠ¡
+	 * @param runEndTime æ·»åŠ å¶å‘ä»»åŠ¡åï¼Œç®—æ³•æ‰§è¡Œæˆªæ­¢æ—¶é—´
 	 */
 	public void addTask(Task sporadicTask, int runEndTime) {
 		return;
 	}
 	
 	/**
-	 * »ñÈ¡µ÷¶È½á¹û
+	 * è·å–è°ƒåº¦ç»“æœ
 	 * @return Vector<TimeBlock>
 	 */
 	public Vector<TimeBlock> getSchedulingResult() {

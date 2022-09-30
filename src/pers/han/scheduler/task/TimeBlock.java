@@ -1,32 +1,32 @@
-package pers.han.scheduler.task;
+ï»¿package pers.han.scheduler.task;
 
 /**
- * ÈÎÎñµÄÖ´ĞĞÊ±¼ä¶Î
+ * ä»»åŠ¡çš„æ‰§è¡Œæ—¶é—´æ®µ
  * 
  * @author		hanYG
- * @createDate	2022Äê5ÔÂ29ÈÕ
- * @alterDate	2022Äê5ÔÂ29ÈÕ
- * 				2022Äê6ÔÂ5ÈÕ ĞŞ¸Ätask Îª taskId 
- * 				2022Äê09ÔÂ28ÈÕ Ìí¼Ó¿½±´º¯Êı£¬¿½±´¹¹Ôìº¯Êı
+ * @createDate	2022å¹´5æœˆ29æ—¥
+ * @alterDate	2022å¹´5æœˆ29æ—¥
+ * 				2022å¹´6æœˆ5æ—¥ ä¿®æ”¹task ä¸º taskId 
+ * 				2022å¹´09æœˆ28æ—¥ æ·»åŠ æ‹·è´å‡½æ•°ï¼Œæ‹·è´æ„é€ å‡½æ•°
  * @version		2.0
  *
  */
 public class TimeBlock {
 	// protected Task task;
-	/** ÈÎÎñId */
+	/** ä»»åŠ¡Id */
 	protected int taskId;
 	
-	/** ¿ªÊ¼Ê±¼ä */
+	/** å¼€å§‹æ—¶é—´ */
 	protected int startTime;
 	
-	/** Ö´ĞĞÊ±¼ä */
+	/** æ‰§è¡Œæ—¶é—´ */
 	protected int execTime;
 
 	/**
-	 * ¹¹Ôìº¯Êı
-	 * @param taskId Ö¸Ã÷Ä³¸öÈÎÎñ
-	 * @param startTime ÈÎÎñ¿ªÊ¼Ö´ĞĞÊ±¼ä
-	 * @param execTime ÈÎÎñÖ´ĞĞÊ±¼ä
+	 * æ„é€ å‡½æ•°
+	 * @param taskId æŒ‡æ˜æŸä¸ªä»»åŠ¡
+	 * @param startTime ä»»åŠ¡å¼€å§‹æ‰§è¡Œæ—¶é—´
+	 * @param execTime ä»»åŠ¡æ‰§è¡Œæ—¶é—´
 	 */
 	public TimeBlock(int taskId, int startTime, int execTime) {
 		this.taskId = taskId;
@@ -35,7 +35,7 @@ public class TimeBlock {
 	}
 	
 	/**
-	 * ¿½±´¹¹Ôìº¯Êı
+	 * æ‹·è´æ„é€ å‡½æ•°
 	 * @param tb
 	 */
 	public TimeBlock(TimeBlock tb) {
@@ -45,7 +45,7 @@ public class TimeBlock {
 	}
 
 	/**
-	 * »ñÈ¡ÈÎÎñ
+	 * è·å–ä»»åŠ¡
 	 * @return int
 	 */
 	public int getTaskId() {
@@ -53,7 +53,7 @@ public class TimeBlock {
 	}
 	
 	/**
-	 * »ñÈ¡ÈÎÎñ¿ªÊ¼Ê±¼ä
+	 * è·å–ä»»åŠ¡å¼€å§‹æ—¶é—´
 	 * @return int
 	 */
 	public int getStartTime() {
@@ -61,7 +61,7 @@ public class TimeBlock {
 	}
 	
 	/**
-	 * »ñÈ¡ÈÎÎñÖ´ĞĞÊ±¼ä
+	 * è·å–ä»»åŠ¡æ‰§è¡Œæ—¶é—´
 	 * @return int
 	 */
 	public int getExecTime() {
@@ -69,7 +69,7 @@ public class TimeBlock {
 	}
 	
 	/**
-	 * ¿½±´¹¹Ôì
+	 * æ‹·è´æ„é€ 
 	 */
 	public TimeBlock clone() {
 		TimeBlock tb = new TimeBlock(this.taskId, this.startTime, this.execTime);

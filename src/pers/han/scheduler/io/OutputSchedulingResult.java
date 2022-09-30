@@ -1,17 +1,17 @@
-package pers.han.scheduler.io;
+ï»¿package pers.han.scheduler.io;
 
 /**
- * Ìá¹©Ò»×éÊä³öµ÷¶È½á¹ûµÄ·½·¨
+ * æä¾›ä¸€ç»„è¾“å‡ºè°ƒåº¦ç»“æœçš„æ–¹æ³•
  * 
  * @author		hanYG
- * @createDate	2022Äê6ÔÂ1ÈÕ
- * @alterDate	2022Äê6ÔÂ1ÈÕ
+ * @createDate	2022å¹´6æœˆ1æ—¥
+ * @alterDate	2022å¹´6æœˆ1æ—¥
  * @version		1.0
  *
  */
 public interface OutputSchedulingResult {
 	/**
-	 * Êä³öµ÷¶È½á¹û
+	 * è¾“å‡ºè°ƒåº¦ç»“æœ
 	 */
 	public void outSchedulingResult();
 

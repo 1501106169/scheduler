@@ -1,4 +1,4 @@
-package pers.han.scheduler.framework;
+ï»¿package pers.han.scheduler.framework;
 
 import java.util.Map;
 import java.util.Vector;
@@ -11,24 +11,24 @@ import pers.han.scheduler.task.PeriodicTask;
  * FileName: TaskCaseSuit.java
  * 
  * @author		hanYG
- * @createDate	2022Äê5ÔÂ24ÈÕ
- * @alterDate	2022Äê5ÔÂ24ÈÕ
+ * @createDate	2022å¹´5æœˆ24æ—¥
+ * @alterDate	2022å¹´5æœˆ24æ—¥
  * @version		1.0
  *
  */
 public class TaskCaseSuit implements BaseTaskCase {
 	
-	/** ²âÊÔÊı¾İ¼¯ºÏ */
+	/** æµ‹è¯•æ•°æ®é›†åˆ */
 	Vector<Vector> taskSetSuit = null;
-	/** µ÷¶ÈËã·¨Àà */
+	/** è°ƒåº¦ç®—æ³•ç±» */
 	Class schedlulingAlgorithmCls = null;
-	/** TaskCase£¬ĞèÒª·ÖÎöTaskCaseµÄĞ£Ñé½á¹û */
+	/** TaskCaseï¼Œéœ€è¦åˆ†æTaskCaseçš„æ ¡éªŒç»“æœ */
 	Vector taskCaseSet = new Vector();
 	
 	/**
-	 * ¹¹Ôìº¯Êı
-	 * @param taskSetSuit Ò»×é²âÊÔÊı¾İ
-	 * @param schedlulingAlgorithmCls ´ı²âÊÔµÄµ÷¶ÈËã·¨Àà
+	 * æ„é€ å‡½æ•°
+	 * @param taskSetSuit ä¸€ç»„æµ‹è¯•æ•°æ®
+	 * @param schedlulingAlgorithmCls å¾…æµ‹è¯•çš„è°ƒåº¦ç®—æ³•ç±»
 	 */
 	public TaskCaseSuit(Vector<Vector> taskSetSuit, Class schedlulingAlgorithmCls) {
 		this.taskSetSuit = taskSetSuit;
@@ -48,8 +48,8 @@ public class TaskCaseSuit implements BaseTaskCase {
 	}
 	
 	/**
-	 * ´´½¨TaskCase¶ÔÏó
-	 * @param taskSet ²âÊÔÊı¾İ
+	 * åˆ›å»ºTaskCaseå¯¹è±¡
+	 * @param taskSet æµ‹è¯•æ•°æ®
 	 * @return
 	 */
 	private TaskCase createTaskCase(Vector taskSet) {
@@ -58,7 +58,7 @@ public class TaskCaseSuit implements BaseTaskCase {
 	
 	
 	/**
-	 * ÔËĞĞTaskCase
+	 * è¿è¡ŒTaskCase
 	 * @param baseTaskCase
 	 */
 	public void runTaskCase(BaseTaskCase baseTaskCase) {
@@ -66,7 +66,7 @@ public class TaskCaseSuit implements BaseTaskCase {
 	}
 	
 	/**
-	 * Ìí¼ÓTaskCaseµ½taskCaseSetÒÔ×÷¼ÇÂ¼
+	 * æ·»åŠ TaskCaseåˆ°taskCaseSetä»¥ä½œè®°å½•
 	 * @param baseTaskCase
 	 */
 	private void addTaskCase(BaseTaskCase baseTaskCase) {
@@ -74,7 +74,7 @@ public class TaskCaseSuit implements BaseTaskCase {
 	}
 	
 	/**
-	 * ²âÊÔÊı¾İµÄÊıÁ¿
+	 * æµ‹è¯•æ•°æ®çš„æ•°é‡
 	 * @return
 	 */
 	public int countTaskCase() {
@@ -85,7 +85,7 @@ public class TaskCaseSuit implements BaseTaskCase {
 	public static void main(String[] argc) {
 		ClassLoader classLoader = ClassLoader.getSystemClassLoader();
 		DynamicCompiler dynamicCompiler = new DynamicCompiler(classLoader);
-		// Ìí¼Óµ½¶¯Ì¬±àÒëÆ÷ÆäµÄ´ı±àÒëÔ´ÎÄ¼şÖĞ
+		// æ·»åŠ åˆ°åŠ¨æ€ç¼–è¯‘å™¨å…¶çš„å¾…ç¼–è¯‘æºæ–‡ä»¶ä¸­
 		dynamicCompiler.addSource("testClass", "import java.util.Vector;\r\n"
 				+ "\r\n"
 				+ "import pers.han.scheduler.task.PeriodicTask;\r\n"

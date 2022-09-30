@@ -1,4 +1,4 @@
-package pers.han.scheduler.algroithms;
+ï»¿package pers.han.scheduler.algroithms;
 
 import pers.han.scheduler.task.*;
 import pers.han.scheduler.io.*;
@@ -9,7 +9,7 @@ import java.util.Iterator;
 public class Main {
 	
 	public static void main(String[] args) {
-		// °´ÕÕ periodicTaskList ¸øÈÎÎñÅÅĞò£¬¼´ÈÎÎñ±àºÅ
+		// æŒ‰ç…§ periodicTaskList ç»™ä»»åŠ¡æ’åºï¼Œå³ä»»åŠ¡ç¼–å·
 		ArrayList<PeriodicTask> periodicTaskList = new ArrayList<PeriodicTask>();
 		periodicTaskList.add(new PeriodicTask(40, 10));
 		periodicTaskList.add(new PeriodicTask(50, 18));
@@ -18,8 +18,8 @@ public class Main {
 
 		ArrayList<TimeBlock> timeAxis = EarlistDeadlineFirst.periodicEDF(periodicTaskList);
 		
-		System.out.print("¸ÃËã·¨µ÷¶È½á¹ûÎª£º");
-		// µ÷¶È½á¹ûĞ£Ñé
+		System.out.print("è¯¥ç®—æ³•è°ƒåº¦ç»“æœä¸ºï¼š");
+		// è°ƒåº¦ç»“æœæ ¡éªŒ
 		System.out.println(CheckAlgroithmsResult.checkPeriodicTask(periodicTaskList, timeAxis));
 		
 		Iterator<TimeBlock> it = timeAxis.iterator();

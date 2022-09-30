@@ -1,25 +1,25 @@
-package pers.han.scheduler.framework;
+ï»¿package pers.han.scheduler.framework;
 
 /**
  * 
  * FileName: BaseTaskCase.java
  * 
  * @author		hanYG
- * @createDate	2022Äê5ÔÂ24ÈÕ
- * @alterDate	2022Äê5ÔÂ24ÈÕ
+ * @createDate	2022å¹´5æœˆ24æ—¥
+ * @alterDate	2022å¹´5æœˆ24æ—¥
  * @version		1.0
  *
  */
 public interface BaseTaskCase {
 	
 	/**
-	 * »ñÈ¡²âÊÔÊı¾İµÄ¸öÊı
+	 * è·å–æµ‹è¯•æ•°æ®çš„ä¸ªæ•°
 	 * @return
 	 */
 	public abstract int countTaskCase();
 	
 	/**
-	 * Ö´ĞĞ²âÊÔ
+	 * æ‰§è¡Œæµ‹è¯•
 	 */
 	public abstract void run();
 

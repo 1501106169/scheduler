@@ -1,25 +1,25 @@
-package pers.han.scheduler.io;
+ï»¿package pers.han.scheduler.io;
 
 import pers.han.scheduler.framework.RunAlgorithm;
 import pers.han.scheduler.framework.RunAlgorithmCase;
 import pers.han.scheduler.task.TimeBlock;
 
 /**
- * Êä³öµ÷¶È½á¹ûµ½ÖÕ¶Ë
+ * è¾“å‡ºè°ƒåº¦ç»“æžœåˆ°ç»ˆç«¯
  * 
  * @author		hanYG
- * @createDate	2022Äê6ÔÂ1ÈÕ
- * @alterDate	2022Äê6ÔÂ1ÈÕ
+ * @createDate	2022å¹´6æœˆ1æ—¥
+ * @alterDate	2022å¹´6æœˆ1æ—¥
  * @version		1.0
  *
  */
 public class OutputForTerminal implements OutputSchedulingResult {
-	/** µ÷¶ÈÊµÀý */
+	/** è°ƒåº¦å®žä¾‹ */
 	RunAlgorithm runAlgorithm;
 	
 	/**
-	 * ¹¹ÔìËã·¨
-	 * @param runAlgorithm µ÷¶ÈÊµÀý
+	 * æž„é€ ç®—æ³•
+	 * @param runAlgorithm è°ƒåº¦å®žä¾‹
 	 */
 	public OutputForTerminal(RunAlgorithm runAlgorithm) {
 		this.runAlgorithm = runAlgorithm;

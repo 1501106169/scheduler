@@ -1,4 +1,4 @@
-package pers.han.scheduler.framework;
+ï»¿package pers.han.scheduler.framework;
 
 import java.util.Vector;
 
@@ -8,34 +8,34 @@ import pers.han.scheduler.scheduling.SchedulingAlgorithm;
 import pers.han.scheduler.check.CheckAlgorithm;
 
 /**
- * ÔËĞĞËã·¨ÔÚÒ»·İÈÎÎñÊı¾İÉÏ
+ * è¿è¡Œç®—æ³•åœ¨ä¸€ä»½ä»»åŠ¡æ•°æ®ä¸Š
  * 
  * @author		hanYG
- * @createDate	2022Äê6ÔÂ2ÈÕ
- * @alterDate	2022Äê6ÔÂ2ÈÕ
+ * @createDate	2022å¹´6æœˆ2æ—¥
+ * @alterDate	2022å¹´6æœˆ2æ—¥
  * @version		1.0
  *
  */
 public class RunAlgorithmCase implements RunAlgorithm {
-	/** Ò»×éÊµÊ±ÈÎÎñ */
+	/** ä¸€ç»„å®æ—¶ä»»åŠ¡ */
 	Vector<Task> taskSet;
 	
-	/** µ÷¶È½á¹û */
+	/** è°ƒåº¦ç»“æœ */
 	Vector<TimeBlock> schedulingResult;
 	
-	/** Ğ£Ñé½á¹û£¬Ëã·¨¿ÉĞĞĞÔ */
+	/** æ ¡éªŒç»“æœï¼Œç®—æ³•å¯è¡Œæ€§ */
 	CheckResultEnum checkResult;
 	
-	/** µ÷¶ÈËã·¨ */
+	/** è°ƒåº¦ç®—æ³• */
 	SchedulingAlgorithm schedulingAlgorithm = null;
 	
-	/** Ğ£ÑéËã·¨ */
+	/** æ ¡éªŒç®—æ³• */
 	CheckAlgorithm checkAlgorithm = null;
 	
-	/** µ÷¶ÈËã·¨Ö´ĞĞÊ±¼ä */
+	/** è°ƒåº¦ç®—æ³•æ‰§è¡Œæ—¶é—´ */
 	long execTime;
 	
-	/** µ÷¶ÈËã·¨ÔËĞĞ½ØÖÁÊ±¼ä */
+	/** è°ƒåº¦ç®—æ³•è¿è¡Œæˆªè‡³æ—¶é—´ */
 	int deadline;
 
 	@Override
@@ -47,7 +47,7 @@ public class RunAlgorithmCase implements RunAlgorithm {
 	@Override
 	public void runSchedulingAlgorithm() {
 		long startTime = System.currentTimeMillis();		
-		// Èô²»Ö¸¶¨Ëã·¨ÔËĞĞÊ±¼ä£¬ÔËĞĞÊ±¼äÎªÒ»¸ö³¬ÖÜÆÚ
+		// è‹¥ä¸æŒ‡å®šç®—æ³•è¿è¡Œæ—¶é—´ï¼Œè¿è¡Œæ—¶é—´ä¸ºä¸€ä¸ªè¶…å‘¨æœŸ
 		this.schedulingAlgorithm.setUp(this.taskSet, this.deadline);
 		Vector<TimeBlock> result = this.schedulingAlgorithm.doSchedule();
 		this.schedulingResult = result;
@@ -65,11 +65,11 @@ public class RunAlgorithmCase implements RunAlgorithm {
 	}
 	
 	/**
-	 * ¹¹Ôìº¯Êı£¬Ö¸¶¨ÈÎÎñ¡¢µ÷¶ÈËã·¨¡¢Ğ£ÑéËã·¨
-	 * @param taskSet ÈÎÎñ¼¯
-	 * @param schedulingAlgorithm µ÷¶ÈËã·¨¶ÔÏó
-	 * @param checkAlgorithm Ğ£ÑéËã·¨¶ÔÏó
-	 * @param deadline µ÷¶ÈËã·¨ÔËĞĞ½ØÖÁÊ±¼ä
+	 * æ„é€ å‡½æ•°ï¼ŒæŒ‡å®šä»»åŠ¡ã€è°ƒåº¦ç®—æ³•ã€æ ¡éªŒç®—æ³•
+	 * @param taskSet ä»»åŠ¡é›†
+	 * @param schedulingAlgorithm è°ƒåº¦ç®—æ³•å¯¹è±¡
+	 * @param checkAlgorithm æ ¡éªŒç®—æ³•å¯¹è±¡
+	 * @param deadline è°ƒåº¦ç®—æ³•è¿è¡Œæˆªè‡³æ—¶é—´
 	 */
 	public RunAlgorithmCase(Vector<Task> taskSet, SchedulingAlgorithm schedulingAlgorithm, CheckAlgorithm checkAlgorithm, int deadline) {
 		this.taskSet = taskSet;
@@ -79,9 +79,9 @@ public class RunAlgorithmCase implements RunAlgorithm {
 	}
 	
 	/**
-	 * ¹¹Ôìº¯Êı£¬Ö¸¶¨ÈÎÎñ
-	 * @param taskSet ÈÎÎñ¼¯
-	 * @param deadline µ÷¶ÈËã·¨ÔËĞĞÊ±³¤
+	 * æ„é€ å‡½æ•°ï¼ŒæŒ‡å®šä»»åŠ¡
+	 * @param taskSet ä»»åŠ¡é›†
+	 * @param deadline è°ƒåº¦ç®—æ³•è¿è¡Œæ—¶é•¿
 	 */
 	public RunAlgorithmCase(Vector<Task> taskSet, int deadline) {
 		this.taskSet = taskSet;
@@ -94,7 +94,7 @@ public class RunAlgorithmCase implements RunAlgorithm {
 	}
 	
 	/**
-	 * »ñÈ¡µ÷¶ÈËã·¨
+	 * è·å–è°ƒåº¦ç®—æ³•
 	 * @return SchedulingAlgorithm 
 	 */
 	public SchedulingAlgorithm getSchedulingAlgorithm() {
@@ -108,7 +108,7 @@ public class RunAlgorithmCase implements RunAlgorithm {
 	}
 	
 	/**
-	 * »ñÈ¡Ğ£ÑéËã·¨
+	 * è·å–æ ¡éªŒç®—æ³•
 	 * @return CheckAlgorithm
 	 */
 	public CheckAlgorithm getCheckAlgorithm() {
@@ -116,7 +116,7 @@ public class RunAlgorithmCase implements RunAlgorithm {
 	}
 	
 	/**
-	 * »ñÈ¡µ÷¶È½á¹û
+	 * è·å–è°ƒåº¦ç»“æœ
 	 * @return Vector<TimeBlock>
 	 */
 	public Vector<TimeBlock> getSchedulingResult() {
@@ -124,7 +124,7 @@ public class RunAlgorithmCase implements RunAlgorithm {
 	}
 	
 	/**
-	 * »ñÈ¡Ğ£Ñé½á¹û
+	 * è·å–æ ¡éªŒç»“æœ
 	 * @return CheckResultEnum
 	 */
 	public CheckResultEnum getCheckResult() {
@@ -132,7 +132,7 @@ public class RunAlgorithmCase implements RunAlgorithm {
 	}
 	
 	/**
-	 * »ñÈ¡µ÷¶ÈÈÎÎñ
+	 * è·å–è°ƒåº¦ä»»åŠ¡
 	 * @return Vector<Task>
 	 */
 	public Vector<Task> getTaskSet() {
@@ -140,7 +140,7 @@ public class RunAlgorithmCase implements RunAlgorithm {
 	}
 	
 	/**
-	 * »ñÈ¡µ÷¶ÈËã·¨Ö´ĞĞÊ±¼ä
+	 * è·å–è°ƒåº¦ç®—æ³•æ‰§è¡Œæ—¶é—´
 	 * @return long
 	 */
 	public long getExecTime() {

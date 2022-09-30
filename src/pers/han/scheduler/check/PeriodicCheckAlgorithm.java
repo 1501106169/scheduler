@@ -1,4 +1,4 @@
-package pers.han.scheduler.check;
+ï»¿package pers.han.scheduler.check;
 
 import java.util.Vector;
 
@@ -8,11 +8,11 @@ import pers.han.scheduler.task.PeriodicTask;
 import pers.han.scheduler.task.TimeBlock;
 
 /**
- * Ğ£ÑéÖÜÆÚĞÔÈÎÎñµ÷¶È½á¹û
+ * æ ¡éªŒå‘¨æœŸæ€§ä»»åŠ¡è°ƒåº¦ç»“æœ
  * 
  * @author		hanYG
- * @createDate	2022Äê6ÔÂ2ÈÕ
- * @alterDate	2022Äê6ÔÂ2ÈÕ
+ * @createDate	2022å¹´6æœˆ2æ—¥
+ * @alterDate	2022å¹´6æœˆ2æ—¥
  * @version		1.0
  *
  */

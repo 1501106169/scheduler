@@ -1,4 +1,4 @@
-package pers.han.scheduler.io;
+ï»¿package pers.han.scheduler.io;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -9,7 +9,7 @@ import javax.swing.JPanel;
 import pers.han.scheduler.task.*;
 
 /**
- * »æÖÆ½ø³Ìµ÷¶ÈÍ¼±í
+ * ç»˜åˆ¶è¿›ç¨‹è°ƒåº¦å›¾è¡¨
  * FileName: Chart.java
  * 
  * @author		hanYG
@@ -25,37 +25,37 @@ public class Chart extends JPanel {
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	/** chartµÄ´óĞ¡ */
+	/** chartçš„å¤§å° */
 	private Dimension dime;
 	
-	/** ÈÎÎñÊı */
+	/** ä»»åŠ¡æ•° */
 	private int taskNum;
 	
-	/** »ñÈ¡ÑÕÉ« */
+	/** è·å–é¢œè‰² */
 	// private ChartColor chartColor = new ChartColor();
 	
-	/** ÈÎÎñµ÷¶È½á¹û */
+	/** ä»»åŠ¡è°ƒåº¦ç»“æœ */
 	private ArrayList<TimeBlock> timeAxis;
 	
-	/** ÌõĞÎÍ¼¸ß¶È30¸öµ¥Î» */
+	/** æ¡å½¢å›¾é«˜åº¦30ä¸ªå•ä½ */
 	private int BAR_HEIGHT = 30;
 	
-	/** Ã¿¸ö½ø¶ÈÌõ¼ä¸ô20¸öµ¥Î» */
+	/** æ¯ä¸ªè¿›åº¦æ¡é—´éš”20ä¸ªå•ä½ */
 	private int BAR_BAR_BORDER = 20;
 	
-	/** ½ø¶ÈÌõºÍcanvasµÄ¼ä¸ô10¸öµ¥Î» */
+	/** è¿›åº¦æ¡å’Œcanvasçš„é—´éš”10ä¸ªå•ä½ */
 	private int BAR_CANVAS_BORDER = 10;
 	
-	/** Ã¿¸öÊ±¼äµ¥Î»µÄ³¤¶ÈÎª3¸öµ¥Î» */
+	/** æ¯ä¸ªæ—¶é—´å•ä½çš„é•¿åº¦ä¸º3ä¸ªå•ä½ */
 	private int PER_DATE_LEN = 3;
 	
-	/** µ÷¶ÈÍ¼¾àÀë×ó±ß½ç */
+	/** è°ƒåº¦å›¾è·ç¦»å·¦è¾¹ç•Œ */
 	
-	/** µ÷¶ÈÍ¼¾àÀëÓÒ±ß½ç */
+	/** è°ƒåº¦å›¾è·ç¦»å³è¾¹ç•Œ */
 	
 	/**
-	 * ¹¹Ôìº¯Êı
-	 * @param timeAxis ÈÎÎñµ÷¶È½á¹û
+	 * æ„é€ å‡½æ•°
+	 * @param timeAxis ä»»åŠ¡è°ƒåº¦ç»“æœ
 	 */
 	public Chart(ArrayList<TimeBlock> timeAxis) {
 		super();
@@ -70,7 +70,7 @@ public class Chart extends JPanel {
 				this.taskNum = timeBlock.getId();
 			}
 		}
-		// ÉèÖÃ»­°åµÄÊ×Ñ¡´óĞ¡
+		// è®¾ç½®ç”»æ¿çš„é¦–é€‰å¤§å°
 		this.dime = new Dimension(
 				(timeAxis.get(timeAxis.size() - 1).getStartTime() + timeAxis.get(timeAxis.size() - 1).getExecTime()) * this.PER_DATE_LEN,
 				this.BAR_CANVAS_BORDER * 2 + this.BAR_BAR_BORDER * this.taskNum + this.BAR_HEIGHT * (this.taskNum + 1)
@@ -80,18 +80,18 @@ public class Chart extends JPanel {
 	}
 
 	/**
-	 * »æÖÆÍ¼±í
+	 * ç»˜åˆ¶å›¾è¡¨
 	 */
 	public void paint(Graphics g) {
-		// »æÖÆµ÷¶ÈÍ¼µÄ¿ò¼Ü
+		// ç»˜åˆ¶è°ƒåº¦å›¾çš„æ¡†æ¶
 		drawFrame(g);
 		
-		/** »­±ß¿ò£¬Ìî³ä¾ØĞÎĞ§¹û¸üºÃ */
+		/** ç”»è¾¹æ¡†ï¼Œå¡«å……çŸ©å½¢æ•ˆæœæ›´å¥½ */
 		
 		for (TimeBlock timeBlock : timeAxis) {
-			// ¸ù¾İÈÎÎñ±àºÅ£¬ÉèÖÃÈÎÎñËùÊ¹ÓÃµÄÑÕÉ«
+			// æ ¹æ®ä»»åŠ¡ç¼–å·ï¼Œè®¾ç½®ä»»åŠ¡æ‰€ä½¿ç”¨çš„é¢œè‰²
 			int taskId = timeBlock.getId();
-			// ÉèÖÃ»­±ÊÑÕÉ«
+			// è®¾ç½®ç”»ç¬”é¢œè‰²
 			g.setColor(Color.decode(ChartColor.getPeriodicTaskColorStr(taskId)));
 			g.fillRect(
 					timeBlock.getStartTime() * this.PER_DATE_LEN,
@@ -111,7 +111,7 @@ public class Chart extends JPanel {
 	}
 	
 	/**
-	 * »æÖÆCanvas¿ò¼Ü½á¹¹
+	 * ç»˜åˆ¶Canvasæ¡†æ¶ç»“æ„
 	 * @param g
 	 */
 	private void drawFrame(Graphics g) {

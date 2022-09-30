@@ -1,54 +1,54 @@
-package pers.han.scheduler.framework;
+ï»¿package pers.han.scheduler.framework;
 
 import pers.han.scheduler.task.*;
 import java.util.ArrayList;
 
 /**
- * ½ö°üº¬»ù±¾¹¦ÄÜµÄµ÷¶È¿ò¼ÜµÄÊµÏÖ
+ * ä»…åŒ…å«åŸºæœ¬åŠŸèƒ½çš„è°ƒåº¦æ¡†æ¶çš„å®ç°
  * FileName: BaseSchedulerFrame.java
  * 
  * @author		hanYG
  * @createDate	2021.10.08
- * @alterDate	2021.10.10	ĞŞ¸ÄÀàĞÍArrayList->ArrayList<Task>
+ * @alterDate	2021.10.10	ä¿®æ”¹ç±»å‹ArrayList->ArrayList<Task>
  * @version		1.0
  * 
  */
 public class BaseSchedulerFrame implements BaseSchedulerCheck {
 	
 	/**
-	 * ÖĞ¼ä³éÏóÀà£¬ÊµÏÖÁË½Ó¿Ú£¬»¹ĞèÒªĞŞ¸Ä
-	 * Ó¦µ±°ÑinputTestCase¡¢outputSchedulerResult¡¢checkSchedulerAlgroithm×÷Îª³éÏó·½·¨£¬¹©ÓÃ»§ÊµÏÖ
-	 * schedulerAlgroithmÓÃ»§ÊµÏÖ
+	 * ä¸­é—´æŠ½è±¡ç±»ï¼Œå®ç°äº†æ¥å£ï¼Œè¿˜éœ€è¦ä¿®æ”¹
+	 * åº”å½“æŠŠinputTestCaseã€outputSchedulerResultã€checkSchedulerAlgroithmä½œä¸ºæŠ½è±¡æ–¹æ³•ï¼Œä¾›ç”¨æˆ·å®ç°
+	 * schedulerAlgroithmç”¨æˆ·å®ç°
 	 */
 	
-	/** Ò»×éÈÎÎñ */
+	/** ä¸€ç»„ä»»åŠ¡ */
 	protected ArrayList<Task> testCase;
 	
-	/** µ÷¶ÈËã·¨²úÉúµÄ½á¹û */
+	/** è°ƒåº¦ç®—æ³•äº§ç”Ÿçš„ç»“æœ */
 	protected ArrayList<TimeBlock> timeBlockList;
 	
-	/** Õë¶Ô¸Ã²âÊÔÓÃÀı£¬Ëã·¨µÄÕıÈ·ĞÔ */
+	/** é’ˆå¯¹è¯¥æµ‹è¯•ç”¨ä¾‹ï¼Œç®—æ³•çš„æ­£ç¡®æ€§ */
 	protected boolean algroithmViable;
 	
-	// ¹¹Ôìº¯Êı£¬Ôİ²»ÊµÏÖ
+	// æ„é€ å‡½æ•°ï¼Œæš‚ä¸å®ç°
 	
 	/**
-	 * ÎŞ²Î¹¹Ôì
+	 * æ— å‚æ„é€ 
 	 */
 	public BaseSchedulerFrame() {
 		runFrame();
 	}
 	
 	/**
-	 * ¹¹Ôìº¯Êı£¬»ùÓÚÒ»×éÈÎÎñÒÔÎÄ¼şĞÎÊ½±£´æµÄµØÖ·
-	 * @param filePath ÎÄ¼şµØÖ·
+	 * æ„é€ å‡½æ•°ï¼ŒåŸºäºä¸€ç»„ä»»åŠ¡ä»¥æ–‡ä»¶å½¢å¼ä¿å­˜çš„åœ°å€
+	 * @param filePath æ–‡ä»¶åœ°å€
 	 */
 	public BaseSchedulerFrame(String filePath) {
 		
 	}
 	
 	/**
-	 * »ñÈ¡Ëã·¨µÄÕıÈ·ĞÔ
+	 * è·å–ç®—æ³•çš„æ­£ç¡®æ€§
 	 * @return Boolean
 	 */
 	public boolean getVisable() {
@@ -56,10 +56,10 @@ public class BaseSchedulerFrame implements BaseSchedulerCheck {
 	}
 	
 	/**
-	 * ¹¹ÔìÖ´ĞĞ¿ò¼Ü
+	 * æ„é€ æ‰§è¡Œæ¡†æ¶
 	 */
 	private void runFrame() {
-		this.testCase = inputTestCase();	// ¶ÁÈ¡²âÊÔÓÃÀı
+		this.testCase = inputTestCase();	// è¯»å–æµ‹è¯•ç”¨ä¾‹
 		this.timeBlockList = schedulerAlgroithm(this.testCase);
 		this.algroithmViable = checkSchedulerAlgroithm(this.testCase, this.timeBlockList);
 		outputSchedulerResult(this.timeBlockList);

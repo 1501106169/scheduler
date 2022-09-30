@@ -1,17 +1,17 @@
-package pers.han.scheduler.task;
+ï»¿package pers.han.scheduler.task;
 
 /**
- * ×÷ÒµÇÀÕ¼ÀàĞÍÃ¶¾Ù
+ * ä½œä¸šæŠ¢å ç±»å‹æšä¸¾
  * 
  * @author		hanYG
- * @createDate	2021Äê5ÔÂ17ÈÕ
- * @alterDate	2021Äê5ÔÂ17ÈÕ
+ * @createDate	2021å¹´5æœˆ17æ—¥
+ * @alterDate	2021å¹´5æœˆ17æ—¥
  * @version		1.0
  *
  */
 public enum JobPreemption {
-	/** ¿ÉÇÀÕ¼µÄ */
+	/** å¯æŠ¢å çš„ */
 	PREEMPTABLE,
-	/** ²»¿ÉÇÀÕ¼µÄ */
+	/** ä¸å¯æŠ¢å çš„ */
 	NONPREEMPTABLE;
 }

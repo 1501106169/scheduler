@@ -1,24 +1,24 @@
-package pers.han.scheduler.framework;
+ï»¿package pers.han.scheduler.framework;
 
 import java.util.Vector;
 
 /**
- * Ğ£ÑéËã·¨
+ * æ ¡éªŒç®—æ³•
  * FileName: Check.java
  * 
  * @author		hanYG
- * @createDate	2022Äê5ÔÂ24ÈÕ
- * @alterDate	2022Äê5ÔÂ24ÈÕ
+ * @createDate	2022å¹´5æœˆ24æ—¥
+ * @alterDate	2022å¹´5æœˆ24æ—¥
  * @version		1.0
  *
  */
 public class Check {
 	
 	/**
-	 * Ğ£ÑéËã·¨
-	 * @param taskSet Ò»×éÊµÊ±ÈÎÎñ
-	 * @param schedulingResult µ÷¶ÈËã·¨²úÉúµÄµ÷¶È½á¹û
-	 * @return µ÷¶È½á¹ûµÄ¿ÉĞĞĞÔ CheckResult
+	 * æ ¡éªŒç®—æ³•
+	 * @param taskSet ä¸€ç»„å®æ—¶ä»»åŠ¡
+	 * @param schedulingResult è°ƒåº¦ç®—æ³•äº§ç”Ÿçš„è°ƒåº¦ç»“æœ
+	 * @return è°ƒåº¦ç»“æœçš„å¯è¡Œæ€§ CheckResult
 	 */
 	static public CheckResultEnum doCheck(Vector taskSet, Vector schedulingResult) {
 		System.out.println(taskSet);

@@ -1,11 +1,11 @@
-package pers.han.scheduler.compiler;
+ï»¿package pers.han.scheduler.compiler;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
 /**
- * Àà¼ÓÔØÆ÷£¬findClass¸ºÔğ¼ÓÔØÀà
+ * ç±»åŠ è½½å™¨ï¼ŒfindClassè´Ÿè´£åŠ è½½ç±»
  * FileName: DynamicClassLoader.java
  * 
  * @author		hanYG
@@ -15,7 +15,7 @@ import java.util.Map.Entry;
  *
  */
 public class DynamicClassLoader extends ClassLoader {
-	/** ÀàÃûºÍ×Ö½ÚÂëµÄÓ³Éä */
+	/** ç±»åå’Œå­—èŠ‚ç çš„æ˜ å°„ */
 	private final Map<String, DynamicByteCode> byteCodes = new HashMap<String, DynamicByteCode>();
 	
 	public DynamicClassLoader(ClassLoader classLoader) {
@@ -32,15 +32,15 @@ public class DynamicClassLoader extends ClassLoader {
 	}
 	
 	/**
-	 * Ìí¼ÓÀàºÍ×Ö½ÚÂë
-	 * @param dynamicByteCode ×Ö½ÚÁ÷Êä³ö¶ÔÏó
+	 * æ·»åŠ ç±»å’Œå­—èŠ‚ç 
+	 * @param dynamicByteCode å­—èŠ‚æµè¾“å‡ºå¯¹è±¡
 	 */
 	public void registerCompiledSource(DynamicByteCode dynamicByteCode) {
 		this.byteCodes.put(dynamicByteCode.getClassName(), dynamicByteCode);
 	}
 	
 	/**
-	 * »ñÈ¡ÀàÃûºÍÀà
+	 * è·å–ç±»åå’Œç±»
 	 * @return Map<String, Class<?>>
 	 * @throws ClassNotFoundException
 	 */
@@ -53,7 +53,7 @@ public class DynamicClassLoader extends ClassLoader {
 	}
 	
 	/**
-	 * »ñÈ¡ÀàÃûºÍ×Ö½ÚÂë
+	 * è·å–ç±»åå’Œå­—èŠ‚ç 
 	 * @return Map<String, byte[]>
 	 */
 	public Map<String, byte[]> getByteCodes() {

@@ -1,4 +1,4 @@
-package pers.han.scheduler.framework;
+ï»¿package pers.han.scheduler.framework;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -12,27 +12,27 @@ import pers.han.scheduler.compiler.DynamicCompiler;
  * FileName: TaskCase.java
  * 
  * @author		hanYG
- * @createDate	2022Äê5ÔÂ24ÈÕ
- * @alterDate	2022Äê5ÔÂ24ÈÕ
+ * @createDate	2022å¹´5æœˆ24æ—¥
+ * @alterDate	2022å¹´5æœˆ24æ—¥
  * @version		1.0
  *
  */
 public class TaskCase extends Check implements BaseTaskCase {
 
-	/** ²âÊÔÊı¾İ£¬Ò»×éÈÎÎñ */
+	/** æµ‹è¯•æ•°æ®ï¼Œä¸€ç»„ä»»åŠ¡ */
 	protected Vector taskSet = null;
-	/** µ÷¶ÈËã·¨Ö´ĞĞ½á¹û */
+	/** è°ƒåº¦ç®—æ³•æ‰§è¡Œç»“æœ */
 	protected Vector schedulingResult = null;
-	/** Ğ£ÑéËã·¨Ö´ĞĞ½á¹û */
+	/** æ ¡éªŒç®—æ³•æ‰§è¡Œç»“æœ */
 	protected CheckResultEnum checkResult = null;
-	/** µ÷¶ÈËã·¨Àà */
+	/** è°ƒåº¦ç®—æ³•ç±» */
 	Class schedlulingAlgorithmCls = null;
-	/** Ö´ĞĞÊ±¼ä */
+	/** æ‰§è¡Œæ—¶é—´ */
 	long execTime;
 	
 	/**
-	 * ¹¹Ôìº¯Êı
-	 * @param taskSet ²âÊÔÊı¾İ
+	 * æ„é€ å‡½æ•°
+	 * @param taskSet æµ‹è¯•æ•°æ®
 	 */
 	public TaskCase(Vector taskSet, Class schedlulingAlgorithmClass) {
 		this.taskSet = taskSet;
@@ -40,10 +40,10 @@ public class TaskCase extends Check implements BaseTaskCase {
 	}
 	
 	/**
-	 * ÔÚ²âÊÔÊı¾İÉÏÖ´ĞĞµ÷¶ÈËã·¨
+	 * åœ¨æµ‹è¯•æ•°æ®ä¸Šæ‰§è¡Œè°ƒåº¦ç®—æ³•
 	 */
 	public void run() {
-		// Ö´ĞĞ
+		// æ‰§è¡Œ
 		if (this.runSchedulingAlgorithm() == null) {
 			return;
 		}
@@ -56,7 +56,7 @@ public class TaskCase extends Check implements BaseTaskCase {
 	}
 	
 	/**
-	 * ¸ù¾İ°üÃûÀàÃû¡¢·½·¨ÃûÖ´ĞĞµ÷¶ÈËã·¨
+	 * æ ¹æ®åŒ…åç±»åã€æ–¹æ³•åæ‰§è¡Œè°ƒåº¦ç®—æ³•
 	 * @return
 	 */
 	private Vector runSchedulingAlgorithm() {
@@ -72,7 +72,7 @@ public class TaskCase extends Check implements BaseTaskCase {
 		}
 		Method schedulingAlgorithmMethod = null;
 		try {
-			// ¸ù¾İµ÷¶ÈËã·¨·½·¨Ãû¡¢²ÎÊı²éÕÒ
+			// æ ¹æ®è°ƒåº¦ç®—æ³•æ–¹æ³•åã€å‚æ•°æŸ¥æ‰¾
 			schedulingAlgorithmMethod = this.schedlulingAlgorithmCls.getDeclaredMethod("test", Vector.class);
 		} catch (NoSuchMethodException | SecurityException e1) {
 			e1.printStackTrace();
@@ -90,7 +90,7 @@ public class TaskCase extends Check implements BaseTaskCase {
 	}
 	
 	/**
-	 * »ñÈ¡²âÊÔÊı¾İµÄÊıÄ¿
+	 * è·å–æµ‹è¯•æ•°æ®çš„æ•°ç›®
 	 * @return
 	 */
 	public int countTaskCase() {
@@ -98,7 +98,7 @@ public class TaskCase extends Check implements BaseTaskCase {
 	}
 	
 	/**
-	 * »ñÈ¡Ğ£Ñé½á¹û
+	 * è·å–æ ¡éªŒç»“æœ
 	 * @return
 	 */
 	public CheckResultEnum getCheckResult() {
@@ -106,14 +106,14 @@ public class TaskCase extends Check implements BaseTaskCase {
 	}
 	
 	/**
-	 * »ñÈ¡µ÷¶ÈËã·¨Ö´ĞĞ½á¹û
+	 * è·å–è°ƒåº¦ç®—æ³•æ‰§è¡Œç»“æœ
 	 * @return
 	 */
 	public Vector getSchedulingResult() {
 		return this.schedulingResult;
 	}
 	
-	/** »ñÈ¡Ö´ĞĞÊ±¼ä */
+	/** è·å–æ‰§è¡Œæ—¶é—´ */
 	public long getExecTime() {
 		return this.execTime;
 	}
@@ -121,7 +121,7 @@ public class TaskCase extends Check implements BaseTaskCase {
 	public static void main(String[] args) {
 		ClassLoader classLoader = ClassLoader.getSystemClassLoader();
 		DynamicCompiler dynamicCompiler = new DynamicCompiler(classLoader);
-		// Ìí¼Óµ½¶¯Ì¬±àÒëÆ÷ÆäµÄ´ı±àÒëÔ´ÎÄ¼şÖĞ
+		// æ·»åŠ åˆ°åŠ¨æ€ç¼–è¯‘å™¨å…¶çš„å¾…ç¼–è¯‘æºæ–‡ä»¶ä¸­
 		dynamicCompiler.addSource("testClass", "import java.util.Vector;\r\n"
 				+ "\r\n"
 				+ "import pers.han.scheduler.task.PeriodicTask;\r\n"

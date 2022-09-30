@@ -1,4 +1,4 @@
-package pers.han.scheduler.io;
+ï»¿package pers.han.scheduler.io;
 
 import java.util.Vector;
 
@@ -6,21 +6,21 @@ import pers.han.scheduler.task.Task;
 import pers.han.scheduler.task.*;
 
 /**
- * ´ÓÎÄ¼şÖĞ»ñÈ¡ÊµÊ±ÈÎÎñ
+ * ä»æ–‡ä»¶ä¸­è·å–å®æ—¶ä»»åŠ¡
  * 
  * @author		hanYG
- * @createDate	2022Äê6ÔÂ1ÈÕ
- * @alterDate	2022Äê6ÔÂ1ÈÕ
+ * @createDate	2022å¹´6æœˆ1æ—¥
+ * @alterDate	2022å¹´6æœˆ1æ—¥
  * @version		1.0
  *
  */
 public class InputTaskDataFromFile implements InputTaskData {
-	/** °üº¬ÊµÊ±ÈÎÎñÎÄ¼şµÄÎÄ¼ş¼ĞÂ·¾¶ */
+	/** åŒ…å«å®æ—¶ä»»åŠ¡æ–‡ä»¶çš„æ–‡ä»¶å¤¹è·¯å¾„ */
 	String dirPath;
 	
 	/**
-	 * ¹¹Ôìº¯Êı
-	 * @param dirPath ÎÄ¼ş¼ĞÂ·¾¶
+	 * æ„é€ å‡½æ•°
+	 * @param dirPath æ–‡ä»¶å¤¹è·¯å¾„
 	 */
 	public InputTaskDataFromFile(String dirPath) {
 		this.dirPath = dirPath;

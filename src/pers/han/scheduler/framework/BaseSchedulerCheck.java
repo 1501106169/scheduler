@@ -1,45 +1,45 @@
-package pers.han.scheduler.framework;
+ï»¿package pers.han.scheduler.framework;
 
 import java.util.ArrayList;
 
 import pers.han.scheduler.task.*;
 
 /**
- * °üº¬ÊäÈë¡¢Ëã·¨¡¢Êä³öµÄ½Ó¿Ú
+ * åŒ…å«è¾“å…¥ã€ç®—æ³•ã€è¾“å‡ºçš„æ¥å£
  * FileName: BaseSchedulerCheck.java
  * 
  * @author		hanYG
  * @createDate	2021.10.08
- * @alterDate	2021.10.10	ĞŞ¸ÄÀàĞÍArrayList->ArrayList<Task>
+ * @alterDate	2021.10.10	ä¿®æ”¹ç±»å‹ArrayList->ArrayList<Task>
  * @version		2.0
  *
  */
 public interface BaseSchedulerCheck {
 
 	/**
-	 * ¶ÁÈë²âÊÔÓÃÀı
-	 * @return Ò»×éµ÷¶ÈÈÎÎñ
+	 * è¯»å…¥æµ‹è¯•ç”¨ä¾‹
+	 * @return ä¸€ç»„è°ƒåº¦ä»»åŠ¡
 	 */
 	public abstract ArrayList<Task> inputTestCase();
 	
 	/**
-	 * µ÷¶ÈËã·¨
-	 * @param taskList	Ô­Ê¼ArrayList£¬Ò»×éÈÎÎñ
-	 * @return	µ÷¶È½á¹û
+	 * è°ƒåº¦ç®—æ³•
+	 * @param taskList	åŸå§‹ArrayListï¼Œä¸€ç»„ä»»åŠ¡
+	 * @return	è°ƒåº¦ç»“æœ
 	 */
 	public abstract ArrayList<TimeBlock> schedulerAlgroithm(ArrayList<Task> taskList);
 	
 	/**
-	 * Êä³öËã·¨
-	 * @param timeBlock	µ÷¶ÈµÄÊ±¼äÆ¬
+	 * è¾“å‡ºç®—æ³•
+	 * @param timeBlock	è°ƒåº¦çš„æ—¶é—´ç‰‡
 	 */
 	public abstract void outputSchedulerResult(ArrayList<TimeBlock> timeBlock);	
 	
 	/**
-	 * Ğ£ÑéËã·¨
-	 * @param taskList	ÈÎÎñ
-	 * @param timeBlock	µ÷¶È½á¹û
-	 * @return	Ëã·¨µÄÕıÈ·ĞÔ
+	 * æ ¡éªŒç®—æ³•
+	 * @param taskList	ä»»åŠ¡
+	 * @param timeBlock	è°ƒåº¦ç»“æœ
+	 * @return	ç®—æ³•çš„æ­£ç¡®æ€§
 	 */
 	public abstract boolean checkSchedulerAlgroithm(ArrayList<Task> taskList, ArrayList<TimeBlock> timeBlock);
 	

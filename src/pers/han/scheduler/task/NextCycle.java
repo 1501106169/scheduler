@@ -1,32 +1,32 @@
-package pers.han.scheduler.task;
+ï»¿package pers.han.scheduler.task;
 
-// ÆúÓÃ
+// å¼ƒç”¨
 
 /**
- * ÖÜÆÚĞÔÈÎÎñµÄÏÂÒ»¸öÖÜÆÚ
+ * å‘¨æœŸæ€§ä»»åŠ¡çš„ä¸‹ä¸€ä¸ªå‘¨æœŸ
  * 
  * @author		hanYG
- * @createDate	2022Äê5ÔÂ29ÈÕ
- * @alterDate	2022Äê5ÔÂ29ÈÕ
- * 				2022Äê6ÔÂ5ÈÕ		Ìí¼ÓtaskId
- * 				2022Äê6ÔÂ29ÈÕ	ÆúÓÃ
- * 				2022Äê09ÔÂ28ÈÕ Ìí¼Ó¿½±´º¯Êı£¬ÈÔÈ»ÆúÓÃ
+ * @createDate	2022å¹´5æœˆ29æ—¥
+ * @alterDate	2022å¹´5æœˆ29æ—¥
+ * 				2022å¹´6æœˆ5æ—¥		æ·»åŠ taskId
+ * 				2022å¹´6æœˆ29æ—¥	å¼ƒç”¨
+ * 				2022å¹´09æœˆ28æ—¥ æ·»åŠ æ‹·è´å‡½æ•°ï¼Œä»ç„¶å¼ƒç”¨
  * @version		1.1
  *
  */
 public class NextCycle extends Task {
-	/** ÖÜÆÚĞÔÈÎÎñ */
+	/** å‘¨æœŸæ€§ä»»åŠ¡ */
 	protected PeriodicTask periodicTask;
 	
-	/** ÈÎÎñId */
+	/** ä»»åŠ¡Id */
 	protected int taskId;
 	
-	/** ÏÂÒ»¸öÖÜÆÚµÄ¿ªÊ¼Ê±¼ä */
+	/** ä¸‹ä¸€ä¸ªå‘¨æœŸçš„å¼€å§‹æ—¶é—´ */
 	protected int cycleStartTime = 0;
 	
 	/**
-	 * ¹¹Ôìº¯Êı£¬¸ù¾İÖÜÆÚĞÔÈÎÎñ¹¹Ôì
-	 * @param periodicTask ÖÜÆÚĞÔÈÎÎñ
+	 * æ„é€ å‡½æ•°ï¼Œæ ¹æ®å‘¨æœŸæ€§ä»»åŠ¡æ„é€ 
+	 * @param periodicTask å‘¨æœŸæ€§ä»»åŠ¡
 	 */
 	public NextCycle(PeriodicTask periodicTask, int taskId) {
 		this.periodicTask = periodicTask;
@@ -40,7 +40,7 @@ public class NextCycle extends Task {
 	}
 	
 	/**
-	 * »ñÈ¡ÖÜÆÚĞÔÈÎÎñµÄÏÂÒ»¸öÖÜÆÚ¿ªÊ¼Ê±¼ä
+	 * è·å–å‘¨æœŸæ€§ä»»åŠ¡çš„ä¸‹ä¸€ä¸ªå‘¨æœŸå¼€å§‹æ—¶é—´
 	 * @return
 	 */
 	public int getCycleStartTime() {
@@ -48,7 +48,7 @@ public class NextCycle extends Task {
 	}
 	
 	/**
-	 * ÉèÖÃÖÜÆÚĞÔÈÎÎñµÄÖÜÆÚ½øÈëÏÂÒ»¸öÖÜÆÚ
+	 * è®¾ç½®å‘¨æœŸæ€§ä»»åŠ¡çš„å‘¨æœŸè¿›å…¥ä¸‹ä¸€ä¸ªå‘¨æœŸ
 	 */
 	public void setNextCycle() {
 		this.cycleStartTime += this.periodicTask.getTaskPeriodic();
@@ -57,7 +57,7 @@ public class NextCycle extends Task {
 	}
 	
 	/**
-	 * »ñÈ¡ÈÎÎñ
+	 * è·å–ä»»åŠ¡
 	 * @return PeriodicTask
 	 */
 	public PeriodicTask getTask() {
@@ -65,7 +65,7 @@ public class NextCycle extends Task {
 	}
 	
 	/**
-	 * »ñÈ¡ÈÎÎñid
+	 * è·å–ä»»åŠ¡id
 	 */
 	public int getTaskId() {
 		return this.taskId;

@@ -1,42 +1,42 @@
-package pers.han.scheduler.task;
+ï»¿package pers.han.scheduler.task;
 
 // import java.util.Iterator;
 
-// ÆúÓÃ
+// å¼ƒç”¨
 
 /**
- * ±íÊ¾ÈÎÎñµÄÏÂÒ»¸öÖ´ĞĞÊ±¼ä¶Î
+ * è¡¨ç¤ºä»»åŠ¡çš„ä¸‹ä¸€ä¸ªæ‰§è¡Œæ—¶é—´æ®µ
  * FileName: TimeSpan.java
  * 
  * @author		hanYG
  * @createDate	2021.06.18
- * @alterDate	2021.10.10	ĞŞ¸ÄÊ±¼äÀàĞÍdouble->int
- * 							Ìí¼ÓÖ´ĞĞÊ±¼ä
+ * @alterDate	2021.10.10	ä¿®æ”¹æ—¶é—´ç±»å‹double->int
+ * 							æ·»åŠ æ‰§è¡Œæ—¶é—´
  * @version		2.0
  *
  */
 public final class TimeSpan {
 	
-	/** ÈÎÎñ±àºÅ */
+	/** ä»»åŠ¡ç¼–å· */
 	// protected int id;
 	
-	/** ¿ªÊ¼Ê±¼ä */
+	/** å¼€å§‹æ—¶é—´ */
 	protected int startTime;
 	
-	/** ½áÊøÊ±¼ä */
+	/** ç»“æŸæ—¶é—´ */
 	protected int endTime;
 	
-	/** Ö´ĞĞÊ±¼ä */
+	/** æ‰§è¡Œæ—¶é—´ */
 	protected int execTime;
 	
-	/** ÈÎÎñÖÜÆÚ */
+	/** ä»»åŠ¡å‘¨æœŸ */
 	protected int periodic;
 	
 	/**
-	 * ¹¹Ôìº¯Êı
-	 * @param startTime		¿ªÊ¼Ê±¼ä
-	 * @param endTime		½áÊøÊ±¼ä
-	 * @param periodic		ÈÎÎñÖÜÆÚ
+	 * æ„é€ å‡½æ•°
+	 * @param startTime		å¼€å§‹æ—¶é—´
+	 * @param endTime		ç»“æŸæ—¶é—´
+	 * @param periodic		ä»»åŠ¡å‘¨æœŸ
 	 */
 	public TimeSpan(int startTime, int endTime, int execTime, int periodic) {
 		// this.id = id;
@@ -48,8 +48,8 @@ public final class TimeSpan {
 	}
 	
 	/**
-	 * ¹¹Ôìº¯Êı
-	 * @param periodicTask	Ò»¸öÖÜÆÚĞÔÈÎÎñ
+	 * æ„é€ å‡½æ•°
+	 * @param periodicTask	ä¸€ä¸ªå‘¨æœŸæ€§ä»»åŠ¡
 	 */
 	public TimeSpan(PeriodicTask periodicTask) {
 		this.startTime = periodicTask.getJobReleaseTime();
@@ -60,7 +60,7 @@ public final class TimeSpan {
 	}
 
 	/**
-	 * ½øÈëÏÂÒ»¸öÊ±¼äÖÜÆÚ
+	 * è¿›å…¥ä¸‹ä¸€ä¸ªæ—¶é—´å‘¨æœŸ
 	 */
 	public void nextPeriodic() {
 		this.startTime = this.endTime;
@@ -69,7 +69,7 @@ public final class TimeSpan {
 	}
 	
 	/**
-	 * »ñÈ¡×÷ÒµÖ´ĞĞÊ±¼ä
+	 * è·å–ä½œä¸šæ‰§è¡Œæ—¶é—´
 	 * @return	Integer
 	 */
 	public int getExecTime() {
@@ -77,7 +77,7 @@ public final class TimeSpan {
 	}
 	
 	/**
-	 * »ñÈ¡ÈÎÎñ±àºÅ
+	 * è·å–ä»»åŠ¡ç¼–å·
 	 * @return	Integer
 	 */
 	/*
@@ -87,7 +87,7 @@ public final class TimeSpan {
 	*/
 	
 	/**
-	 * »ñÈ¡ÈÎÎñµÄÊÍ·ÅÊ±¼ä
+	 * è·å–ä»»åŠ¡çš„é‡Šæ”¾æ—¶é—´
 	 * @return	Integer
 	 */
 	public int getStartTime() {
@@ -95,7 +95,7 @@ public final class TimeSpan {
 	}
 	
 	/**
-	 * »ñÈ¡ÈÎÎñµÄÊ±ÏŞ
+	 * è·å–ä»»åŠ¡çš„æ—¶é™
 	 * @return	Integer
 	 */
 	public int getEndTime() {
@@ -103,8 +103,8 @@ public final class TimeSpan {
 	}
 	
 	/**
-	 * ÉèÖÃÈÎÎñÊÍ·ÅÊ±¼ä
-	 * @param startTime	ÈÎÎñ¿ªÊ¼Ê±¼ä
+	 * è®¾ç½®ä»»åŠ¡é‡Šæ”¾æ—¶é—´
+	 * @param startTime	ä»»åŠ¡å¼€å§‹æ—¶é—´
 	 */
 	/*
 	public void setStartTime(double startTime) {
@@ -114,8 +114,8 @@ public final class TimeSpan {
 	*/
 	
 	/**
-	 * ÉèÖÃÈÎÎñµÄÊ±ÏŞ
-	 * @param endTime	ÈÎÎñÊ±ÏŞ
+	 * è®¾ç½®ä»»åŠ¡çš„æ—¶é™
+	 * @param endTime	ä»»åŠ¡æ—¶é™
 	 */
 	/*
 	public void setEndTime(double endTime) {

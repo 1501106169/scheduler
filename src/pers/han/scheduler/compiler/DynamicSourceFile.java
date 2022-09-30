@@ -1,11 +1,11 @@
-package pers.han.scheduler.compiler;
+ï»¿package pers.han.scheduler.compiler;
 
 import java.net.URI;
 
 import javax.tools.SimpleJavaFileObject;
 
 /**
- * ÊäÈëµÄÔ´ÎÄ¼ş¶ÔÏó
+ * è¾“å…¥çš„æºæ–‡ä»¶å¯¹è±¡
  * FileName: DynamicSourceFile.java
  * 
  * @author		hanYG
@@ -16,13 +16,13 @@ import javax.tools.SimpleJavaFileObject;
  */
 public class DynamicSourceFile extends SimpleJavaFileObject {
 
-	/** Ô´´úÂë */
+	/** æºä»£ç  */
 	private final String contents;
 	
 	/**
-	 * ÓÃÀ´ÊäÈëÔ´´úÂëµÄ¹¹Ôìº¯Êı
-	 * @param className ÀàÃû
-	 * @param contents Ô´´úÂë
+	 * ç”¨æ¥è¾“å…¥æºä»£ç çš„æ„é€ å‡½æ•°
+	 * @param className ç±»å
+	 * @param contents æºä»£ç 
 	 */
 	protected DynamicSourceFile(String className, String contents) {
 		super(URI.create("string:///" + className.replace('.', '/') + Kind.SOURCE.extension), Kind.SOURCE);

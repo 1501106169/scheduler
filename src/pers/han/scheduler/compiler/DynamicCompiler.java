@@ -1,4 +1,4 @@
-package pers.han.scheduler.compiler;
+ï»¿package pers.han.scheduler.compiler;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -14,7 +14,7 @@ import javax.tools.StandardJavaFileManager;
 import javax.tools.ToolProvider;
 
 /**
- * ×Ô¶¨ÒåµÄJavaÔ´´úÂë±àÒëÆ÷£¬ÊµÏÖ¶ÔÔ´´úÂëµÄ±àÒë
+ * è‡ªå®šä¹‰çš„Javaæºä»£ç ç¼–è¯‘å™¨ï¼Œå®ç°å¯¹æºä»£ç çš„ç¼–è¯‘
  * FileName: DynamicCompiler.java
  * 
  * @author		hanYG
@@ -25,19 +25,19 @@ import javax.tools.ToolProvider;
  */
 public class DynamicCompiler {
 	
-	/** »ñÈ¡ÏµÍ³µÄJava±àÒëÆ÷ */
+	/** è·å–ç³»ç»Ÿçš„Javaç¼–è¯‘å™¨ */
 	private final JavaCompiler javaCompiler = ToolProvider.getSystemJavaCompiler();
 	
-	/** ¶¯Ì¬±àÒëµÄÎÄ¼ş¹ÜÀíÆ÷ */
+	/** åŠ¨æ€ç¼–è¯‘çš„æ–‡ä»¶ç®¡ç†å™¨ */
 	private StandardJavaFileManager standardFileManager = null;
 	
-	/** ±àÒëµÄ²ÎÊı */
+	/** ç¼–è¯‘çš„å‚æ•° */
 	private final List<String> options = new ArrayList<String>();
 	
-	/** Àà¼ÓÔØÆ÷ */
+	/** ç±»åŠ è½½å™¨ */
 	private DynamicClassLoader dynamicClassLoader = null;
 	
-	/** JavaFileObject×é³ÉµÄ´ı±àÒëµÄÔ´ÎÄ¼şÁĞ±í */
+	/** JavaFileObjectç»„æˆçš„å¾…ç¼–è¯‘çš„æºæ–‡ä»¶åˆ—è¡¨ */
 	private final Collection<JavaFileObject> compilationUnits = new ArrayList<JavaFileObject>();
 	
 	private JavaFileManager fileManager = null;
@@ -45,8 +45,8 @@ public class DynamicCompiler {
 	DiagnosticCollector<JavaFileObject> collector = null;
 	
 	/**
-	 * ¹¹Ôìº¯Êı£¬³õÊ¼»¯
-	 * @param classLoader »ùÀàµÄÀà¼ÓÔØÆ÷
+	 * æ„é€ å‡½æ•°ï¼Œåˆå§‹åŒ–
+	 * @param classLoader åŸºç±»çš„ç±»åŠ è½½å™¨
 	 */
 	public DynamicCompiler(ClassLoader classLoader) {
 		this.standardFileManager = this.javaCompiler.getStandardFileManager(null, null, null);
@@ -55,24 +55,24 @@ public class DynamicCompiler {
 	}
 	
 	/**
-	 * Ìí¼Ó´ı±àÒëµÄÔ´´úÂë
-	 * @param className ÀàÃû
-	 * @param contents Ô´´úÂë
+	 * æ·»åŠ å¾…ç¼–è¯‘çš„æºä»£ç 
+	 * @param className ç±»å
+	 * @param contents æºä»£ç 
 	 */
 	public void addSource(String className, String contents) {
 		this.addSource(new DynamicSourceFile(className, contents));
 	}
 	
 	/**
-	 * Ìí¼Ó´ı±àÒëµÄÔ´´úÂëÎÄ¼ş¶ÔÏó
-	 * @param javaFileObject ÊäÈëµÄÔ´ÎÄ¼ş¶ÔÏó
+	 * æ·»åŠ å¾…ç¼–è¯‘çš„æºä»£ç æ–‡ä»¶å¯¹è±¡
+	 * @param javaFileObject è¾“å…¥çš„æºæ–‡ä»¶å¯¹è±¡
 	 */
 	public void addSource(JavaFileObject javaFileObject) {
 		this.compilationUnits.add(javaFileObject);
 	}
 	
 	/**
-	 * Ö´ĞĞ±àÒë²Ù×÷
+	 * æ‰§è¡Œç¼–è¯‘æ“ä½œ
 	 * @return Boolean
 	 */
 	public boolean build() {
@@ -83,7 +83,7 @@ public class DynamicCompiler {
 	}
 	
 	/**
-	 * »ñÈ¡ËùÓĞµÄÀàÃûºÍÀà
+	 * è·å–æ‰€æœ‰çš„ç±»åå’Œç±»
 	 * @return Map<String, Class<?>>
 	 */
 	public Map<String, Class<?>> getClasses() {
@@ -97,7 +97,7 @@ public class DynamicCompiler {
 	}
 	
 	/**
-	 * »ñÈ¡ËùÓĞµÄÀàÃûºÍ×Ö½ÚÂë
+	 * è·å–æ‰€æœ‰çš„ç±»åå’Œå­—èŠ‚ç 
 	 * @return Map<String, byte[]>
 	 */
 	public Map<String, byte[]> getByteCodes() {
@@ -105,7 +105,7 @@ public class DynamicCompiler {
 	}
 	
 	/**
-	 * »ñÈ¡±¨´íĞÅÏ¢
+	 * è·å–æŠ¥é”™ä¿¡æ¯
 	 * @return String
 	 */
 	public String getBuildError() {

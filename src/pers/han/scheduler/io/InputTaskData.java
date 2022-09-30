@@ -1,21 +1,21 @@
-package pers.han.scheduler.io;
+ï»¿package pers.han.scheduler.io;
 
 import java.util.Vector;
 
 import pers.han.scheduler.task.Task;
 
 /**
- * Ìá¹©Ò»×é»ñÈ¡ÊµÊ±ÈÎÎñµÄ·½·¨
+ * æä¾›ä¸€ç»„è·å–å®æ—¶ä»»åŠ¡çš„æ–¹æ³•
  * 
  * @author		hanYG
- * @createDate	2022Äê6ÔÂ1ÈÕ
- * @alterDate	2022Äê6ÔÂ1ÈÕ
+ * @createDate	2022å¹´6æœˆ1æ—¥
+ * @alterDate	2022å¹´6æœˆ1æ—¥
  * @version		1.0
  *
  */
 public interface InputTaskData {
 	/**
-	 * »ñÈ¡Ò»×éµ÷¶ÈÈÎÎñ
+	 * è·å–ä¸€ç»„è°ƒåº¦ä»»åŠ¡
 	 * @return Vector<Vector<Task>>
 	 */
 	public Vector<Vector<Task>> getTaskData();

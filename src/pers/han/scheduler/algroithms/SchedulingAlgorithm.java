@@ -1,32 +1,32 @@
-package pers.han.scheduler.algroithms;
+ï»¿package pers.han.scheduler.algroithms;
 
 import java.util.Vector;
 
 import pers.han.scheduler.task.Task;
 
 /**
- * µ÷¶ÈËã·¨µÄ»ùÀà
+ * è°ƒåº¦ç®—æ³•çš„åŸºç±»
  * 
  * @author		hanYG
- * @createDate	2022Äê5ÔÂ29ÈÕ
- * @alterDate	2022Äê5ÔÂ29ÈÕ
+ * @createDate	2022å¹´5æœˆ29æ—¥
+ * @alterDate	2022å¹´5æœˆ29æ—¥
  * @version		1.0
  *
  */
 public abstract class SchedulingAlgorithm {
-	/** Ò»×éÊµÊ±ÈÎÎñ */
+	/** ä¸€ç»„å®æ—¶ä»»åŠ¡ */
 	Vector<Task> TaskSet;
 	
-	/** µ±Ç°Ê±¼ä */
+	/** å½“å‰æ—¶é—´ */
 	int timeAxis = 0;
 	
-	/** µ÷¶ÈËã·¨ÔËĞĞ½ØÖÁÊ±¼ä */
+	/** è°ƒåº¦ç®—æ³•è¿è¡Œæˆªè‡³æ—¶é—´ */
 	int runEndTime;
 	
 	/**
-	 * ¹¹Ôìº¯Êı
-	 * @param taskSet Ò»×éÊµÊ±ÈÎÎñ
-	 * @param runEndTime Ëã·¨ÔËĞĞ½ØÖÁÊ±¼ä
+	 * æ„é€ å‡½æ•°
+	 * @param taskSet ä¸€ç»„å®æ—¶ä»»åŠ¡
+	 * @param runEndTime ç®—æ³•è¿è¡Œæˆªè‡³æ—¶é—´
 	 */
 	public SchedulingAlgorithm(Vector<Task> taskSet, int runEndTime) {
 		this.TaskSet = taskSet;
@@ -34,7 +34,7 @@ public abstract class SchedulingAlgorithm {
 	}
 	
 	/**
-	 * ÏòÊµÊ±ÈÎÎñÖĞÌí¼ÓÒ»¸öÅ¼·¢ÈÎÎñ¡£µ÷¶ÈÅ¼·¢ÈÎÎñµÄµ÷¶ÈËã·¨ÏÖÊµÊ±ĞèÒªÖØĞ´
+	 * å‘å®æ—¶ä»»åŠ¡ä¸­æ·»åŠ ä¸€ä¸ªå¶å‘ä»»åŠ¡ã€‚è°ƒåº¦å¶å‘ä»»åŠ¡çš„è°ƒåº¦ç®—æ³•ç°å®æ—¶éœ€è¦é‡å†™
 	 * @param sporadicTask
 	 */
 	public void addTask(Task sporadicTask) {

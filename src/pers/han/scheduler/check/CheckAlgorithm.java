@@ -1,4 +1,4 @@
-package pers.han.scheduler.check;
+ï»¿package pers.han.scheduler.check;
 
 import java.util.Vector;
 
@@ -7,34 +7,34 @@ import pers.han.scheduler.task.Task;
 import pers.han.scheduler.task.TimeBlock;
 
 /**
- * Ğ£ÑéËã·¨µÄ»ùÀà
+ * æ ¡éªŒç®—æ³•çš„åŸºç±»
  * 
  * @author		hanYG
- * @createDate	2022Äê6ÔÂ1ÈÕ
- * @alterDate	2022Äê6ÔÂ1ÈÕ
- * 				2022Äê09Äê28ÈÕ Ìí¼ÓtearDownÉèÎªĞéº¯Êı
+ * @createDate	2022å¹´6æœˆ1æ—¥
+ * @alterDate	2022å¹´6æœˆ1æ—¥
+ * 				2022å¹´09å¹´28æ—¥ æ·»åŠ tearDownè®¾ä¸ºè™šå‡½æ•°
  * @version		1.0
  *
  */
 public abstract class CheckAlgorithm {
-	/** Ò»×éÊµÊ±ÈÎÎñ */
+	/** ä¸€ç»„å®æ—¶ä»»åŠ¡ */
 	Vector<Task> taskSet;
 	
-	/** µ÷¶È½á¹û */
+	/** è°ƒåº¦ç»“æœ */
 	Vector<TimeBlock> schedulingResult;
 	
-	/** µ÷¶ÈËã·¨Ö´ĞĞµÄÊ±¼ä */
+	/** è°ƒåº¦ç®—æ³•æ‰§è¡Œçš„æ—¶é—´ */
 	int deadline;
 	
 	/**
-	 * ¹¹Ôìº¯Êı
+	 * æ„é€ å‡½æ•°
 	 */
 	public CheckAlgorithm() {
 		
 	}
 	
 	/**
-	 * ³õÊ¼»¯³ÉÔ±±äÁ¿£¬ÔÚdoCheck·½·¨Ç°Ö´ĞĞ
+	 * åˆå§‹åŒ–æˆå‘˜å˜é‡ï¼Œåœ¨doCheckæ–¹æ³•å‰æ‰§è¡Œ
 	 * @param taskSet
 	 * @param schedulingResult
 	 */
@@ -45,14 +45,14 @@ public abstract class CheckAlgorithm {
 	}
 	
 	/**
-	 * ÔÚdoCheck·½·¨ºóÖ´ĞĞ
+	 * åœ¨doCheckæ–¹æ³•åæ‰§è¡Œ
 	 */
 	public abstract void tearDown();
 	
 	/**
-	 * Ö´ĞĞĞ£ÑéËã·¨
-	 * @param taskSet Ò»×éÊµÊ±ÈÎÎñ
-	 * @param schedulingResult µ÷¶È½á¹û
+	 * æ‰§è¡Œæ ¡éªŒç®—æ³•
+	 * @param taskSet ä¸€ç»„å®æ—¶ä»»åŠ¡
+	 * @param schedulingResult è°ƒåº¦ç»“æœ
 	 * @return CheckResultEnum
 	 */
 	public abstract CheckResultEnum doCheck();

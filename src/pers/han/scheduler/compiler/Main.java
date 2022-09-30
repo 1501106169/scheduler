@@ -1,4 +1,4 @@
-package pers.han.scheduler.compiler;
+ï»¿package pers.han.scheduler.compiler;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -11,10 +11,10 @@ public class Main {
 
 		ClassLoader classLoader = ClassLoader.getSystemClassLoader();
 		
-		// ¶¯Ì¬±àÒëÆ÷
+		// åŠ¨æ€ç¼–è¯‘å™¨
 		DynamicCompiler dynamicCompiler = new DynamicCompiler(classLoader);
 		
-		// Ìí¼Óµ½¶¯Ì¬±àÒëÆ÷ÆäµÄ´ı±àÒëÔ´ÎÄ¼şÖĞ
+		// æ·»åŠ åˆ°åŠ¨æ€ç¼–è¯‘å™¨å…¶çš„å¾…ç¼–è¯‘æºæ–‡ä»¶ä¸­
 		dynamicCompiler.addSource("Man", "import pers.han.scheduler.task.*; public class Man { public PeriodicTask hello () { PeriodicTask p = new PeriodicTask(2, 3); System.out.println(\"hello world\"); return p; }}");
 		
 		System.out.println(dynamicCompiler.build());

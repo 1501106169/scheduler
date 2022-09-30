@@ -1,19 +1,19 @@
-package pers.han.scheduler.io;
+ï»¿package pers.han.scheduler.io;
 
 import pers.han.scheduler.algroithms.SchedulingAlgorithm;
 
 /**
- * »ñÈ¡µ÷¶ÈËã·¨µÄ½Ó¿Ú
+ * è·å–è°ƒåº¦ç®—æ³•çš„æ¥å£
  * 
  * @author		hanYG
- * @createDate	2022Äê5ÔÂ29ÈÕ
- * @alterDate	2022Äê5ÔÂ29ÈÕ
+ * @createDate	2022å¹´5æœˆ29æ—¥
+ * @alterDate	2022å¹´5æœˆ29æ—¥
  * @version		1.0
  *
  */
 public interface InputAlgorithm {
 	/**
-	 * »ñÈ¡ÊäÈëµÄµ÷¶ÈËã·¨
+	 * è·å–è¾“å…¥çš„è°ƒåº¦ç®—æ³•
 	 * @return SchedulingAlgorithm
 	 */
 	public abstract SchedulingAlgorithm getAlgorithm();

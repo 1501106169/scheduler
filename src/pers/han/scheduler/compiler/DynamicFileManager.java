@@ -1,4 +1,4 @@
-package pers.han.scheduler.compiler;
+ï»¿package pers.han.scheduler.compiler;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +9,7 @@ import javax.tools.JavaFileManager;
 import javax.tools.JavaFileObject;
 
 /**
- * JavaÎÄ¼ş¹ÜÀí£¬getJavaFileForOutput»ñÈ¡Êä³öµÄJavaFileObject¶ÔÏó
+ * Javaæ–‡ä»¶ç®¡ç†ï¼ŒgetJavaFileForOutputè·å–è¾“å‡ºçš„JavaFileObjectå¯¹è±¡
  * FileName: DynamicFileManager.java
  * 
  * @author		hanYG
@@ -20,16 +20,16 @@ import javax.tools.JavaFileObject;
  */
 public class DynamicFileManager extends ForwardingJavaFileManager<JavaFileManager> {
 	
-	/** Àà¼ÓÔØÆ÷ */
+	/** ç±»åŠ è½½å™¨ */
 	private final DynamicClassLoader dynamicClassLoader;
 	
-	/** ËùÓĞÔ´´úÂëµÄ×Ö½ÚÁ÷Êä³ö¶ÔÏó */
+	/** æ‰€æœ‰æºä»£ç çš„å­—èŠ‚æµè¾“å‡ºå¯¹è±¡ */
 	private final List<DynamicByteCode> byteCodes = new ArrayList<DynamicByteCode>();
 	
 	/**
-	 * ¹¹Ôìº¯Êı£¬³õÊ¼»¯Àà¼ÓÔØÆ÷
+	 * æ„é€ å‡½æ•°ï¼Œåˆå§‹åŒ–ç±»åŠ è½½å™¨
 	 * @param fileManager JavaFileManager
-	 * @param dynamicClassLoader Àà¼ÓÔØÆ÷
+	 * @param dynamicClassLoader ç±»åŠ è½½å™¨
 	 */
 	public DynamicFileManager(JavaFileManager fileManager, DynamicClassLoader dynamicClassLoader) {
 		super(fileManager);

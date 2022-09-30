@@ -1,4 +1,4 @@
-package pers.han.scheduler.algroithms;
+﻿package pers.han.scheduler.algroithms;
 
 public abstract class LeastSlackTimeFirst {	
 

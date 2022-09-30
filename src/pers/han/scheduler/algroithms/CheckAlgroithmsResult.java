@@ -1,4 +1,4 @@
-package pers.han.scheduler.algroithms;
+ï»¿package pers.han.scheduler.algroithms;
 
 import java.util.ArrayList;
 
@@ -7,48 +7,48 @@ import pers.han.scheduler.task.TimeBlock;
 import pers.han.scheduler.task.*;
 // import java.util.Iterator;
 
-// ÆúÓÃ
+// å¼ƒç”¨
 
 
 /**
- * ¶Ôµ÷¶ÈËã·¨µÄ½á¹û½øĞĞĞ£Ñé
+ * å¯¹è°ƒåº¦ç®—æ³•çš„ç»“æœè¿›è¡Œæ ¡éªŒ
  * FileName: CheckAlgroithmsResult.java
  * 
  * @author		hanYG
  * @createDate	2021.09.10
- * @alterDate	2021.10.10	ĞŞ¸ÄÊ±¼äÖáÀàĞÍdouble->int
+ * @alterDate	2021.10.10	ä¿®æ”¹æ—¶é—´è½´ç±»å‹double->int
  * @version		1.1
  *
  */
 public class CheckAlgroithmsResult {
 	
 	/**
-	 * Ë½ÓĞ¹¹Ôìº¯Êı
+	 * ç§æœ‰æ„é€ å‡½æ•°
 	 */
 	private CheckAlgroithmsResult() {
 		
 	}
 	
 	/**
-	 * ¾²Ì¬·½·¨£¬Ğ£Ñé²»¿ÉÇÀÕ¼µÄÖÜÆÚĞÔÈÎÎñµ÷¶ÈËã·¨²úÉúµÄ½á¹û
-	 * @param periodicTaskList	Ò»×éÖÜÆÚĞÔÈÎÎñ
-	 * @param timeAxis			µ÷¶ÈËã·¨²úÉúµÄµ÷¶È½á¹û
+	 * é™æ€æ–¹æ³•ï¼Œæ ¡éªŒä¸å¯æŠ¢å çš„å‘¨æœŸæ€§ä»»åŠ¡è°ƒåº¦ç®—æ³•äº§ç”Ÿçš„ç»“æœ
+	 * @param periodicTaskList	ä¸€ç»„å‘¨æœŸæ€§ä»»åŠ¡
+	 * @param timeAxis			è°ƒåº¦ç®—æ³•äº§ç”Ÿçš„è°ƒåº¦ç»“æœ
 	 * @return					Boolean
 	 */
 	public static boolean checkPeriodicTask(ArrayList<PeriodicTask> periodicTaskList, ArrayList<TimeBlock> timeAxis) {
-		// ĞèÒªĞ£Ñé£¬¸÷¸öÈÎÎñÖ´ĞĞµÄ´ÎÊı
-		// ÑéÖ¤µ÷¶ÈÈÎÎñµÄÊ±¼äÖá
+		// éœ€è¦æ ¡éªŒï¼Œå„ä¸ªä»»åŠ¡æ‰§è¡Œçš„æ¬¡æ•°
+		// éªŒè¯è°ƒåº¦ä»»åŠ¡çš„æ—¶é—´è½´
 		int axis = 0;
-		// ¼ÇÂ¼Ã¿Ò»¸öÖÜÆÚĞÔÈÎÎñÔÚµ±Ç°ÖÜÆÚµÄÊÍ·ÅÊ±¼äºÍÊ±ÏŞ
+		// è®°å½•æ¯ä¸€ä¸ªå‘¨æœŸæ€§ä»»åŠ¡åœ¨å½“å‰å‘¨æœŸçš„é‡Šæ”¾æ—¶é—´å’Œæ—¶é™
 		ArrayList<TimeSpan> nextStopTaskTime = new ArrayList<TimeSpan>();
 		// Iterator<PeriodicTask> periodicTaskListIterator = periodicTaskList.iterator();
 		for (PeriodicTask task : periodicTaskList) {
 			nextStopTaskTime.add(new TimeSpan(task));
 		}
-		// Ğ£ÑéÖÜÆÚĞÔÈÎÎñµÄµ÷¶ÈÊÇ·ñºÏÀí
+		// æ ¡éªŒå‘¨æœŸæ€§ä»»åŠ¡çš„è°ƒåº¦æ˜¯å¦åˆç†
 		for (TimeBlock timeBlock : timeAxis) {
 			int taskId = timeBlock.getId();
-			// µ±Ò»¸öÖÜÆÚĞÔÈÎÎñµÄ¿ªÊ¼Ê±¼äÔÚÊ±¼äÖáÖ®ºó£¬ÇÒ¿ªÊ¼Ê±¼äºÍ½áÊøÊ±¼äÔÚµ±Ç°ÖÜÆÚµÄ·¶Î§ÄÚÊ±ÈÎÎñµ÷¶ÈÓĞĞ§
+			// å½“ä¸€ä¸ªå‘¨æœŸæ€§ä»»åŠ¡çš„å¼€å§‹æ—¶é—´åœ¨æ—¶é—´è½´ä¹‹åï¼Œä¸”å¼€å§‹æ—¶é—´å’Œç»“æŸæ—¶é—´åœ¨å½“å‰å‘¨æœŸçš„èŒƒå›´å†…æ—¶ä»»åŠ¡è°ƒåº¦æœ‰æ•ˆ
 			if (timeBlock.getStartTime() >= axis && timeBlock.getStartTime() >= nextStopTaskTime.get(taskId).getStartTime() && timeBlock.getExecTime() + timeBlock.getStartTime() <= nextStopTaskTime.get(taskId).getEndTime()) {
 				nextStopTaskTime.get(taskId).nextPeriodic();
 				axis = timeBlock.getStartTime() + timeBlock.getExecTime();

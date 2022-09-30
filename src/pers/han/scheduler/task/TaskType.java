@@ -1,20 +1,20 @@
-package pers.han.scheduler.task;
+ï»¿package pers.han.scheduler.task;
 
 /**
- * ÈÎÎñÀàĞÍÃ¶¾Ù
+ * ä»»åŠ¡ç±»å‹æšä¸¾
  * FileName: TaskTye.java
  * 
  * @author		hanYG
  * @createDate	2021.06.17
- * @alterDate	2021.06.17		ÆúÓÃ
+ * @alterDate	2021.06.17		å¼ƒç”¨
  * @version		1.0
  * 
  */
 public enum TaskType {
-	/** ÖÜÆÚĞÔÈÎÎñ */
+	/** å‘¨æœŸæ€§ä»»åŠ¡ */
 	PERIODIC,
-	/** ·ÇÖÜÆÚĞÔÈÎÎñ */
+	/** éå‘¨æœŸæ€§ä»»åŠ¡ */
 	APERIODIC,
-	/** Å¼·¢ĞÔÈÎÎñ */
+	/** å¶å‘æ€§ä»»åŠ¡ */
 	SPORADIC;
 }

@@ -1,4 +1,4 @@
-package pers.han.scheduler.algroithms;
+ï»¿package pers.han.scheduler.algroithms;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -7,10 +7,10 @@ import java.util.Iterator;
 
 import pers.han.scheduler.task.*;
 
-// ÆúÓÃ
+// å¼ƒç”¨
 
 /**
- * ×îÔçÊ±ÏŞÓÅÏÈËã·¨ 
+ * æœ€æ—©æ—¶é™ä¼˜å…ˆç®—æ³• 
  * FileName: EarlistDeadlineFirst.java
  * 
  * @author		hanYG
@@ -26,15 +26,15 @@ public class EarlistDeadlineFirst {
 	}
 	
 	/**
-	 * »ùÓÚEDFµÄÖÜÆÚĞÔÈÎÎñµ÷¶ÈËã·¨£¬×îĞ¡Ê±ÏŞ×î¶ÌÖ´ĞĞÊ±¼äÓÅÏÈ
-	 * @param periodicTaskList	ÖÜÆÚĞÔÈÎÎñÊı×é
-	 * @return ArrayList<TimeBlock> Ê±¼äÖá£¬Ã¿¶ÎÊ±¼äÄÚÖ´ĞĞµÄÈÎÎñ
+	 * åŸºäºEDFçš„å‘¨æœŸæ€§ä»»åŠ¡è°ƒåº¦ç®—æ³•ï¼Œæœ€å°æ—¶é™æœ€çŸ­æ‰§è¡Œæ—¶é—´ä¼˜å…ˆ
+	 * @param periodicTaskList	å‘¨æœŸæ€§ä»»åŠ¡æ•°ç»„
+	 * @return ArrayList<TimeBlock> æ—¶é—´è½´ï¼Œæ¯æ®µæ—¶é—´å†…æ‰§è¡Œçš„ä»»åŠ¡
 	 */
 	public static ArrayList<TimeBlock> periodicEDF(ArrayList<PeriodicTask> periodicTaskList) {
-		// ÈÎÎñÖ´ĞĞµÄÊ±¼ä¶Î
+		// ä»»åŠ¡æ‰§è¡Œçš„æ—¶é—´æ®µ
 		ArrayList<TimeBlock> timeAxis = new ArrayList<TimeBlock>();
 		
-		// Ê¹ÓÃQueue´æ´¢TimeBlock
+		// ä½¿ç”¨Queueå­˜å‚¨TimeBlock
 		/*
 		timeAxis.add(new TimeBlock(0, 0, 10));
 		timeAxis.add(new TimeBlock(1, 10, 18));
@@ -49,20 +49,20 @@ public class EarlistDeadlineFirst {
 		timeAxis.add(new TimeBlock(0, 170, 10));
 		*/
 		
-		// Ê±¼äÖá
+		// æ—¶é—´è½´
 		int axis = 0;
 		
-		// »ñµÃÒ»×éÈÎÎñµÄ³¬ÖÜÆÚ
+		// è·å¾—ä¸€ç»„ä»»åŠ¡çš„è¶…å‘¨æœŸ
 		int hyperperiod = getHyperperiod(periodicTaskList);
 		
-		// ´æ´¢ÏÂÒ»¸öÈÎÎñÖ´ĞĞµÄÊÍ·ÅÊ±¿Ì¡¢Ö´ĞĞÊ±¼ä¡¢Ê±ÏŞ
+		// å­˜å‚¨ä¸‹ä¸€ä¸ªä»»åŠ¡æ‰§è¡Œçš„é‡Šæ”¾æ—¶åˆ»ã€æ‰§è¡Œæ—¶é—´ã€æ—¶é™
 		ArrayList<TimeSpan> nextStopTaskTime = new ArrayList<TimeSpan>();		
 		for (PeriodicTask periodicTask : periodicTaskList) {
 			nextStopTaskTime.add(new TimeSpan(periodicTask));
 		}
 		
 		while (axis < hyperperiod) {
-			// µ±Î´µ½ÈÎÎñÊÍ·ÅÊ±¼ä£¬ÈÎÎñ²»¿ÉÖ´ĞĞ
+			// å½“æœªåˆ°ä»»åŠ¡é‡Šæ”¾æ—¶é—´ï¼Œä»»åŠ¡ä¸å¯æ‰§è¡Œ
 			int leastTaskIndex = getLeastDeadlineIndex(nextStopTaskTime, axis);
 			if (leastTaskIndex == -1) {
 				leastTaskIndex = getLeastStartTimeIndex(nextStopTaskTime);
@@ -79,8 +79,8 @@ public class EarlistDeadlineFirst {
 	}
 	
 	/**
-	 * »ñÈ¡Ò»×éÖÜÆÚÈÎÎñµÄ³¬ÖÜÆÚ
-	 * @param periodicTaskList	Ò»×éÖÜÆÚĞÔÈÎÎñ
+	 * è·å–ä¸€ç»„å‘¨æœŸä»»åŠ¡çš„è¶…å‘¨æœŸ
+	 * @param periodicTaskList	ä¸€ç»„å‘¨æœŸæ€§ä»»åŠ¡
 	 * @return Integer
 	 */
 	private static int getHyperperiod(ArrayList<PeriodicTask> periodicTaskList) {
@@ -92,9 +92,9 @@ public class EarlistDeadlineFirst {
 	}
 	
 	/**
-	 * »ñÈ¡Ò»×éÖÜÆÚÈÎÎñÖĞÔÚÊÍ·ÅÊ±¼äÖ®ºóµÄ×îĞ¡Ê±ÏŞ×î¶ÌÈÎÎñµÄË÷Òı
-	 * @param timeSpanList	Ò»×éÖÜÆÚĞÔÈÎÎñµÄÏÂÒ»¸öÖ´ĞĞ½×¶Î
-	 * @param axis	µ±Ç°Ê±¼äÖáÊ±¼ä
+	 * è·å–ä¸€ç»„å‘¨æœŸä»»åŠ¡ä¸­åœ¨é‡Šæ”¾æ—¶é—´ä¹‹åçš„æœ€å°æ—¶é™æœ€çŸ­ä»»åŠ¡çš„ç´¢å¼•
+	 * @param timeSpanList	ä¸€ç»„å‘¨æœŸæ€§ä»»åŠ¡çš„ä¸‹ä¸€ä¸ªæ‰§è¡Œé˜¶æ®µ
+	 * @param axis	å½“å‰æ—¶é—´è½´æ—¶é—´
 	 * @return	Integer
 	 */
 	private static int getLeastDeadlineIndex(ArrayList<TimeSpan> timeSpanList, int axis) {
@@ -115,8 +115,8 @@ public class EarlistDeadlineFirst {
 	}
 	
 	/**
-	 * »ñÈ¡ÊÍ·ÅÊ±¼ä×îĞ¡µÄÈÎÎñË÷Òı
-	 * @param timeSpanList	Ò»×éÖÜÆÚĞÔÈÎÎñµÄÏÂÒ»¸öÖ´ĞĞ½×¶Î
+	 * è·å–é‡Šæ”¾æ—¶é—´æœ€å°çš„ä»»åŠ¡ç´¢å¼•
+	 * @param timeSpanList	ä¸€ç»„å‘¨æœŸæ€§ä»»åŠ¡çš„ä¸‹ä¸€ä¸ªæ‰§è¡Œé˜¶æ®µ
 	 * @return	Integer
 	 */
 	private static int getLeastStartTimeIndex(ArrayList<TimeSpan> timeSpanList) {

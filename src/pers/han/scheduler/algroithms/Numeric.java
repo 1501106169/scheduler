@@ -1,9 +1,9 @@
-package pers.han.scheduler.algroithms;
+ï»¿package pers.han.scheduler.algroithms;
 
 import java.util.ArrayList;
 
 /**
- * °üº¬Ò»×éÊıÑ§Ëã·¨
+ * åŒ…å«ä¸€ç»„æ•°å­¦ç®—æ³•
  * FileName: numeric.java
  * 
  * @author		hanYG
@@ -14,21 +14,21 @@ import java.util.ArrayList;
  */
 public class Numeric {
 	/**
-	 * Ë½ÓĞ¹¹Ôìº¯Êı£¬¸ÃÀà²»¿ÉÊµÀı»¯
+	 * ç§æœ‰æ„é€ å‡½æ•°ï¼Œè¯¥ç±»ä¸å¯å®ä¾‹åŒ–
 	 */
 	private Numeric() {
 		
 	}
 	
 	/**
-	 * ¾²Ì¬º¯Êı£¬¼ÆËã×îĞ¡¹«±¶Êı
+	 * é™æ€å‡½æ•°ï¼Œè®¡ç®—æœ€å°å…¬å€æ•°
 	 * @param digitalList
 	 * @return
 	 */
 	public static int leastCommonMultiple(ArrayList<Integer> digitalList) {
 		int digitalListLen = digitalList.size();
 		if (digitalListLen < 2) {
-			throw new Error("Êı×é³¤¶ÈĞ¡ÓÚ2£¡");
+			throw new Error("æ•°ç»„é•¿åº¦å°äº2ï¼");
 		}
 		int lcm = digitalList.get(0);
 		for (int i = 1; i < digitalListLen; ++i) {
@@ -38,20 +38,20 @@ public class Numeric {
 	}
 	
 	/**
-	 * ¼ÆËãÁ½¸öÊıµÄ×îĞ¡¹«±¶Êı
-	 * @param a	Êı×Öa
-	 * @param b	Êı×Öb
+	 * è®¡ç®—ä¸¤ä¸ªæ•°çš„æœ€å°å…¬å€æ•°
+	 * @param a	æ•°å­—a
+	 * @param b	æ•°å­—b
 	 * @return	Integer
 	 */
 	public static int leastCommonMultiple(int a, int b) {
 		if (a == 0 || b == 0) {
-			throw new Error("Çó×îĞ¡¹«±¶ÊıµÄÁ½¸öÊı¾ù²»¿ÉÎª0£¡");
+			throw new Error("æ±‚æœ€å°å…¬å€æ•°çš„ä¸¤ä¸ªæ•°å‡ä¸å¯ä¸º0ï¼");
 		}
 		return a * b / greatestCommonDivisor(a, b);
 	}
 	
 	/**
-	 * ¼ÆËã×î´ó¹«Ô¼Êı
+	 * è®¡ç®—æœ€å¤§å…¬çº¦æ•°
 	 * @return	Integer
 	 */
 	public static int greatestCommonDivisor(ArrayList<Integer> digitalList) {
@@ -60,14 +60,14 @@ public class Numeric {
 	}
 	
 	/**
-	 * ¼ÆËãÁ½¸öÊıµÄ×î´ó¹«Ô¼Êı
-	 * @param a	Êı×Öa
-	 * @param b	Êı×Öb
+	 * è®¡ç®—ä¸¤ä¸ªæ•°çš„æœ€å¤§å…¬çº¦æ•°
+	 * @param a	æ•°å­—a
+	 * @param b	æ•°å­—b
 	 * @return	Integer
 	 */
 	public static int greatestCommonDivisor(int a, int b) {
 		if (a == 0 || b == 0) {
-			throw new Error("Çó×î´ó¹«Ô¼ÊıµÄÁ½¸öÊı¾ù²»¿ÉÎª0£¡");
+			throw new Error("æ±‚æœ€å¤§å…¬çº¦æ•°çš„ä¸¤ä¸ªæ•°å‡ä¸å¯ä¸º0ï¼");
 		}
 		int max = a > b ? a : b;
 		int min = max == a ? b : a;

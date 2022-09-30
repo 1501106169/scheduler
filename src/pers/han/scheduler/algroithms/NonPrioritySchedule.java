@@ -1,11 +1,11 @@
-package pers.han.scheduler.algroithms;
+ï»¿package pers.han.scheduler.algroithms;
 
 import java.util.ArrayList;
 
 import pers.han.scheduler.task.*;
 
 /**
- * ÎŞÓÅÏÈ¼¶Ëã·¨
+ * æ— ä¼˜å…ˆçº§ç®—æ³•
  * FileName: NonPrioritySchedule.java
  * 
  * @author		hanYG
@@ -19,9 +19,9 @@ public class NonPrioritySchedule {
 	private NonPrioritySchedule() { }
 	
 	/**
-	 * FIFOµ÷¶È£¬ÏÈ¾ÍĞ÷µÄÈÎÎñÏÈµ÷¶È
-	 * @param periodicTaskList Ò»×éÖÜÆÚĞÔÈÎÎñ
-	 * @return ArrayList<TimeBlock> Ê±¼äÖá£¬Ã¿¶ÎÊ±¼äÄÚÖ´ĞĞµÄÈÎÎñ
+	 * FIFOè°ƒåº¦ï¼Œå…ˆå°±ç»ªçš„ä»»åŠ¡å…ˆè°ƒåº¦
+	 * @param periodicTaskList ä¸€ç»„å‘¨æœŸæ€§ä»»åŠ¡
+	 * @return ArrayList<TimeBlock> æ—¶é—´è½´ï¼Œæ¯æ®µæ—¶é—´å†…æ‰§è¡Œçš„ä»»åŠ¡
 	 */
 	public static ArrayList<TimeBlock> fifoSchedule(ArrayList<PeriodicTask> periodicTaskList) {
 		ArrayList<TimeBlock> timeAxis = new ArrayList<TimeBlock>();
@@ -30,9 +30,9 @@ public class NonPrioritySchedule {
 	}
 	
 	/**
-	 * ÂÖ×ªµ÷¶È£¬Round-Robin
-	 * @param periodicTaskList Ò»×éÖÜÆÚĞÔÈÎÎñ
-	 * @return ArrayList<TimeBlock> Ê±¼äÖá£¬Ã¿¶ÎÊ±¼äÄÚÖ´ĞĞµÄÈÎÎñ
+	 * è½®è½¬è°ƒåº¦ï¼ŒRound-Robin
+	 * @param periodicTaskList ä¸€ç»„å‘¨æœŸæ€§ä»»åŠ¡
+	 * @return ArrayList<TimeBlock> æ—¶é—´è½´ï¼Œæ¯æ®µæ—¶é—´å†…æ‰§è¡Œçš„ä»»åŠ¡
 	 */
 	public static ArrayList<TimeBlock> roundRobin(ArrayList<PeriodicTask> periodicTaskList) {
 		ArrayList<TimeBlock> timeAxis = new ArrayList<TimeBlock>();

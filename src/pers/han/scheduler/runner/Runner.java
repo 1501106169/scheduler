@@ -1,4 +1,4 @@
-package pers.han.scheduler.runner;
+ï»¿package pers.han.scheduler.runner;
 
 import java.util.Vector;
 
@@ -12,29 +12,29 @@ import pers.han.scheduler.check.*;
 public class Runner {
 
 	public static void main(String[] args) {
-		// ÊäÈë
+		// è¾“å…¥
 		InputTaskData in = new InputTaskDataFromFile("dirPath");
 		Vector<Vector<Task>> taskSuit = in.getTaskData();
 		
-		// Ö´ÐÐËã·¨
+		// æ‰§è¡Œç®—æ³•
 		RunAlgorithm algorithmCase = new RunAlgorithmCase(taskSuit.get(0), 200);
 		
-		// ÉèÖÃµ÷¶ÈËã·¨ºÍÐ£ÑéËã·¨
+		// è®¾ç½®è°ƒåº¦ç®—æ³•å’Œæ ¡éªŒç®—æ³•
 		SchedulingAlgorithm schedulingAlgorithm = new PeriodicSchedulingAlgorithm();
 		CheckAlgorithm checkAlgorithm = new PeriodicCheckAlgorithm();
 		algorithmCase.setSchedulingAlgorithm(schedulingAlgorithm);
 		algorithmCase.setCheckAlgorithm(checkAlgorithm);
 		
-		// Ö´ÐÐµ÷¶ÈËã·¨
+		// æ‰§è¡Œè°ƒåº¦ç®—æ³•
 		algorithmCase.runSchedulingAlgorithm();
-		// Ö´ÐÐÐ£ÑéËã·¨
+		// æ‰§è¡Œæ ¡éªŒç®—æ³•
 		algorithmCase.runCheckAlgorithm();
 		
-		// ¼ÆËãµ÷¶ÈËã·¨ÐÔÄÜ
+		// è®¡ç®—è°ƒåº¦ç®—æ³•æ€§èƒ½
 		PerformanceTest pt = new PerformanceTest(algorithmCase);
 		System.out.println(pt.calcTimeUtilization());
 		
-		// Êä³ö
+		// è¾“å‡º
 		OutputSchedulingResult out = new OutputForTerminal(algorithmCase);
 		out.outSchedulingResult();
 		

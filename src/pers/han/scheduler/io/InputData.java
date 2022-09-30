@@ -1,4 +1,4 @@
-package pers.han.scheduler.io;
+ï»¿package pers.han.scheduler.io;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import pers.han.scheduler.task.*;
 
 /**
- * ¶ÁÈ¡²âÊÔÓÃÀıÊı¾İ
+ * è¯»å–æµ‹è¯•ç”¨ä¾‹æ•°æ®
  * FileName: Inputdata.java
  * 
  * @author		hanYG
@@ -19,13 +19,13 @@ import pers.han.scheduler.task.*;
 public class InputData {
 	
 	/**
-	 * ¶ÁÈ¡ÎÄ¼şÖĞµÄÈÎÎñÊı¾İ
-	 * @param filePath	ÎÄ¼şÂ·¾¶£¬°üº¬ÎÄ¼şÃû
+	 * è¯»å–æ–‡ä»¶ä¸­çš„ä»»åŠ¡æ•°æ®
+	 * @param filePath	æ–‡ä»¶è·¯å¾„ï¼ŒåŒ…å«æ–‡ä»¶å
 	 * @return	ArrayList<Task>
 	 */
 	public static ArrayList<Task> readFileDate(String filePath) {
 		/*
-		 * ÈÎÎñÀàĞÍ	ÊÍ·ÅÊ±¼ä		ÖÜÆÚ		Ö´ĞĞÊ±¼ä		Ê±ÏŞ
+		 * ä»»åŠ¡ç±»å‹	é‡Šæ”¾æ—¶é—´		å‘¨æœŸ		æ‰§è¡Œæ—¶é—´		æ—¶é™
 		 * PERIODIC
 		 * 			0			40		10			40
 		 * 			0			50		18			50
@@ -33,10 +33,10 @@ public class InputData {
 		 * 			0			200		20			200
 		 * 
 		 * APERIODIC
-		 * 			ÊÍ·ÅÊ±¼ä				Ö´ĞĞÊ±¼ä		Ê±ÏŞ
+		 * 			é‡Šæ”¾æ—¶é—´				æ‰§è¡Œæ—¶é—´		æ—¶é™
 		 * 
 		 * SPORADIC
-		 * 			²»Ğ´ÔÚÎÄ¼şÖĞ £¿£¿£¿
+		 * 			ä¸å†™åœ¨æ–‡ä»¶ä¸­ ï¼Ÿï¼Ÿï¼Ÿ
 		 */
 		// ArrayList<PeriodicTask> periodicTaskList = new ArrayList<PeriodicTask>();
 		ArrayList<Task> periodicTaskList = new ArrayList<Task>();
@@ -45,10 +45,10 @@ public class InputData {
 			br = new BufferedReader(new FileReader(filePath));
 			String s = null;
 			while ((s = br.readLine()) != null) {
-				// ÕıÔò±í´ïÊ½Æ¥Åä¿Õ¸ñ»òTab»ò¿Õ¸ñºÍTan
+				// æ­£åˆ™è¡¨è¾¾å¼åŒ¹é…ç©ºæ ¼æˆ–Tabæˆ–ç©ºæ ¼å’ŒTan
 				String[] strList = s.split("\t|\s|\t\s");
 				
-				// ¹¤³§Ä£Ê½£¬ĞèÒª¹¤³§°ïÎÒ´´½¨ÈÎÎñ×ÓÀà¶ÔÏóµÄÊµÀı
+				// å·¥å‚æ¨¡å¼ï¼Œéœ€è¦å·¥å‚å¸®æˆ‘åˆ›å»ºä»»åŠ¡å­ç±»å¯¹è±¡çš„å®ä¾‹
 				
 				periodicTaskList.add(new PeriodicTask(Integer.parseInt(strList[0]), Integer.parseInt(strList[1]), Integer.parseInt(strList[2]), Integer.parseInt(strList[3])));
 			}

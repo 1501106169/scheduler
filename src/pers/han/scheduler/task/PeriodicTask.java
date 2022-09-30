@@ -1,35 +1,35 @@
-package pers.han.scheduler.task;
+ï»¿package pers.han.scheduler.task;
 
 /**
- * ÖÜÆÚĞÔÈÎÎñ
+ * å‘¨æœŸæ€§ä»»åŠ¡
  * 
  * @author		hanYG
- * @createDate	2021Äê6ÔÂ17ÈÕ
- * @alterDate	2021Äê10ÔÂ10ÈÕ
- * 				2022Äê6ÔÂ19ÈÕ	Ìí¼ÓÊôĞÔcycleStartTime
- * 				2022Äê09ÔÂ28ÈÕ Ìí¼Ó¿½±´º¯Êı
+ * @createDate	2021å¹´6æœˆ17æ—¥
+ * @alterDate	2021å¹´10æœˆ10æ—¥
+ * 				2022å¹´6æœˆ19æ—¥	æ·»åŠ å±æ€§cycleStartTime
+ * 				2022å¹´09æœˆ28æ—¥ æ·»åŠ æ‹·è´å‡½æ•°
  * @version		1.0
  *
  */
 public class PeriodicTask extends Task {
 	
-	/** ÈÎÎñÖÜÆÚ */
+	/** ä»»åŠ¡å‘¨æœŸ */
 	protected int taskPeriodic;
 	
-	/** ÏÂÒ»¸öÖÜÆÚµÄ¿ªÊ¼Ê±¼ä */
+	/** ä¸‹ä¸€ä¸ªå‘¨æœŸçš„å¼€å§‹æ—¶é—´ */
 	protected int cycleStartTime = 0;
 	
 	/**
-	 * ¹¹Ôìº¯Êı
-	 * @param taskPhase ÏàÎ»
-	 * @param taskPeriodic ÖÜÆÚ
-	 * @param jobExecTime Ö´ĞĞÊ±¼ä
-	 * @param jobDeadline ½ØÖÁÊ±¼ä
-	 * @param taskPriority ÓÅÏÈ¼¶
-	 * @param jobPreempt ÊÇ·ñ¿ÉÇÀÕ¼
+	 * æ„é€ å‡½æ•°
+	 * @param taskPhase ç›¸ä½
+	 * @param taskPeriodic å‘¨æœŸ
+	 * @param jobExecTime æ‰§è¡Œæ—¶é—´
+	 * @param jobDeadline æˆªè‡³æ—¶é—´
+	 * @param taskPriority ä¼˜å…ˆçº§
+	 * @param jobPreempt æ˜¯å¦å¯æŠ¢å 
 	 */
 	public PeriodicTask(int taskPhase, int taskPeriodic, int jobExecTime, int jobDeadline, int taskPriority, JobPreemption jobPreempt) {
-		// ÏàÎ»£¬ÊÍ·ÅÊ±¼ä
+		// ç›¸ä½ï¼Œé‡Šæ”¾æ—¶é—´
 		this.jobReleaseTime = taskPhase;
 		this.jobDeadline = jobDeadline;
 		this.taskPeriodic = taskPeriodic;
@@ -40,68 +40,68 @@ public class PeriodicTask extends Task {
 	
 	
 	/**
-	 * ¹¹Ôìº¯Êı£¬ÎŞÓÅÏÈ¼¶¡¢²»¿ÉÇÀÕ¼
-	 * @param taskPhase		ÖÜÆÚĞÔÈÎÎñµÄÏàÎ»
-	 * @param taskPeriodic	ÖÜÆÚĞÔÈÎÎñµÄÖÜÆÚ
-	 * @param jobExecTime	ÖÜÆÚĞÔÈÎÎñµÄÖ´ĞĞÊ±¼ä
-	 * @param jobDeadline	ÖÜÆÚĞÔÈÎÎñµÄÊ±ÏŞ
+	 * æ„é€ å‡½æ•°ï¼Œæ— ä¼˜å…ˆçº§ã€ä¸å¯æŠ¢å 
+	 * @param taskPhase		å‘¨æœŸæ€§ä»»åŠ¡çš„ç›¸ä½
+	 * @param taskPeriodic	å‘¨æœŸæ€§ä»»åŠ¡çš„å‘¨æœŸ
+	 * @param jobExecTime	å‘¨æœŸæ€§ä»»åŠ¡çš„æ‰§è¡Œæ—¶é—´
+	 * @param jobDeadline	å‘¨æœŸæ€§ä»»åŠ¡çš„æ—¶é™
 	 */
 	public PeriodicTask(int taskPhase, int taskPeriodic, int jobExecTime, int jobDeadline) {
-		// ²»¿ÉÇÀÕ¼
+		// ä¸å¯æŠ¢å 
 		this.jobPreempt = JobPreemption.NONPREEMPTABLE;
-		// Ê±ÏŞ
+		// æ—¶é™
 		this.jobDeadline = jobDeadline;
-		// ÖÜÆÚ
+		// å‘¨æœŸ
 		this.taskPeriodic = taskPeriodic;
-		// Ö´ĞĞÊ±¼ä
+		// æ‰§è¡Œæ—¶é—´
 		this.jobExecTime = jobExecTime;
-		// ÏàÎ»
+		// ç›¸ä½
 		this.jobReleaseTime = taskPhase;
 		this.taskPriority = 0;
 	}
 
 	/**
-	 * ¹¹Ôìº¯Êı£¬ÎŞÓÅÏÈ¼¶¡¢²»¿ÉÇÀÕ¼
-	 * @param taskPeriodic	ÖÜÆÚĞÔÈÎÎñµÄÖÜÆÚ
-	 * @param jobExecTime	ÖÜÆÚĞÔÈÎÎñµÄÖ´ĞĞÊ±¼ä
-	 * @param jobDeadline	ÖÜÆÚĞÔÈÎÎñµÄÊ±ÏŞ
+	 * æ„é€ å‡½æ•°ï¼Œæ— ä¼˜å…ˆçº§ã€ä¸å¯æŠ¢å 
+	 * @param taskPeriodic	å‘¨æœŸæ€§ä»»åŠ¡çš„å‘¨æœŸ
+	 * @param jobExecTime	å‘¨æœŸæ€§ä»»åŠ¡çš„æ‰§è¡Œæ—¶é—´
+	 * @param jobDeadline	å‘¨æœŸæ€§ä»»åŠ¡çš„æ—¶é™
 	 */
 	public PeriodicTask(int taskPeriodic, int jobExecTime, int jobDeadline) {
-		// ²»¿ÉÇÀÕ¼
+		// ä¸å¯æŠ¢å 
 		this.jobPreempt = JobPreemption.NONPREEMPTABLE;
-		// Ê±ÏŞ
+		// æ—¶é™
 		this.jobDeadline = jobDeadline;
-		// ÖÜÆÚ
+		// å‘¨æœŸ
 		this.taskPeriodic = taskPeriodic;
-		// Ö´ĞĞÊ±¼ä
+		// æ‰§è¡Œæ—¶é—´
 		this.jobExecTime = jobExecTime;
-		// ÏàÎ»ÏàÎ»µÈÓÚ0
+		// ç›¸ä½ç›¸ä½ç­‰äº0
 		this.jobReleaseTime = 0;
 		this.taskPriority = 0;
 	}
 	
 	/**
-	 * ¹¹Ôìº¯Êı£¬ÎŞÓÅÏÈ¼¶¡¢²»¿ÉÇÀÕ¼
-	 * @param taskPeriodic	ÖÜÆÚĞÔÈÎÎñµÄÖÜÆÚ
-	 * @param jobExecTime	ÖÜÆÚĞÔÈÎÎñµÄÖ´ĞĞÊ±¼ä
+	 * æ„é€ å‡½æ•°ï¼Œæ— ä¼˜å…ˆçº§ã€ä¸å¯æŠ¢å 
+	 * @param taskPeriodic	å‘¨æœŸæ€§ä»»åŠ¡çš„å‘¨æœŸ
+	 * @param jobExecTime	å‘¨æœŸæ€§ä»»åŠ¡çš„æ‰§è¡Œæ—¶é—´
 	 */
 	public PeriodicTask(int taskPeriodic, int jobExecTime) {
-		// ²»¿ÉÇÀÕ¼
+		// ä¸å¯æŠ¢å 
 		this.jobPreempt = JobPreemption.NONPREEMPTABLE;
-		// Ê±ÏŞµÈÓÚÖÜÆÚ
+		// æ—¶é™ç­‰äºå‘¨æœŸ
 		this.jobDeadline = taskPeriodic;
-		// ÖÜÆÚ
+		// å‘¨æœŸ
 		this.taskPeriodic = taskPeriodic;
-		// Ö´ĞĞÊ±¼ä
+		// æ‰§è¡Œæ—¶é—´
 		this.jobExecTime = jobExecTime;
-		// ÏàÎ»µÈÓÚ0
+		// ç›¸ä½ç­‰äº0
 		this.jobReleaseTime = 0;
 		this.taskPriority = 0;
 	}
 	
 	/**
-	 * ¿½±´¹¹Ôìº¯Êı
-	 * @param periodicTask ÖÜÆÚĞÔÈÎÎñ
+	 * æ‹·è´æ„é€ å‡½æ•°
+	 * @param periodicTask å‘¨æœŸæ€§ä»»åŠ¡
 	 */
 	public PeriodicTask(PeriodicTask periodicTask) {
 		this.jobDeadline = periodicTask.getJobDeadline();
@@ -113,7 +113,7 @@ public class PeriodicTask extends Task {
 	}
 	
 	/**
-	 * »ñÈ¡ÖÜÆÚĞÔÈÎÎñÖÜÆÚ
+	 * è·å–å‘¨æœŸæ€§ä»»åŠ¡å‘¨æœŸ
 	 * @return int
 	 */
 	public int getTaskPeriodic() {
@@ -121,7 +121,7 @@ public class PeriodicTask extends Task {
 	}
 	
 	/**
-	 * »ñÈ¡ÖÜÆÚĞÔÈÎÎñµÄÏÂÒ»¸öÖÜÆÚ¿ªÊ¼Ê±¼ä
+	 * è·å–å‘¨æœŸæ€§ä»»åŠ¡çš„ä¸‹ä¸€ä¸ªå‘¨æœŸå¼€å§‹æ—¶é—´
 	 * @return
 	 */
 	public int getCycleStartTime() {
@@ -129,7 +129,7 @@ public class PeriodicTask extends Task {
 	}
 	
 	/**
-	 * ÖÜÆÚĞÔÈÎÎñ½øÈëÏÂÒ»¸öÖÜÆÚ
+	 * å‘¨æœŸæ€§ä»»åŠ¡è¿›å…¥ä¸‹ä¸€ä¸ªå‘¨æœŸ
 	 */
 	public void nextCycle() {
 		this.cycleStartTime += this.taskPeriodic;
