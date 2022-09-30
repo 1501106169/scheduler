@@ -38,8 +38,6 @@ public class Runner {
 		OutputSchedulingResult out = new OutputForTerminal(algorithmCase);
 		out.outSchedulingResult();
 		
-		System.out.println((taskSuit.get(0).get(0).getClass() == pers.han.scheduler.task.PeriodicTask.class));
-		
 	}
 
 }

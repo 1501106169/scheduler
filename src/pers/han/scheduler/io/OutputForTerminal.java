@@ -33,6 +33,8 @@ public class OutputForTerminal implements OutputSchedulingResult {
 		for (TimeBlock t : algorithmCase.getSchedulingResult()) {
 			System.out.print(algorithmCase.getTaskSet().get(t.getTaskId()));
 			System.out.print("--");
+			System.out.print(t.getTaskId());
+			System.out.print("--");
 			System.out.print(t.getStartTime());
 			System.out.print("--");
 			System.out.print(t.getExecTime());

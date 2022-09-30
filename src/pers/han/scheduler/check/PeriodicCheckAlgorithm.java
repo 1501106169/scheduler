@@ -22,15 +22,16 @@ public class PeriodicCheckAlgorithm extends CheckAlgorithm {
 	public CheckResultEnum doCheck() {
 		Vector<PeriodicTask> periodicTaskSet = new Vector<PeriodicTask>();
 		for (Task task : this.taskSet) {
-			periodicTaskSet.add((PeriodicTask)task);
+			periodicTaskSet.add((PeriodicTask)task.clone());
 		}
 
 		for (TimeBlock timeBlock : this.schedulingResult) {
-			if (timeBlock.getStartTime() >= periodicTaskSet.get(timeBlock.getTaskId()).getCycleStartTime()
-					&& timeBlock.getStartTime() + timeBlock.getExecTime() <= periodicTaskSet.get(timeBlock.getTaskId()).getCycleStartTime() + periodicTaskSet.get(timeBlock.getTaskId()).getJobDeadline()
-					&& timeBlock.getExecTime() == periodicTaskSet.get(timeBlock.getTaskId()).getJobExecTime()) {
-				periodicTaskSet.get(timeBlock.getTaskId()).nextCycle();
-				break;
+			// 浅拷贝
+			PeriodicTask periodicTask = periodicTaskSet.get(timeBlock.getTaskId());
+			if (timeBlock.getStartTime() >= periodicTask.getCycleStartTime() + periodicTask.getJobReleaseTime()
+					&& timeBlock.getStartTime() + timeBlock.getExecTime() <= periodicTask.getCycleStartTime() + periodicTask.getJobDeadline()
+					&& timeBlock.getExecTime() == periodicTask.getJobExecTime()) {
+				periodicTask.nextCycle();
 			} else {
 				return CheckResultEnum.INFEASIBLE;
 			}
