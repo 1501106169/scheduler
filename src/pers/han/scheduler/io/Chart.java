@@ -59,24 +59,24 @@ public class Chart extends JPanel {
 	 */
 	public Chart(ArrayList<TimeBlock> timeAxis) {
 		super();
-		this.timeAxis = timeAxis;
-		if (timeAxis.isEmpty()) {
-			this.taskNum = -1;
-			return;
-		}
-		this.taskNum = 0;
-		for (TimeBlock timeBlock : timeAxis) {
-			if (timeBlock.getId() > this.taskNum) {
-				this.taskNum = timeBlock.getId();
-			}
-		}
-		// 设置画板的首选大小
-		this.dime = new Dimension(
-				(timeAxis.get(timeAxis.size() - 1).getStartTime() + timeAxis.get(timeAxis.size() - 1).getExecTime()) * this.PER_DATE_LEN,
-				this.BAR_CANVAS_BORDER * 2 + this.BAR_BAR_BORDER * this.taskNum + this.BAR_HEIGHT * (this.taskNum + 1)
-		);
-		this.setPreferredSize(this.dime);
-		this.setSize(this.dime);
+//		this.timeAxis = timeAxis;
+//		if (timeAxis.isEmpty()) {
+//			this.taskNum = -1;
+//			return;
+//		}
+//		this.taskNum = 0;
+//		for (TimeBlock timeBlock : timeAxis) {
+//			if (timeBlock.getId() > this.taskNum) {
+//				this.taskNum = timeBlock.getId();
+//			}
+//		}
+//		// 设置画板的首选大小
+//		this.dime = new Dimension(
+//				(timeAxis.get(timeAxis.size() - 1).getStartTime() + timeAxis.get(timeAxis.size() - 1).getExecTime()) * this.PER_DATE_LEN,
+//				this.BAR_CANVAS_BORDER * 2 + this.BAR_BAR_BORDER * this.taskNum + this.BAR_HEIGHT * (this.taskNum + 1)
+//		);
+//		this.setPreferredSize(this.dime);
+//		this.setSize(this.dime);
 	}
 
 	/**
@@ -88,25 +88,25 @@ public class Chart extends JPanel {
 		
 		/** 画边框，填充矩形效果更好 */
 		
-		for (TimeBlock timeBlock : timeAxis) {
-			// 根据任务编号，设置任务所使用的颜色
-			int taskId = timeBlock.getId();
-			// 设置画笔颜色
-			g.setColor(Color.decode(ChartColor.getPeriodicTaskColorStr(taskId)));
-			g.fillRect(
-					timeBlock.getStartTime() * this.PER_DATE_LEN,
-					this.getHeight() - this.BAR_CANVAS_BORDER - this.BAR_HEIGHT * (taskId + 1) - this.BAR_BAR_BORDER * taskId,
-					timeBlock.getExecTime() * this.PER_DATE_LEN,
-					this.BAR_HEIGHT
-			);
-			g.setColor(Color.decode(ChartColor.defaultColorStr));
-			g.drawRect(
-					timeBlock.getStartTime() * this.PER_DATE_LEN,
-					this.getHeight() - this.BAR_CANVAS_BORDER - this.BAR_HEIGHT * (taskId + 1) - this.BAR_BAR_BORDER * taskId,
-					timeBlock.getExecTime() * this.PER_DATE_LEN,
-					this.BAR_HEIGHT
-			);
-		}
+//		for (TimeBlock timeBlock : timeAxis) {
+//			// 根据任务编号，设置任务所使用的颜色
+//			int taskId = timeBlock.getId();
+//			// 设置画笔颜色
+//			g.setColor(Color.decode(ChartColor.getPeriodicTaskColorStr(taskId)));
+//			g.fillRect(
+//					timeBlock.getStartTime() * this.PER_DATE_LEN,
+//					this.getHeight() - this.BAR_CANVAS_BORDER - this.BAR_HEIGHT * (taskId + 1) - this.BAR_BAR_BORDER * taskId,
+//					timeBlock.getExecTime() * this.PER_DATE_LEN,
+//					this.BAR_HEIGHT
+//			);
+//			g.setColor(Color.decode(ChartColor.defaultColorStr));
+//			g.drawRect(
+//					timeBlock.getStartTime() * this.PER_DATE_LEN,
+//					this.getHeight() - this.BAR_CANVAS_BORDER - this.BAR_HEIGHT * (taskId + 1) - this.BAR_BAR_BORDER * taskId,
+//					timeBlock.getExecTime() * this.PER_DATE_LEN,
+//					this.BAR_HEIGHT
+//			);
+//		}
 		
 	}
 	

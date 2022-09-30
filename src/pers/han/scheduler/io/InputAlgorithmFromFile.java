@@ -1,6 +1,6 @@
 ﻿package pers.han.scheduler.io;
 
-import pers.han.scheduler.algroithms.SchedulingAlgorithm;
+import pers.han.scheduler.scheduling.*;
 
 /**
  * 从文件中获取调度算法

@@ -1,6 +1,6 @@
 ﻿package pers.han.scheduler.io;
 
-import pers.han.scheduler.algroithms.SchedulingAlgorithm;
+import pers.han.scheduler.scheduling.SchedulingAlgorithm;
 
 /**
  * 获取调度算法的接口
