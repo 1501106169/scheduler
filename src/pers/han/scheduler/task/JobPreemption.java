@@ -1,4 +1,4 @@
-﻿package pers.han.scheduler.task;
+package pers.han.scheduler.task;
 
 /**
  * 作业抢占类型枚举

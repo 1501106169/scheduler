@@ -1,4 +1,4 @@
-﻿package pers.han.scheduler.compiler;
+package pers.han.scheduler.compiler;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;

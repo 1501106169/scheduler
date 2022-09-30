@@ -1,4 +1,4 @@
-﻿package pers.han.scheduler.io;
+package pers.han.scheduler.io;
 
 /**
  * 提供一组输出调度结果的方法

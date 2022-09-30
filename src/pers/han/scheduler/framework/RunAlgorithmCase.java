@@ -1,4 +1,4 @@
-﻿package pers.han.scheduler.framework;
+package pers.han.scheduler.framework;
 
 import java.util.Vector;
 

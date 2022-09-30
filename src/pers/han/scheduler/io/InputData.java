@@ -1,4 +1,4 @@
-﻿package pers.han.scheduler.io;
+package pers.han.scheduler.io;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

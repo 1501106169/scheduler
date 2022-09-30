@@ -1,4 +1,4 @@
-﻿package pers.han.scheduler.task;
+package pers.han.scheduler.task;
 
 /**
  * 所有实时任务类的基类

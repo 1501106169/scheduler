@@ -1,4 +1,4 @@
-﻿package pers.han.scheduler.task;
+package pers.han.scheduler.task;
 
 /**
  * 偶发任务

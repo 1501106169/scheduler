@@ -1,4 +1,4 @@
-﻿package pers.han.scheduler.framework;
+package pers.han.scheduler.framework;
 
 /**
  * 校验结果的表示

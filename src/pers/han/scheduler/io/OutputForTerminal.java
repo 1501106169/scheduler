@@ -1,4 +1,4 @@
-﻿package pers.han.scheduler.io;
+package pers.han.scheduler.io;
 
 import pers.han.scheduler.framework.RunAlgorithm;
 import pers.han.scheduler.framework.RunAlgorithmCase;

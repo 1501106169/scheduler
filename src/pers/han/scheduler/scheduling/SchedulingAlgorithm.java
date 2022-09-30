@@ -1,4 +1,4 @@
-﻿package pers.han.scheduler.scheduling;
+package pers.han.scheduler.scheduling;
 
 import java.util.Vector;
 

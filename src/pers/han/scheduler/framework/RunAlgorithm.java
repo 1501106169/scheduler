@@ -1,4 +1,4 @@
-﻿package pers.han.scheduler.framework;
+package pers.han.scheduler.framework;
 
 import pers.han.scheduler.check.CheckAlgorithm;
 import pers.han.scheduler.scheduling.SchedulingAlgorithm;

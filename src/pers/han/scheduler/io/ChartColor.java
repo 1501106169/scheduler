@@ -1,4 +1,4 @@
-﻿package pers.han.scheduler.io;
+package pers.han.scheduler.io;
 
 /**
  * 图表中各类型任务的颜色

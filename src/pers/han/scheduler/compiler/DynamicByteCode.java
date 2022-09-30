@@ -1,4 +1,4 @@
-﻿package pers.han.scheduler.compiler;
+package pers.han.scheduler.compiler;
 
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStream;
