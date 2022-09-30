@@ -1,11 +1,11 @@
 package pers.han.scheduler.framework;
 
 /**
- * 鍦ㄥ涓皟搴︿换锷′笂镓ц璋冨害绠楁硶锛孯unAlgorithmCase镄勫悎板?
+ * 在多个调度任务上执行调度算法，RunAlgorithmCase的合集
  * 
  * @author		hanYG
- * @createDate	2022骞?链?0镞?
- * @alterDate	2022骞?链?0镞?
+ * @createDate	2022年9月30日
+ * @alterDate	2022年9月30日
  * @version		1.0
  *
  */
