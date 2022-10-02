@@ -1,6 +1,6 @@
 package pers.han.scheduler.algroithms;
 
-import java.util.ArrayList;
+import java.util.Vector;
 
 /**
  * 包含一组数学算法
@@ -25,7 +25,7 @@ public class Numeric {
 	 * @param digitalList
 	 * @return
 	 */
-	public static int leastCommonMultiple(ArrayList<Integer> digitalList) {
+	public static int leastCommonMultiple(Vector<Integer> digitalList) {
 		int digitalListLen = digitalList.size();
 		if (digitalListLen < 2) {
 			throw new Error("数组长度小于2！");
@@ -54,7 +54,7 @@ public class Numeric {
 	 * 计算最大公约数
 	 * @return	Integer
 	 */
-	public static int greatestCommonDivisor(ArrayList<Integer> digitalList) {
+	public static int greatestCommonDivisor(Vector<Integer> digitalList) {
 		
 		return 0;
 	}
@@ -78,5 +78,24 @@ public class Numeric {
 		}
 	}
 	
+	/**
+	 * 求数列方差
+	 * @param nums double类型的数列
+	 * @return Double
+	 */
+	public static double variance(Vector<Double> nums) {
+		int numsLen = nums.size();
+		double numsSum = 0;
+		double numsAvg;
+		double squareSum = 0;
+		for(double d : nums) {
+			numsSum += d;
+		}
+		numsAvg = numsSum / numsLen;
+		for (double d : nums) {
+			squareSum += Math.pow(d - numsAvg, 2);
+		}
+		return squareSum / numsLen;
+	}
 	
 }

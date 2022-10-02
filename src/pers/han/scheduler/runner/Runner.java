@@ -13,7 +13,7 @@ public class Runner {
 
 	public static void main(String[] args) {
 		// 输入
-		InputTaskData in = new InputTaskDataFromFile("dirPath");
+		InputTaskData in = new InputTaskDataFromFile("D:\\\\eclipse\\\\workspace\\\\scheduler\\\\fileData");
 		Vector<Vector<Task>> taskSuit = in.getTaskData();
 		
 		// 执行算法
@@ -33,7 +33,13 @@ public class Runner {
 		
 		// 计算调度算法性能
 		PerformanceTest pt = new PerformanceTest(algorithmCase);
+		// 计算时间利用率
+		System.out.print("时间利用率: ");
 		System.out.println(pt.calcTimeUtilization());
+		System.out.print("作业响应时间: ");
+		System.out.println(pt.calcResponseTime());
+		System.out.print("作业响应时间方差: ");
+		System.out.println(pt.calcVarianceResponseTime());
 		
 		// 输出
 		OutputSchedulingResult out = new OutputForTerminal(algorithmCase);
