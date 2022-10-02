@@ -5,6 +5,7 @@ import java.util.Vector;
 import pers.han.scheduler.task.*;
 import pers.han.scheduler.task.TimeBlock;
 import pers.han.scheduler.framework.*;
+import pers.han.scheduler.algroithms.Numeric;
 
 /**
  * 调度算法性能度量
@@ -28,6 +29,12 @@ public class PerformanceTest {
 	
 	/** 总响应延时 */
 	private double responseTime;
+	
+	/** 响应时间的方差 */
+	private double varianceResponseTime;
+	
+	/** 响应时间标准差 */
+	private double standardDeviation;
 	
 	private PerformanceTest() { }
 	
@@ -82,6 +89,30 @@ public class PerformanceTest {
 		return this.responseTime;
 	}
 	
-	
+	/**
+	 * 计算作业的响应时间的方差，标准差
+	 * @return
+	 */
+	public double calcVarianceResponseTime() {
+		Vector<Double> reponseTimeList = new Vector<Double>();
+		Vector<Task> taskSet = new Vector<Task>();
+		for (Task t : this.algorithmCase.getTaskSet()) {
+			taskSet.add(t.clone());
+		}
+		// 浅拷贝
+		Vector<TimeBlock> schedulingResult = this.algorithmCase.getSchedulingResult();
+		for (TimeBlock tb : schedulingResult) {
+			if (taskSet.get(tb.getTaskId()).getClass() == pers.han.scheduler.task.PeriodicTask.class) {
+				PeriodicTask pt = pers.han.scheduler.task.PeriodicTask.class.cast(taskSet.get(tb.getTaskId()));
+				reponseTimeList.add((double) (tb.getStartTime() - pt.getCycleStartTime() - pt.getJobReleaseTime()));
+				pt.nextCycle();
+			} else {
+				reponseTimeList.add((double) (tb.getStartTime() - taskSet.get(tb.getTaskId()).getJobReleaseTime()));
+			}
+		}
+		this.varianceResponseTime = Numeric.variance(reponseTimeList);
+		this.standardDeviation = Math.pow(this.varianceResponseTime, 0.5);
+		return this.varianceResponseTime;
+	}
 	
 }

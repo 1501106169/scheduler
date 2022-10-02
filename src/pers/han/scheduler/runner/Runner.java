@@ -32,7 +32,13 @@ public class Runner {
 		
 		// 计算调度算法性能
 		PerformanceTest pt = new PerformanceTest(algorithmCase);
+		// 计算时间利用率
+		System.out.print("时间利用率: ");
 		System.out.println(pt.calcTimeUtilization());
+		System.out.print("作业响应时间: ");
+		System.out.println(pt.calcResponseTime());
+		System.out.print("作业响应时间方差: ");
+		System.out.println(pt.calcVarianceResponseTime());
 		
 		// 输出
 		OutputSchedulingResult out = new OutputForTerminal(algorithmCase);
