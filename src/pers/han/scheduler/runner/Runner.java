@@ -17,10 +17,11 @@ public class Runner {
 		Vector<Vector<Task>> taskSuit = in.getTaskData();
 		
 		// 执行算法
-		RunAlgorithm algorithmCase = new RunAlgorithmCase(taskSuit.get(0), 200);
+		RunAlgorithm algorithmCase = new RunAlgorithmCase(taskSuit.get(0), 40);
 		
 		// 设置调度算法和校验算法
-		SchedulingAlgorithm schedulingAlgorithm = new PeriodicSchedulingAlgorithm();
+//		SchedulingAlgorithm schedulingAlgorithm = new PeriodicSchedulingAlgorithm();
+		SchedulingAlgorithm schedulingAlgorithm = new PeriodicRMSchedulingAlgorithmEx();
 		CheckAlgorithm checkAlgorithm = new PeriodicCheckAlgorithm();
 		algorithmCase.setSchedulingAlgorithm(schedulingAlgorithm);
 		algorithmCase.setCheckAlgorithm(checkAlgorithm);

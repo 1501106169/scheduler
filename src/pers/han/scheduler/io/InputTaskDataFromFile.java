@@ -30,10 +30,13 @@ public class InputTaskDataFromFile implements InputTaskData {
 	public Vector<Vector<Task>> getTaskData() {
 		Vector<Vector<Task>> taskSuit = new Vector<Vector<Task>>(2);
 		Vector<Task> task = new Vector<Task>();
-		task.add(new PeriodicTask(0, 40, 10, 40));
-		task.add(new PeriodicTask(0, 50, 18, 50));
-		task.add(new PeriodicTask(0, 200, 10, 200));
-		task.add(new PeriodicTask(0, 200, 20, 200));
+//		task.add(new PeriodicTask(0, 40, 10, 40));
+//		task.add(new PeriodicTask(0, 50, 18, 50));
+//		task.add(new PeriodicTask(0, 200, 10, 200));
+//		task.add(new PeriodicTask(0, 200, 20, 200));
+		task.add(new PeriodicTask(0, 8, 1, 8));
+		task.add(new PeriodicTask(0, 5, 2, 5));
+		task.add(new PeriodicTask(0, 10, 2, 10));
 		taskSuit.add(task);
 		return taskSuit;
 	}

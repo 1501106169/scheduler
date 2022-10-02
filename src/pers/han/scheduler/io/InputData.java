@@ -46,7 +46,7 @@ public class InputData {
 			String s = null;
 			while ((s = br.readLine()) != null) {
 				// 正则表达式匹配空格或Tab或空格和Tan
-				String[] strList = s.split("\t|\s|\t\s");
+				String[] strList = s.split("\\t|\\s|\\t\\s");
 				
 				// 工厂模式，需要工厂帮我创建任务子类对象的实例
 				
