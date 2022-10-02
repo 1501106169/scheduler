@@ -13,7 +13,7 @@ public class Runner {
 
 	public static void main(String[] args) {
 		// 输入
-		InputTaskData in = new InputTaskDataFromFile("D:\\\\eclipse\\\\workspace\\\\scheduler\\\\fileData");
+		InputTaskData in = new InputTaskDataFromFile("./fileData/RMS");
 		Vector<Vector<Task>> taskSuit = in.getTaskData();
 		
 		// 执行算法
