@@ -1,6 +1,8 @@
 package pers.han.scheduler.framework;
 
 import pers.han.scheduler.check.CheckAlgorithm;
+import pers.han.scheduler.runner.ThreadTask;
+import pers.han.scheduler.runner.ThreadTaskPool;
 import pers.han.scheduler.scheduling.SchedulingAlgorithm;
 import pers.han.scheduler.task.Task;
 
@@ -17,11 +19,11 @@ import java.util.Vector;
  */
 public class RunAlgorithmSuit implements RunAlgorithm {
 	
+	/** 一组执行算法的实例 */
 	private Vector<RunAlgorithm> algorithmSuit = new Vector<RunAlgorithm>();
 	
-	
-	
-	public RunAlgorithmSuit() { }
+	/** 线程池 */
+	private final ThreadTaskPool pool = new ThreadTaskPool();
 	
 	/**
 	 * 使用任务suit构造，需要后续添加调度算法和校验算法
@@ -31,7 +33,6 @@ public class RunAlgorithmSuit implements RunAlgorithm {
 		for (Vector<Task> taskSet : taskSuit) {
 			this.algorithmSuit.add(new RunAlgorithmCase(taskSet));
 		}
-		return;
 	}
 	
 	/**
@@ -45,7 +46,15 @@ public class RunAlgorithmSuit implements RunAlgorithm {
 		for (Vector<Task> taskSet : taskSuit) {
 			this.algorithmSuit.add(new RunAlgorithmCase(taskSet, schedulingAlgorithm, checkAlgorithm));
 		}
-		return;
+	}
+
+	/**
+	 * 添加执行算法实例任务
+	 * @param algorithm 执行算法实例
+	 */
+	public void addAlgorithmCase(RunAlgorithm algorithm) {
+		this.pool.execute(new ThreadTask(algorithm));
+		this.algorithmSuit.add(algorithm);
 	}
 	
 	@Override
@@ -53,7 +62,6 @@ public class RunAlgorithmSuit implements RunAlgorithm {
 		for (RunAlgorithm algorithm : this.algorithmSuit) {
 			algorithm.setSchedulingAlgorithm(schedulingAlgorithm);
 		}
-		return;
 	}
 
 	@Override
@@ -61,12 +69,13 @@ public class RunAlgorithmSuit implements RunAlgorithm {
 		for (RunAlgorithm algorithm : this.algorithmSuit) {
 			algorithm.setCheckAlgorithm(checkAlgorithm);
 		}
-		return;
 	}
 
 	@Override
 	public void run() {
-		
+		for (RunAlgorithm algorithm : this.algorithmSuit) {
+			this.pool.execute(new ThreadTask(algorithm));
+		}
 	}
 
 	@Override
