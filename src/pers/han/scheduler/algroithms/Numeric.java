@@ -16,19 +16,20 @@ public class Numeric {
 	/**
 	 * 私有构造函数，该类不可实例化
 	 */
-	private Numeric() {
-		
-	}
+	private Numeric() { }
 	
 	/**
 	 * 静态函数，计算最小公倍数
-	 * @param digitalList
-	 * @return
+	 * @param digitalList 一组正整数
+	 * @return Integer
 	 */
 	public static int leastCommonMultiple(Vector<Integer> digitalList) {
 		int digitalListLen = digitalList.size();
-		if (digitalListLen < 2) {
-			throw new Error("数组长度小于2！");
+		if (digitalListLen == 0) {
+			return 0;
+		}
+		if (digitalListLen == 1) {
+			return digitalList.get(0);
 		}
 		int lcm = digitalList.get(0);
 		for (int i = 1; i < digitalListLen; ++i) {

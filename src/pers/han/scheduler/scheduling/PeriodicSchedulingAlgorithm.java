@@ -21,7 +21,7 @@ public class PeriodicSchedulingAlgorithm extends SchedulingAlgorithm {
 	public Vector<TimeBlock> doSchedule() {
 		Vector<PeriodicTask> periodicTaskSet = new Vector<PeriodicTask>();
 		for (Task task : this.taskSet) {
-			periodicTaskSet.add((PeriodicTask)task);
+			periodicTaskSet.add((PeriodicTask)task.clone());
 		}
 		while (this.timeAxis < this.runEndTime) {
 			int earlistReleaseTime = this.getEarlistRealseTime(periodicTaskSet);
