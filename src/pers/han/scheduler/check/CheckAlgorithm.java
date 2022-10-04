@@ -18,13 +18,13 @@ import pers.han.scheduler.task.TimeBlock;
  */
 public abstract class CheckAlgorithm {
 	/** 一组实时任务 */
-	Vector<Task> taskSet;
+	protected Vector<Task> taskSet;
 	
 	/** 调度结果 */
-	Vector<TimeBlock> schedulingResult;
+	protected Vector<TimeBlock> schedulingResult;
 	
 	/** 调度算法执行的时间 */
-	int deadline;
+	protected int deadline;
 	
 	/**
 	 * 构造函数
@@ -38,7 +38,7 @@ public abstract class CheckAlgorithm {
 	 * @param taskSet
 	 * @param schedulingResult
 	 */
-	public void setUp(Vector<Task> taskSet, Vector<TimeBlock> schedulingResult, int deadline) {
+	public void setUp(final Vector<Task> taskSet, final Vector<TimeBlock> schedulingResult, final int deadline) {
 		this.taskSet = taskSet;
 		this.schedulingResult = schedulingResult;
 		this.deadline = deadline;

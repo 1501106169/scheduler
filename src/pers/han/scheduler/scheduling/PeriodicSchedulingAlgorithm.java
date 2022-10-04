@@ -45,7 +45,7 @@ public class PeriodicSchedulingAlgorithm extends SchedulingAlgorithm {
 	 * @param nowTime 现在的时间
 	 * @return int
 	 */
-	private int getEarlistTask(Vector<PeriodicTask> periodicTaskSet, int nowTime) {
+	private int getEarlistTask(final Vector<PeriodicTask> periodicTaskSet, final int nowTime) {
 		int nextTaskId = -1;
 		for (int i = 0; i < periodicTaskSet.size(); ++i) {
 			if (nextTaskId == -1 && periodicTaskSet.get(i).getCycleStartTime() + periodicTaskSet.get(i).getJobReleaseTime() <= nowTime) {
@@ -62,7 +62,7 @@ public class PeriodicSchedulingAlgorithm extends SchedulingAlgorithm {
 	 * @param periodicTaskSet 周期性任务集
 	 * @return int
 	 */
-	private int getEarlistRealseTime(Vector<PeriodicTask> periodicTaskSet) {
+	private int getEarlistRealseTime(final Vector<PeriodicTask> periodicTaskSet) {
 		if (periodicTaskSet.isEmpty()) {
 			// -1 表示作业为空
 			return -1;

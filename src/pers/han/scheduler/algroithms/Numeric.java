@@ -23,7 +23,7 @@ public class Numeric {
 	 * @param digitalList 一组正整数
 	 * @return Integer
 	 */
-	public static int leastCommonMultiple(Vector<Integer> digitalList) {
+	public static int leastCommonMultiple(final Vector<Integer> digitalList) {
 		int digitalListLen = digitalList.size();
 		if (digitalListLen == 0) {
 			return 0;
@@ -44,7 +44,7 @@ public class Numeric {
 	 * @param b	数字b
 	 * @return	Integer
 	 */
-	public static int leastCommonMultiple(int a, int b) {
+	public static int leastCommonMultiple(final int a, int b) {
 		if (a == 0 || b == 0) {
 			throw new Error("求最小公倍数的两个数均不可为0！");
 		}
@@ -55,7 +55,7 @@ public class Numeric {
 	 * 计算最大公约数
 	 * @return	Integer
 	 */
-	public static int greatestCommonDivisor(Vector<Integer> digitalList) {
+	public static int greatestCommonDivisor(final Vector<Integer> digitalList) {
 		
 		return 0;
 	}
@@ -66,7 +66,7 @@ public class Numeric {
 	 * @param b	数字b
 	 * @return	Integer
 	 */
-	public static int greatestCommonDivisor(int a, int b) {
+	public static int greatestCommonDivisor(final int a, final int b) {
 		if (a == 0 || b == 0) {
 			throw new Error("求最大公约数的两个数均不可为0！");
 		}
@@ -84,7 +84,7 @@ public class Numeric {
 	 * @param nums double类型的数列
 	 * @return Double
 	 */
-	public static double variance(Vector<Double> nums) {
+	public static double variance(final Vector<Double> nums) {
 		int numsLen = nums.size();
 		double numsSum = 0;
 		double numsAvg;

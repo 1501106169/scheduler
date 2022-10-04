@@ -20,25 +20,25 @@ import java.util.Vector;
  */
 public class RunAlgorithmCase implements RunAlgorithm {
 	/** 一组实时任务 */
-	Vector<Task> taskSet;
+	private final Vector<Task> taskSet;
 	
 	/** 调度结果 */
-	Vector<TimeBlock> schedulingResult;
+	private Vector<TimeBlock> schedulingResult;
 	
 	/** 校验结果，算法可行性 */
-	CheckResultEnum checkResult;
+	private CheckResultEnum checkResult;
 	
 	/** 调度算法 */
-	SchedulingAlgorithm schedulingAlgorithm = null;
+	private SchedulingAlgorithm schedulingAlgorithm = null;
 	
 	/** 校验算法 */
-	CheckAlgorithm checkAlgorithm = null;
+	private CheckAlgorithm checkAlgorithm = null;
 	
 	/** 调度算法执行时间 */
-	long execTime;
+	private long execTime;
 	
 	/** 调度算法运行截至时间 */
-	int deadline = 0;
+	private int deadline = 0;
 
 	@Override
 	public void run() {
@@ -76,7 +76,7 @@ public class RunAlgorithmCase implements RunAlgorithm {
 	 * @param checkAlgorithm 校验算法对象
 	 * @param deadline 调度算法运行截至时间
 	 */
-	public RunAlgorithmCase(Vector<Task> taskSet, SchedulingAlgorithm schedulingAlgorithm, CheckAlgorithm checkAlgorithm, int deadline) {
+	public RunAlgorithmCase(final Vector<Task> taskSet, final SchedulingAlgorithm schedulingAlgorithm, final CheckAlgorithm checkAlgorithm, final int deadline) {
 		this.taskSet = taskSet;
 		this.schedulingAlgorithm = schedulingAlgorithm;
 		this.checkAlgorithm = checkAlgorithm;
@@ -88,7 +88,7 @@ public class RunAlgorithmCase implements RunAlgorithm {
 	 * @param taskSet 任务集
 	 * @param deadline 调度算法运行时长
 	 */
-	public RunAlgorithmCase(Vector<Task> taskSet, int deadline) {
+	public RunAlgorithmCase(final Vector<Task> taskSet, final int deadline) {
 		this.taskSet = taskSet;
 		this.deadline = deadline;
 	}
@@ -99,7 +99,7 @@ public class RunAlgorithmCase implements RunAlgorithm {
 	 * @param schedulingAlgorithm 调度算法对象
 	 * @param checkAlgorithm 校验算法对象
 	 */
-	public RunAlgorithmCase(Vector<Task> taskSet, SchedulingAlgorithm schedulingAlgorithm, CheckAlgorithm checkAlgorithm) {
+	public RunAlgorithmCase(final Vector<Task> taskSet, final SchedulingAlgorithm schedulingAlgorithm, final CheckAlgorithm checkAlgorithm) {
 		this.taskSet = taskSet;
 		this.schedulingAlgorithm = schedulingAlgorithm;
 		this.checkAlgorithm = checkAlgorithm;
@@ -110,7 +110,7 @@ public class RunAlgorithmCase implements RunAlgorithm {
 	 * 构造函数，指定任务
 	 * @param taskSet 任务集
 	 */
-	public RunAlgorithmCase(Vector<Task> taskSet) {
+	public RunAlgorithmCase(final Vector<Task> taskSet) {
 		this.taskSet = taskSet;
 		// this.deadline = Tools.hyperperiod(taskSet);
 	}

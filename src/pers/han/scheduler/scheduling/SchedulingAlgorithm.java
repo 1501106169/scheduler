@@ -15,27 +15,30 @@ import pers.han.scheduler.task.TimeBlock;
  *
  */
 public abstract class SchedulingAlgorithm {
+	
 	/** 一组实时任务 */
-	Vector<Task> taskSet;
+	protected Vector<Task> taskSet;
+	
 	/** 算法运行结束时间 */
-	int runEndTime;
+	protected int runEndTime;
+	
 	/** 算法运行的时间轴 */
-	int timeAxis = 0;
+	protected int timeAxis = 0;
+	
 	/** 调度结果 */
-	Vector<TimeBlock> schedulingResult = new Vector<TimeBlock>();
+	protected Vector<TimeBlock> schedulingResult = new Vector<TimeBlock>();
 	
 	/**
 	 * 构造函数
 	 */
-	public SchedulingAlgorithm() {
-	}
+	public SchedulingAlgorithm() { }
 	
 	/**
 	 * 初始化成员变量，在doSchedule方法执行前执行
 	 * @param taskSet 一组实时任务
 	 * @param runEndTime 算法执行结束时间
 	 */
-	public void setUp(Vector<Task> taskSet, int runEndTime) {
+	public void setUp(final Vector<Task> taskSet, final int runEndTime) {
 		this.taskSet = taskSet;
 		this.runEndTime = runEndTime;
 	}
@@ -58,7 +61,7 @@ public abstract class SchedulingAlgorithm {
 	 * @param sporadicTask 偶发任务
 	 * @param runEndTime 添加偶发任务后，算法执行截止时间
 	 */
-	public void addTask(Task sporadicTask, int runEndTime) {
+	public void addTask(final Task sporadicTask, final int runEndTime) {
 		return;
 	}
 	
