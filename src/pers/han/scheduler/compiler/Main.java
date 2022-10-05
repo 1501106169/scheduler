@@ -2,27 +2,31 @@ package pers.han.scheduler.compiler;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.util.List;
 import java.util.Map;
 
 public class Main {
 
 	public static void main(String[] args) {
+		
+		DynamicCompilerManager dcm = new DynamicCompilerManager();
+		dcm.addSourceFile("D:\\eclipse\\workspace\\scheduler\\fileData\\Algorithm.java");
+		Map<String, Class<?>> classes = dcm.compile();
 
-		ClassLoader classLoader = ClassLoader.getSystemClassLoader();
+//		ClassLoader classLoader = ClassLoader.getSystemClassLoader();
+//		
+//		// 动态编译器
+//		DynamicCompiler dynamicCompiler = new DynamicCompiler(classLoader);
+//		
+//		// 添加到动态编译器其的待编译源文件中
+//		dynamicCompiler.addSource("Man", "import pers.han.scheduler.task.*; public class Man { public PeriodicTask hello () { PeriodicTask p = new PeriodicTask(2, 3); System.out.println(\"hello world\"); return p; }}");
+//		
+//		System.out.println(dynamicCompiler.build());
+//		System.out.println(dynamicCompiler.getBuildError());
 		
-		// 动态编译器
-		DynamicCompiler dynamicCompiler = new DynamicCompiler(classLoader);
+//		Map<String, Class<?>> classes = dynamicCompiler.getClasses();
 		
-		// 添加到动态编译器其的待编译源文件中
-		dynamicCompiler.addSource("Man", "import pers.han.scheduler.task.*; public class Man { public PeriodicTask hello () { PeriodicTask p = new PeriodicTask(2, 3); System.out.println(\"hello world\"); return p; }}");
-		
-		System.out.println(dynamicCompiler.build());
-		dynamicCompiler.getBuildError();
-		
-		Map<String, Class<?>> classes = dynamicCompiler.getClasses();
 		System.out.println(classes);
-		Class<?> cls = classes.get("Man");
+		Class<?> cls = classes.get("user.Algorithm");
 		System.out.println(cls);
 		
 		Method method = null;
@@ -33,6 +37,8 @@ public class Main {
 			e.printStackTrace();
 		} catch (SecurityException e) {
 			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch(NullPointerException e) {
 			e.printStackTrace();
 		}
 		
