@@ -25,7 +25,7 @@ public class Tools {
 	 * @param taskSet 周期性任务
 	 * @return
 	 */
-	public static int hyperperiod(Vector<Task> taskSet) {
+	public static int hyperperiod(final Vector<Task> taskSet) {
 		// Vector<PeriodicTask> periodicTaskSet = new Vector<PeriodicTask>();
 		Vector<Integer> list = new Vector<Integer>();
 		int maxDeadline = 0;

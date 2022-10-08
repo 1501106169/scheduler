@@ -16,8 +16,14 @@ import pers.han.scheduler.io.OutputSchedulingResult;
  */
 public class ThreadTask implements Runnable {
 	
+	static enum TYPE {
+		RUN,
+		CHECK,
+		SCHEDULING
+	};
+	
 	/** 在一组任务上执行调度算法的实例 */
-	RunAlgorithm algorithmCase;
+	private RunAlgorithm algorithmCase;
 
 	/**
 	 * 构造函数
@@ -25,7 +31,6 @@ public class ThreadTask implements Runnable {
 	 */
 	public ThreadTask(RunAlgorithm algorithmCase) {
 		this.algorithmCase = algorithmCase;
-		return;
 	}
 	
 	@Override
