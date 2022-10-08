@@ -26,7 +26,7 @@ public class Numeric {
 	public static int leastCommonMultiple(final Vector<Integer> digitalList) {
 		int digitalListLen = digitalList.size();
 		if (digitalListLen == 0) {
-			return 0;
+			return 1;
 		}
 		if (digitalListLen == 1) {
 			return digitalList.get(0);

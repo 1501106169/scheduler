@@ -9,7 +9,8 @@ public class Main {
 	public static void main(String[] args) {
 		
 		DynamicCompilerManager dcm = new DynamicCompilerManager();
-		dcm.addSourceFile("D:\\eclipse\\workspace\\scheduler\\fileData\\Algorithm.java");
+//		dcm.addSourceFile("D:\\eclipse\\workspace\\scheduler\\fileData\\Algorithm.java");
+		dcm.addSourceDir("/usr/local/scheduler");
 		Map<String, Class<?>> classes = dcm.compile();
 
 //		ClassLoader classLoader = ClassLoader.getSystemClassLoader();
