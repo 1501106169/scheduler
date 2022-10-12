@@ -13,15 +13,15 @@ public class Runner {
 
 	public static void main(String[] args) {
 		// 输入
-		InputTaskData in = new InputTaskDataFromFile("./fileData/RMS");
+		InputTaskData in = new InputTaskDataFromFile("./fileData/periodic_task");
 		Vector<Vector<Task>> taskSuit = in.getTaskData();
 		
 		// 执行算法
-		RunAlgorithm algorithmCase = new RunAlgorithmCase(taskSuit.get(0), 40);
+		RunAlgorithm algorithmCase = new RunAlgorithmCase(taskSuit.get(0), 200);
 		
 		// 设置调度算法和校验算法
 //		SchedulingAlgorithm schedulingAlgorithm = new PeriodicSchedulingAlgorithm();
-		SchedulingAlgorithm schedulingAlgorithm = new PeriodicRMSchedulingAlgorithmEx();
+		SchedulingAlgorithm schedulingAlgorithm = new PeriodicLIFOSchedulingAlgorithmEx();
 		CheckAlgorithm checkAlgorithm = new PeriodicCheckAlgorithm();
 		algorithmCase.setSchedulingAlgorithm(schedulingAlgorithm);
 		algorithmCase.setCheckAlgorithm(checkAlgorithm);

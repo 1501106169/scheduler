@@ -57,7 +57,7 @@ public class PeriodicDMSchedulingAlgorithmEx extends SchedulingAlgorithm {
                             else : if currentTime mod waitingTask.releaseTime == 0, add it
                      */
 //                    if(timeAxis >= waitingTask.getJobReleaseTime()){
-                    if(timeAxis >= waitingTask.getCycleStartTime()){
+                    if(timeAxis >= waitingTask.getCycleStartTime() + waitingTask.getJobReleaseTime()){
                         readyTaskSet.addTask(waitingTask);
                         itr.remove();
                     }
@@ -84,7 +84,7 @@ public class PeriodicDMSchedulingAlgorithmEx extends SchedulingAlgorithm {
 
         return this.schedulingResult;
     }
-    public class ReadyTaskSet{
+    class ReadyTaskSet{
         MyPeriodicTask lastTaskExecuted;
         LinkedList<MyPeriodicTask> readyTaskSet;
         int timeLapsed;
@@ -156,13 +156,13 @@ public class PeriodicDMSchedulingAlgorithmEx extends SchedulingAlgorithm {
             return new ExecuteInfo(lastTaskExecuted.id, executeTime);
         }
 
-        boolean addTask(MyPeriodicTask task){
+        void addTask(MyPeriodicTask task){
             if(readyTaskSet.isEmpty()){
                 /*
                     ReadyTaskSet is empty. So add it in the first of the set.
                  */
                 readyTaskSet.addFirst(task);
-                return true;
+                return;
             }
 
             if(task.getJobDeadline() == readyTaskSet.getFirst().getJobDeadline()){
@@ -171,23 +171,23 @@ public class PeriodicDMSchedulingAlgorithmEx extends SchedulingAlgorithm {
                     so add it after the first task.
                  */
                 readyTaskSet.add(1, task);
-                return true;
+                return;
             }
 
             if(task.getJobDeadline() < readyTaskSet.getFirst().getJobDeadline()){
                 if(!isPreemptive){
                     readyTaskSet.addFirst(task);
-                    return true;
+                    return;
                 }
                 else{
                     boolean isPreempted = true;
                     //TODO remainingTime
 //                    readyTaskSet.getFirst().getJobExecTime() != readyTaskSet.getFirst().remainingTime;
                     readyTaskSet.addFirst(task);
-                    if(!isPreempted) return true;
+                    if(!isPreempted) return;
                     else{
                         System.out.println("Task is preempted");
-                        return true;
+                        return;
                     }
                 }
             }
@@ -195,23 +195,22 @@ public class PeriodicDMSchedulingAlgorithmEx extends SchedulingAlgorithm {
             if(task.getJobDeadline() > readyTaskSet.getFirst().getJobDeadline()){
                 if(readyTaskSet.size() == 1){
                     readyTaskSet.add(task);
-                    return true;
+                    return;
                 }
             }
             for(int i = 1; i < readyTaskSet.size(); i++){
                 if(task.getJobDeadline() < readyTaskSet.get(i).getJobDeadline()){
                     readyTaskSet.add(i, task);
-                    return true;
+                    return;
                 }else{
                     if(i == readyTaskSet.size() - 1){
                         //This task has lowest priority.
                         readyTaskSet.add(task);
-                        return true;
+                        return;
                     }
                 }
             }
 
-            return false;
         }
 
     }

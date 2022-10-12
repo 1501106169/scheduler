@@ -61,7 +61,7 @@ public class PeriodicRMSchedulingAlgorithmEx extends SchedulingAlgorithm {
                             else : if currentTime mod waitingTask.releaseTime == 0, add it
                      */
 //                    if(timeAxis >= waitingTask.getJobReleaseTime()){
-                    if(timeAxis >= waitingTask.getCycleStartTime()){
+                    if(timeAxis >= waitingTask.getCycleStartTime() + waitingTask.getJobReleaseTime()){
                         readyTaskSet.addTask(waitingTask);
                         itr.remove();
                     }

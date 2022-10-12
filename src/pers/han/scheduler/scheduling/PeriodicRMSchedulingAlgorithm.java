@@ -127,23 +127,23 @@ public class PeriodicRMSchedulingAlgorithm extends SchedulingAlgorithm {
             lastTaskExecuted = taskToExecute;
             //lastExecutedTask = taskToExecute;
 //            if(timeLapsed >= lastTaskExecuted.getCycleStartTime())
-                waitingTaskSet.add(new PeriodicTask(
+            waitingTaskSet.add(new PeriodicTask(
                     lastTaskExecuted.getCycleStartTime(),
                     lastTaskExecuted.getTaskPeriodic(),
                     lastTaskExecuted.getJobExecTime(),
                     lastTaskExecuted.getJobDeadline()
-                    ));
+            ));
             readyTaskSet.pollFirst();
             return executeTime;
         }
 
-        boolean addTask(PeriodicTask task){
+        void addTask(PeriodicTask task){
             if(readyTaskSet.isEmpty()){
                 /*
                     ReadyTaskSet is empty. So add it in the first of the set.
                  */
                 readyTaskSet.addFirst(task);
-                return true;
+                return;
             }
 
             if(task.getTaskPeriodic() == readyTaskSet.getFirst().getTaskPeriodic()){
@@ -152,23 +152,23 @@ public class PeriodicRMSchedulingAlgorithm extends SchedulingAlgorithm {
                     so add it after the first task.
                  */
                 readyTaskSet.add(1, task);
-                return true;
+                return;
             }
 
             if(task.getTaskPeriodic() < readyTaskSet.getFirst().getTaskPeriodic()){
                 if(!isPreemptive){
                     readyTaskSet.addFirst(task);
-                    return true;
+                    return;
                 }
                 else{
                     boolean isPreempted = true;
                     //TODO remainingTime
 //                    readyTaskSet.getFirst().getJobExecTime() != readyTaskSet.getFirst().remainingTime;
                     readyTaskSet.addFirst(task);
-                    if(!isPreempted) return true;
+                    if(!isPreempted) return;
                     else{
                         System.out.println("Task is preempted");
-                        return true;
+                        return;
                     }
                 }
             }
@@ -176,23 +176,22 @@ public class PeriodicRMSchedulingAlgorithm extends SchedulingAlgorithm {
             if(task.getTaskPeriodic() > readyTaskSet.getFirst().getTaskPeriodic()){
                 if(readyTaskSet.size() == 1){
                     readyTaskSet.add(task);
-                    return true;
+                    return;
                 }
             }
             for(int i = 1; i < readyTaskSet.size(); i++){
                 if(task.getTaskPeriodic() < readyTaskSet.get(i).getTaskPeriodic()){
                     readyTaskSet.add(i, task);
-                    return true;
+                    return;
                 }else{
                     if(i == readyTaskSet.size() - 1){
                         //This task has lowest priority.
                         readyTaskSet.add(task);
-                        return true;
+                        return;
                     }
                 }
             }
 
-            return false;
         }
 
     }
