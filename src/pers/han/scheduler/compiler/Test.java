@@ -4,10 +4,10 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Map;
 
-public class Main {
+public class Test {
 
 	public static void main(String[] args) {
-		
+
 		DynamicCompilerManager dcm = new DynamicCompilerManager();
 //		dcm.addSourceFile("D:\\eclipse\\workspace\\scheduler\\fileData\\Algorithm.java");
 		dcm.addSourceDir("/usr/local/scheduler");
