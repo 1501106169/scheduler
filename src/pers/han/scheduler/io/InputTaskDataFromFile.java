@@ -1,4 +1,5 @@
 package pers.han.scheduler.io;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -37,6 +38,9 @@ public class InputTaskDataFromFile implements InputTaskData {
 		 * 0	200	20	200
 		 */
 		File[] txtFileArray = new File(this.dirPath).listFiles((path)->path.getName().endsWith(".txt"));
+		if (txtFileArray == null) {
+			return taskSuit;
+		}
 		for (File file : txtFileArray) {
 			taskSuit.add(readTaskDataFromFile(file.getPath()));
 		}

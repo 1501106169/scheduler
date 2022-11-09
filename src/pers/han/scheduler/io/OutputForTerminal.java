@@ -28,14 +28,12 @@ public class OutputForTerminal implements OutputSchedulingResult {
 	@Override
 	public void outSchedulingResult() {
 		RunAlgorithmCase algorithmCase = RunAlgorithmCase.class.cast(this.runAlgorithm);
-		System.out.print("算法可行性: ");
+		System.out.print("FEASIBILITY: ");
 		System.out.println(algorithmCase.getCheckResult());
-		System.out.print("算法执行时间: ");
+		System.out.print("EXECTION TIME: ");
 		System.out.println(algorithmCase.getExecTime());
-		System.out.println("调度结果: ");
+		System.out.println("SCHEDULE TIME: ");
 		for (TimeBlock t : algorithmCase.getSchedulingResult()) {
-			System.out.print(algorithmCase.getTaskSet().get(t.getTaskId()));
-			System.out.print("--");
 			System.out.print(t.getTaskId());
 			System.out.print("--");
 			System.out.print(t.getStartTime());
