@@ -3,7 +3,7 @@ package pers.han.scheduler.io;
 import pers.han.scheduler.task.*;
 import java.awt.Color;
 import java.awt.Graphics;
-import java.util.ArrayList;
+import java.util.Vector;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -38,13 +38,13 @@ public class OutputWindow extends JFrame {
 	private JPanel panel;
 	
 	/** 绘制图表的数据 */
-	private ArrayList<TimeBlock> timeAxis;
+	private Vector<TimeBlock> timeAxis;
 	
 	/**
 	 * 构造函数，创建图表窗口
 	 * @param timeAxis	绘制图表的数据
 	 */
-	public OutputWindow(ArrayList<TimeBlock> timeAxis) {
+	public OutputWindow(Vector<TimeBlock> timeAxis) {
 		super();
 		this.timeAxis = timeAxis;
 		this.panel = new JPanel();
@@ -75,7 +75,7 @@ public class OutputWindow extends JFrame {
 		// 设置窗体创建时显示
 		this.setVisible(true);
 		// 设置窗体大小不可改变
-		this.setResizable(false);
+		// this.setResizable(false);
 		// this.setLayout(null);
 		this.setLocation(150, 150);
 		// this.setSize(this.getWidth(), this.getHeight());
