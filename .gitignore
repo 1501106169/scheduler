@@ -1,6 +1,9 @@
-/bin/
-bin
 /.settings
 /*.classpath
 /.project
 /out/
+out/
+/.idea/
+.idea
+/bin/
+bin
