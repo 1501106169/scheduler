@@ -39,8 +39,14 @@ public abstract class CheckAlgorithm {
 	 * @param schedulingResult
 	 */
 	public void setUp(final Vector<Task> taskSet, final Vector<TimeBlock> schedulingResult, final int deadline) {
-		this.taskSet = taskSet;
-		this.schedulingResult = schedulingResult;
+		this.taskSet = new Vector<Task>();
+		for (Task task : taskSet) {
+			this.taskSet.add(task.clone());
+		}
+		this.schedulingResult = new Vector<TimeBlock>();
+		for (TimeBlock tBlock : schedulingResult) {
+			this.schedulingResult.add(tBlock.clone());
+		}
 		this.deadline = deadline;
 	}
 	

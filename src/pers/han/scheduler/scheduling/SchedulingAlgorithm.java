@@ -39,7 +39,10 @@ public abstract class SchedulingAlgorithm {
 	 * @param runEndTime 算法执行结束时间
 	 */
 	public void setUp(final Vector<Task> taskSet, final int runEndTime) {
-		this.taskSet = taskSet;
+		this.taskSet = new Vector<Task>();
+		for (Task task : taskSet) {
+			this.taskSet.add(task.clone());
+		}
 		this.runEndTime = runEndTime;
 	}
 	

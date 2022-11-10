@@ -133,6 +133,7 @@ public class PeriodicTask extends Task {
 	 */
 	public void nextCycle() {
 		this.cycleStartTime += this.taskPeriodic;
+		this.runTime = 0;
 	}
 
 	@Override

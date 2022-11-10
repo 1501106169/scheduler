@@ -59,5 +59,5 @@ public class SporadicTask extends Task {
 		SporadicTask task = new SporadicTask(this.jobReleaseTime, this.jobExecTime, this.jobDeadline, this.taskPriority, this.jobPreempt);
 		return task;
 	}
-
+	
 }

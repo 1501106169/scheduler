@@ -30,6 +30,9 @@ public abstract class Task {
 	/** 优先级 */
 	protected int taskPriority = 0;
 	
+	/** 任务已经运行的时间 */
+	protected int runTime = 0;
+	
 	/**
 	 * 获取任务优先级
 	 * @return int
@@ -83,5 +86,27 @@ public abstract class Task {
 	 * 拷贝构造函数
 	 */
 	public abstract Task clone();
-
+	
+	/**
+	 * 任务运行一个单位时间
+	 */
+	public void run() {
+		this.runTime += 1;
+	}
+	
+	/**
+	 * 任务运行time时间单位
+	 * @param time 时间
+	 */
+	public void run(int time) {
+		this.runTime += time;
+	}
+	
+	/**
+	 * 获取任务实际运行时间
+	 * @return Integer
+	 */
+	public int getRunTime() {
+		return this.runTime;
+	}
 }
