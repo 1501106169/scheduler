@@ -44,5 +44,29 @@ public class Tools {
 		}
 		return res;
 	}
+	
+	/**
+	 * 获取任务中作业的最早释放时间
+	 * @param taskSet 任务集
+	 * @return Integer
+	 */
+	public static int getEarlistRealseTime(final Vector<Task> taskSet) {
+		if (taskSet.isEmpty()) {
+			// -1 表示作业为空
+			return -1;
+		}
+		int leastRealseTime =  Integer.MAX_VALUE;
+		for (Task task : taskSet) {
+			if (task.getClass() == pers.han.scheduler.task.PeriodicTask.class) {
+				// 周期性任务
+				leastRealseTime = Math.min(leastRealseTime, 
+						((PeriodicTask) task).getCycleStartTime() + ((PeriodicTask) task).getJobReleaseTime());
+			} else if (task.getRunTime() < task.getJobExecTime()) {
+				// 偶发任务和非周期性任务
+				leastRealseTime = Math.min(leastRealseTime, task.getJobReleaseTime());
+			}
+		}
+		return leastRealseTime;
+	}
 
 }

@@ -8,6 +8,7 @@ import pers.han.scheduler.task.TimeBlock;
 
 /**
  * EDF不可抢占调度算法
+ * 任务的时限越早优先级越高
  * 
  * @author		hanYG
  * @createDate	2022年11月9日
@@ -63,7 +64,8 @@ public class EDFSchedulingAlgorithm extends SchedulingAlgorithm {
 				}
 			} else {
 				// 偶发任务和非周期性任务
-				if (taskSet.get(i).getJobDeadline() <= leastDeadline && taskSet.get(i).getRunTime() < taskSet.get(i).getJobExecTime()) {
+				if (taskSet.get(i).getJobDeadline() <= leastDeadline 
+						&& taskSet.get(i).getRunTime() < taskSet.get(i).getJobExecTime()) {
 					nextTaskId = i;
 					leastDeadline = taskSet.get(i).getJobDeadline();
 				}
@@ -86,7 +88,8 @@ public class EDFSchedulingAlgorithm extends SchedulingAlgorithm {
 		for (Task task : taskSet) {
 			if (task.getClass() == pers.han.scheduler.task.PeriodicTask.class) {
 				// 周期性任务
-				leastRealseTime = Math.min(leastRealseTime, ((PeriodicTask) task).getCycleStartTime() + ((PeriodicTask) task).getJobReleaseTime());
+				leastRealseTime = Math.min(leastRealseTime, 
+						((PeriodicTask) task).getCycleStartTime() + ((PeriodicTask) task).getJobReleaseTime());
 			} else if (task.getRunTime() < task.getJobExecTime()) {
 				// 偶发任务和非周期性任务
 				leastRealseTime = Math.min(leastRealseTime, task.getJobReleaseTime());
