@@ -19,7 +19,7 @@ import pers.han.scheduler.algroithms.Numeric;
 public class PerformanceTest {
 	
 	/** test case实例 */
-	private final RunAlgorithmCase algorithmCase;
+	private final RunAlgorithmTestCase algorithmCase;
 	
 	/** 时间利用率 */
 	private double timeUtilization;
@@ -40,7 +40,7 @@ public class PerformanceTest {
 	 * 构造函数
 	 * @param algorithmCase
 	 */
-	public PerformanceTest(final RunAlgorithmCase algorithmCase) {
+	public PerformanceTest(final RunAlgorithmTestCase algorithmCase) {
 		// 浅拷贝
 		this.algorithmCase = algorithmCase;
 	}
@@ -51,7 +51,7 @@ public class PerformanceTest {
 	 */
 	public PerformanceTest(final RunAlgorithm runAlgorithm) {
 		// 浅拷贝
-		this.algorithmCase = (RunAlgorithmCase) runAlgorithm;
+		this.algorithmCase = (RunAlgorithmTestCase) runAlgorithm;
 	}
 	
 	/**

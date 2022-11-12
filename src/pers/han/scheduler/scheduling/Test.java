@@ -10,9 +10,9 @@ import pers.han.scheduler.check.LSTCheckAlgorithm;
 import pers.han.scheduler.check.PerformanceTest;
 import pers.han.scheduler.check.PeriodicCheckAlgorithm;
 import pers.han.scheduler.framework.RunAlgorithm;
-import pers.han.scheduler.framework.RunAlgorithmCase;
-import pers.han.scheduler.io.InputTaskData;
-import pers.han.scheduler.io.InputTaskDataFromFile;
+import pers.han.scheduler.framework.RunAlgorithmTestCase;
+import pers.han.scheduler.io.InputTasksets;
+import pers.han.scheduler.io.InputTasksetsFromFile;
 import pers.han.scheduler.io.OutputForTerminal;
 import pers.han.scheduler.io.OutputSchedulingResult;
 import pers.han.scheduler.task.Task;
@@ -21,11 +21,11 @@ public class Test {
 
 	public static void main(String[] args) {
 		// 输入数据
-		InputTaskData in = new InputTaskDataFromFile("./fileData/periodic_task");
+		InputTasksets in = new InputTasksetsFromFile("./fileData/periodic_task");
 		Vector<Vector<Task>> taskSuit = in.getTaskData();
 
 		// 执行算法
-		RunAlgorithm algorithmCase = new RunAlgorithmCase(taskSuit.get(1), Tools.hyperperiod((taskSuit.get(1))));
+		RunAlgorithm algorithmCase = new RunAlgorithmTestCase(taskSuit.get(1), Tools.hyperperiod((taskSuit.get(1))));
 		// 设置调度算法和校验算法
 		SchedulingAlgorithm schedulingAlgorithm = new EDFSchedulingAlgorithm();
 		CheckAlgorithm checkAlgorithm = new LSTCheckAlgorithm();

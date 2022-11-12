@@ -18,7 +18,7 @@ import java.util.Vector;
  * @version		1.0
  *
  */
-public class RunAlgorithmCase implements RunAlgorithm {
+public class RunAlgorithmTestCase implements RunAlgorithm {
 	/** 一组实时任务 */
 	private final Vector<Task> taskSet;
 	
@@ -76,7 +76,7 @@ public class RunAlgorithmCase implements RunAlgorithm {
 	 * @param checkAlgorithm 校验算法对象
 	 * @param deadline 调度算法运行截至时间
 	 */
-	public RunAlgorithmCase(final Vector<Task> taskSet, final SchedulingAlgorithm schedulingAlgorithm, final CheckAlgorithm checkAlgorithm, final int deadline) {
+	public RunAlgorithmTestCase(final Vector<Task> taskSet, final SchedulingAlgorithm schedulingAlgorithm, final CheckAlgorithm checkAlgorithm, final int deadline) {
 		this.taskSet = taskSet;
 		this.schedulingAlgorithm = schedulingAlgorithm;
 		this.checkAlgorithm = checkAlgorithm;
@@ -88,7 +88,7 @@ public class RunAlgorithmCase implements RunAlgorithm {
 	 * @param taskSet 任务集
 	 * @param deadline 调度算法运行时长
 	 */
-	public RunAlgorithmCase(final Vector<Task> taskSet, final int deadline) {
+	public RunAlgorithmTestCase(final Vector<Task> taskSet, final int deadline) {
 		this.taskSet = taskSet;
 		this.deadline = deadline;
 	}
@@ -99,7 +99,7 @@ public class RunAlgorithmCase implements RunAlgorithm {
 	 * @param schedulingAlgorithm 调度算法对象
 	 * @param checkAlgorithm 校验算法对象
 	 */
-	public RunAlgorithmCase(final Vector<Task> taskSet, final SchedulingAlgorithm schedulingAlgorithm, final CheckAlgorithm checkAlgorithm) {
+	public RunAlgorithmTestCase(final Vector<Task> taskSet, final SchedulingAlgorithm schedulingAlgorithm, final CheckAlgorithm checkAlgorithm) {
 		this.taskSet = taskSet;
 		this.schedulingAlgorithm = schedulingAlgorithm;
 		this.checkAlgorithm = checkAlgorithm;
@@ -110,7 +110,7 @@ public class RunAlgorithmCase implements RunAlgorithm {
 	 * 构造函数，指定任务
 	 * @param taskSet 任务集
 	 */
-	public RunAlgorithmCase(final Vector<Task> taskSet) {
+	public RunAlgorithmTestCase(final Vector<Task> taskSet) {
 		this.taskSet = taskSet;
 		// this.deadline = Tools.hyperperiod(taskSet);
 	}

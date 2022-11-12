@@ -11,7 +11,7 @@ import pers.han.scheduler.scheduling.*;
  * @version		1.0
  *
  */
-public class InputAlgorithmFromFile implements InputAlgorithm {
+public class InputSchedulingAlgorithmFromFile implements InputSchedulingAlgorithm {
 	/** 文件路径 */
 	String filePath;
 	
@@ -19,7 +19,7 @@ public class InputAlgorithmFromFile implements InputAlgorithm {
 	 * 构造函数
 	 * @param filePath 文件路径
 	 */
-	public InputAlgorithmFromFile(String filePath) {
+	public InputSchedulingAlgorithmFromFile(String filePath) {
 		this.filePath = filePath;
 	}
 	

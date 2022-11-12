@@ -17,7 +17,7 @@ import java.util.Vector;
  * @version		1.0
  *
  */
-public class RunAlgorithmSuit implements RunAlgorithm {
+public class RunAlgorithmTestSuit implements RunAlgorithm {
 	
 	/** 一组执行算法的实例 */
 	private Vector<RunAlgorithm> algorithmSuit = new Vector<RunAlgorithm>();
@@ -29,9 +29,9 @@ public class RunAlgorithmSuit implements RunAlgorithm {
 	 * 使用任务suit构造，需要后续添加调度算法和校验算法
 	 * @param taskSuit 任务
 	 */
-	public RunAlgorithmSuit(final Vector<Vector<Task>> taskSuit) {
+	public RunAlgorithmTestSuit(final Vector<Vector<Task>> taskSuit) {
 		for (Vector<Task> taskSet : taskSuit) {
-			this.algorithmSuit.add(new RunAlgorithmCase(taskSet));
+			this.algorithmSuit.add(new RunAlgorithmTestCase(taskSet));
 		}
 	}
 	
@@ -41,10 +41,10 @@ public class RunAlgorithmSuit implements RunAlgorithm {
 	 * @param schedulingAlgorithm 调度算法
 	 * @param checkAlgorithm 校验算法
 	 */
-	public RunAlgorithmSuit(final Vector<Vector<Task>> taskSuit, final SchedulingAlgorithm schedulingAlgorithm, final CheckAlgorithm checkAlgorithm) {
+	public RunAlgorithmTestSuit(final Vector<Vector<Task>> taskSuit, final SchedulingAlgorithm schedulingAlgorithm, final CheckAlgorithm checkAlgorithm) {
 		// this.algorithmSuit = new Vector<RunAlgorithm>();
 		for (Vector<Task> taskSet : taskSuit) {
-			this.algorithmSuit.add(new RunAlgorithmCase(taskSet, schedulingAlgorithm, checkAlgorithm));
+			this.algorithmSuit.add(new RunAlgorithmTestCase(taskSet, schedulingAlgorithm, checkAlgorithm));
 		}
 	}
 

@@ -4,7 +4,7 @@ import java.util.Map;
 import java.util.Vector;
 
 import pers.han.scheduler.framework.RunAlgorithm;
-import pers.han.scheduler.framework.RunAlgorithmCase;
+import pers.han.scheduler.framework.RunAlgorithmTestCase;
 import pers.han.scheduler.io.*;
 import pers.han.scheduler.task.*;
 import pers.han.scheduler.scheduling.*;
@@ -16,13 +16,13 @@ public class Runner {
 	public static void main(String[] args) {
 		// 输入
 //		InputTaskData in = new InputTaskDataFromFile("D:\\\\eclipse\\\\workspace\\\\scheduler\\\\fileData");
-		InputTaskData in = new InputTaskDataFromFile("/usr/local/scheduler-test-data/");
+		InputTasksets in = new InputTasksetsFromFile("/usr/local/scheduler-test-data/");
 		Vector<Vector<Task>> taskSuit = in.getTaskData();
 		if (taskSuit.size() == 0) {
 			return;
 		}
 		// 执行算法
-		RunAlgorithm algorithmCase = new RunAlgorithmCase(taskSuit.get(0), 200);
+		RunAlgorithm algorithmCase = new RunAlgorithmTestCase(taskSuit.get(0), 200);
 		
 		// 设置调度算法和校验算法
 //		SchedulingAlgorithm schedulingAlgorithm = new PeriodicSchedulingAlgorithm();

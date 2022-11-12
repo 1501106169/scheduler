@@ -11,7 +11,7 @@ import pers.han.scheduler.scheduling.SchedulingAlgorithm;
  * @version		1.0
  *
  */
-public interface InputAlgorithm {
+public interface InputSchedulingAlgorithm {
 	/**
 	 * 获取输入的调度算法
 	 * @return SchedulingAlgorithm

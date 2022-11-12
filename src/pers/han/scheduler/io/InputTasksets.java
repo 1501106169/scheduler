@@ -13,7 +13,7 @@ import pers.han.scheduler.task.Task;
  * @version		1.0
  *
  */
-public interface InputTaskData {
+public interface InputTasksets {
 	/**
 	 * 获取一组调度任务
 	 * @return Vector<Vector<Task>>

@@ -1,7 +1,7 @@
 package pers.han.scheduler.io;
 
 import pers.han.scheduler.framework.RunAlgorithm;
-import pers.han.scheduler.framework.RunAlgorithmCase;
+import pers.han.scheduler.framework.RunAlgorithmTestCase;
 import pers.han.scheduler.task.TimeBlock;
 
 /**
@@ -27,7 +27,7 @@ public class OutputForTerminal implements OutputSchedulingResult {
 	
 	@Override
 	public void outSchedulingResult() {
-		RunAlgorithmCase algorithmCase = RunAlgorithmCase.class.cast(this.runAlgorithm);
+		RunAlgorithmTestCase algorithmCase = RunAlgorithmTestCase.class.cast(this.runAlgorithm);
 		System.out.print("FEASIBILITY: ");
 		System.out.println(algorithmCase.getCheckResult());
 		System.out.print("EXECTION TIME: ");

@@ -16,7 +16,7 @@ import pers.han.scheduler.task.*;
  * @version		1.0
  *
  */
-public class InputTaskDataFromFile implements InputTaskData {
+public class InputTasksetsFromFile implements InputTasksets {
 	/** 包含实时任务文件的文件夹路径 */
 	String dirPath;
 	
@@ -24,7 +24,7 @@ public class InputTaskDataFromFile implements InputTaskData {
 	 * 构造函数
 	 * @param dirPath 文件夹路径
 	 */
-	public InputTaskDataFromFile(String dirPath) {
+	public InputTasksetsFromFile(String dirPath) {
 		this.dirPath = dirPath;
 	}
 	
