@@ -2,6 +2,7 @@ package pers.han.scheduler.scheduling;
 
 import java.util.Vector;
 
+import pers.han.scheduler.algroithms.Tools;
 import pers.han.scheduler.task.PeriodicTask;
 import pers.han.scheduler.task.Task;
 import pers.han.scheduler.task.TimeBlock;
@@ -21,7 +22,7 @@ public class LSTSchedulingAlgorithm extends SchedulingAlgorithm {
 	@Override
 	public Vector<TimeBlock> doSchedule() {
 		while (this.timeAxis < this.runEndTime) {
-			int earlistReleaseTime = this.getEarlistRealseTime(this.taskSet);
+			int earlistReleaseTime = Tools.getEarlistRealseTime(this.taskSet);
 			if (earlistReleaseTime > this.timeAxis) {
 				this.timeAxis = earlistReleaseTime;
 				continue;
@@ -74,30 +75,5 @@ public class LSTSchedulingAlgorithm extends SchedulingAlgorithm {
 		}
 		return nextTaskId;
 	}
-	
-	/**
-	 * 获取作业的最早释放时间
-	 * @param taskSet 任务集
-	 * @return Integer
-	 */
-	private int getEarlistRealseTime(final Vector<Task> taskSet) {
-		if (taskSet.isEmpty()) {
-			// -1 表示作业为空
-			return -1;
-		}
-		int leastRealseTime =  this.runEndTime;
-		for (Task task : taskSet) {
-			if (task.getClass() == pers.han.scheduler.task.PeriodicTask.class) {
-				// 周期性任务
-				leastRealseTime = Math.min(leastRealseTime, 
-						((PeriodicTask) task).getCycleStartTime() + ((PeriodicTask) task).getJobReleaseTime());
-			} else if (task.getRunTime() < task.getJobExecTime()) {
-				// 偶发任务和非周期性任务
-				leastRealseTime = Math.min(leastRealseTime, task.getJobReleaseTime());
-			}
-		}
-		return leastRealseTime;
-	}
-	
 
 }

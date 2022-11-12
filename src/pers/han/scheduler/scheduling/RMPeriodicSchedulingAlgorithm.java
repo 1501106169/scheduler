@@ -2,6 +2,7 @@ package pers.han.scheduler.scheduling;
 
 import java.util.Vector;
 
+import pers.han.scheduler.algroithms.Tools;
 import pers.han.scheduler.task.PeriodicTask;
 import pers.han.scheduler.task.Task;
 import pers.han.scheduler.task.TimeBlock;
@@ -22,7 +23,7 @@ public class RMPeriodicSchedulingAlgorithm extends SchedulingAlgorithm {
 	@Override
 	public Vector<TimeBlock> doSchedule() {
 		while (this.timeAxis < this.runEndTime) {
-			int earlistReleaseTime = this.getEarlistRealseTime(this.taskSet);
+			int earlistReleaseTime = Tools.getEarlistRealseTime(this.taskSet);
 			if (earlistReleaseTime > this.timeAxis) {
 				this.timeAxis = earlistReleaseTime;
 				continue;
@@ -41,24 +42,6 @@ public class RMPeriodicSchedulingAlgorithm extends SchedulingAlgorithm {
 		return this.schedulingResult;
 	}
 
-	/**
-	 * 获取作业的最早释放时间
-	 * @param taskSet 任务集
-	 * @return Integer
-	 */
-	private int getEarlistRealseTime(final Vector<Task> taskSet) {
-		if (taskSet.isEmpty()) {
-			// -1 表示作业为空
-			return -1;
-		}
-		int leastRealseTime =  this.runEndTime;
-		for (Task task : taskSet) {
-			leastRealseTime = Math.min(leastRealseTime, 
-					((PeriodicTask) task).getCycleStartTime() + ((PeriodicTask) task).getJobReleaseTime());
-		}
-		return leastRealseTime;
-	}
-	
 	/**
 	 * 获取已释放且周期最短的任务
 	 * @param taskSet 任务集

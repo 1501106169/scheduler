@@ -27,7 +27,7 @@ public class Test {
 		// 执行算法
 		RunAlgorithm algorithmCase = new RunAlgorithmCase(taskSuit.get(1), Tools.hyperperiod((taskSuit.get(1))));
 		// 设置调度算法和校验算法
-		SchedulingAlgorithm schedulingAlgorithm = new EDFSchedulingAlgorithmPreemptbale();
+		SchedulingAlgorithm schedulingAlgorithm = new EDFSchedulingAlgorithm();
 		CheckAlgorithm checkAlgorithm = new LSTCheckAlgorithm();
 		algorithmCase.setSchedulingAlgorithm(schedulingAlgorithm);
 		algorithmCase.setCheckAlgorithm(checkAlgorithm);

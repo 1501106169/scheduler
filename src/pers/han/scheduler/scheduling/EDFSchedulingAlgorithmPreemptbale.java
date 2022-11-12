@@ -2,6 +2,7 @@ package pers.han.scheduler.scheduling;
 
 import java.util.Vector;
 
+import pers.han.scheduler.algroithms.Tools;
 import pers.han.scheduler.task.PeriodicTask;
 import pers.han.scheduler.task.Task;
 import pers.han.scheduler.task.TimeBlock;
@@ -25,7 +26,7 @@ public class EDFSchedulingAlgorithmPreemptbale extends SchedulingAlgorithm{
 		// 记录上次调度任务的索引
 		int index = -1;
 		for (nowTime = 0 ; nowTime < this.runEndTime; ++nowTime) {
-			int taskIndex = getEarlistTask(taskSet, nowTime);
+			int taskIndex = getMinDeadlineTask(taskSet, nowTime);
 			if (taskIndex == -1) {
 				if (index != -1) {
 					this.schedulingResult.add(new TimeBlock(index, startTime, nowTime - startTime));
@@ -64,7 +65,7 @@ public class EDFSchedulingAlgorithmPreemptbale extends SchedulingAlgorithm{
 	 * @param nowTime 当前时刻
 	 * @return Integer
 	 */
-	private int getEarlistTask(final Vector<Task> taskSet, final int nowTime) {
+	private int getMinDeadlineTask(final Vector<Task> taskSet, final int nowTime) {
 		int nextTaskId = -1;
 		int leastDeadline = this.runEndTime;
 		for (int i = 0; i < taskSet.size(); ++i) {
