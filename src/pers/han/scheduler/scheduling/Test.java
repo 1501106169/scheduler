@@ -25,9 +25,9 @@ public class Test {
 		Vector<Vector<Task>> taskSuit = in.getTaskData();
 
 		// 执行算法
-		RunAlgorithm algorithmCase = new RunAlgorithmCase(taskSuit.get(0), Tools.hyperperiod((taskSuit.get(0))));
+		RunAlgorithm algorithmCase = new RunAlgorithmCase(taskSuit.get(1), Tools.hyperperiod((taskSuit.get(1))));
 		// 设置调度算法和校验算法
-		SchedulingAlgorithm schedulingAlgorithm = new LSTSchedulingAlgorithm();
+		SchedulingAlgorithm schedulingAlgorithm = new EDFSchedulingAlgorithmPreemptbale();
 		CheckAlgorithm checkAlgorithm = new LSTCheckAlgorithm();
 		algorithmCase.setSchedulingAlgorithm(schedulingAlgorithm);
 		algorithmCase.setCheckAlgorithm(checkAlgorithm);
@@ -35,7 +35,7 @@ public class Test {
 		// 执行调度算法
 		algorithmCase.runSchedulingAlgorithm();
 		// 执行校验算法
-		algorithmCase.runCheckAlgorithm();
+//		algorithmCase.runCheckAlgorithm();
 		
 		// 计算调度算法性能
 		PerformanceTest pt = new PerformanceTest(algorithmCase);

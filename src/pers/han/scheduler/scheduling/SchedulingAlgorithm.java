@@ -65,6 +65,7 @@ public abstract class SchedulingAlgorithm {
 	 * @param runEndTime 添加偶发任务后，算法执行截止时间
 	 */
 	public void addTask(final Task sporadicTask, final int runEndTime) {
+		this.taskSet.add(sporadicTask);
 		return;
 	}
 	
