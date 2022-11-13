@@ -50,11 +50,11 @@ public class RMPeriodicSchedulingAlgorithm extends SchedulingAlgorithm {
 	 */
 	private int getPeriodicMinTask(final Vector<Task> taskSet, final int nowTime) {
 		int nextTaskId = -1;
-		int minPeriodic = this.runEndTime;
+		int minPeriodic = Integer.MAX_VALUE;
 		for (int i = 0; i < taskSet.size(); ++i) {
 			PeriodicTask task = (PeriodicTask) taskSet.get(i);
 			if (task.getCycleStartTime() + task.getJobReleaseTime() <= nowTime 
-					&& task.getTaskPeriodic() < minPeriodic) {
+					&& task.getTaskPeriodic() <= minPeriodic) {
 				minPeriodic = task.getTaskPeriodic();
 				nextTaskId = i;
 			}
