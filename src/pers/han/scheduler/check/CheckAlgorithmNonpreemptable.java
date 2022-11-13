@@ -14,7 +14,7 @@ import pers.han.scheduler.task.TimeBlock;
  * @version		1.0
  *
  */
-public class CheckAlgorithmPreemptableNonpreemptable extends CheckAlgorithm {
+public class CheckAlgorithmNonpreemptable extends CheckAlgorithm {
 	
 	@Override
 	public void tearDown() {
@@ -24,7 +24,7 @@ public class CheckAlgorithmPreemptableNonpreemptable extends CheckAlgorithm {
 	@Override
 	public CheckResultEnum doCheck() {
 		for (TimeBlock tb : this.schedulingResult) {
-			if (this.taskSet.get(tb.getTaskId()).getClass() == pers.han.scheduler.task.PeriodicTask.class) {
+			if (this.taskSet.get(tb.getTaskId()).getClass() == PeriodicTask.class) {
 				// 周期性任务
 				PeriodicTask pTask = (PeriodicTask) this.taskSet.get(tb.getTaskId());
 				if (tb.getStartTime() >= pTask.getCycleStartTime() + pTask.getJobReleaseTime() 
@@ -50,7 +50,7 @@ public class CheckAlgorithmPreemptableNonpreemptable extends CheckAlgorithm {
 			}
 		}
 		for (Task task : this.taskSet) {
-			if (task.getClass() == pers.han.scheduler.task.PeriodicTask.class) {
+			if (task.getClass() == PeriodicTask.class) {
 				// 周期性任务
 				if (((PeriodicTask) task).getCycleStartTime() < this.deadline) {
 					return CheckResultEnum.INFEASIBLE;

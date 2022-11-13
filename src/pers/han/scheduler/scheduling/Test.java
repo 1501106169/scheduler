@@ -5,6 +5,7 @@ import java.util.Vector;
 import pers.han.scheduler.algroithms.Numeric;
 import pers.han.scheduler.algroithms.Tools;
 import pers.han.scheduler.check.CheckAlgorithm;
+import pers.han.scheduler.check.CheckAlgorithmPreemptable;
 import pers.han.scheduler.check.EDFCheckAlgorithm;
 import pers.han.scheduler.check.LSTCheckAlgorithm;
 import pers.han.scheduler.check.PerformanceTest;
@@ -27,15 +28,15 @@ public class Test {
 		// 执行算法
 		RunAlgorithm algorithmCase = new RunAlgorithmTestCase(taskSuit.get(1), Tools.hyperperiod((taskSuit.get(1))));
 		// 设置调度算法和校验算法
-		SchedulingAlgorithm schedulingAlgorithm = new EDFSchedulingAlgorithm();
-		CheckAlgorithm checkAlgorithm = new LSTCheckAlgorithm();
+		SchedulingAlgorithm schedulingAlgorithm = new EDFSchedulingAlgorithmPreemptbale();
+		CheckAlgorithm checkAlgorithm = new CheckAlgorithmPreemptable();
 		algorithmCase.setSchedulingAlgorithm(schedulingAlgorithm);
 		algorithmCase.setCheckAlgorithm(checkAlgorithm);
 		
 		// 执行调度算法
 		algorithmCase.runSchedulingAlgorithm();
 		// 执行校验算法
-//		algorithmCase.runCheckAlgorithm();
+		algorithmCase.runCheckAlgorithm();
 		
 		// 计算调度算法性能
 		PerformanceTest pt = new PerformanceTest(algorithmCase);

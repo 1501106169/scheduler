@@ -47,7 +47,7 @@ public class EDFSchedulingAlgorithmPreemptbale extends SchedulingAlgorithm{
 			if (task.getRunTime() == task.getJobExecTime()) {
 				this.schedulingResult.add(new TimeBlock(index, startTime, nowTime - startTime + 1));
 				index = -1;
-				if (task.getClass() == pers.han.scheduler.task.PeriodicTask.class) {
+				if (task.getClass() == PeriodicTask.class) {
 					// 周期性任务
 					((PeriodicTask) task).nextCycle();
 				} 
@@ -69,7 +69,7 @@ public class EDFSchedulingAlgorithmPreemptbale extends SchedulingAlgorithm{
 		int nextTaskId = -1;
 		int leastDeadline = this.runEndTime;
 		for (int i = 0; i < taskSet.size(); ++i) {
-			if (taskSet.get(i).getClass() == pers.han.scheduler.task.PeriodicTask.class) {
+			if (taskSet.get(i).getClass() == PeriodicTask.class) {
 				// 周期性任务
 				PeriodicTask pTask = (PeriodicTask) taskSet.get(i);
 				int realseTime = pTask.getCycleStartTime() + pTask.getJobReleaseTime();

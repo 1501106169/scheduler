@@ -37,7 +37,7 @@ public class LSTSchedulingAlgorithm extends SchedulingAlgorithm {
 			this.schedulingResult.add(new TimeBlock(nextTaskId, this.timeAxis, execTime));
 			this.timeAxis += execTime;
 			this.taskSet.get(nextTaskId).run(execTime);
-			if (this.taskSet.get(nextTaskId).getClass() == pers.han.scheduler.task.PeriodicTask.class) {
+			if (this.taskSet.get(nextTaskId).getClass() == PeriodicTask.class) {
 				((PeriodicTask) this.taskSet.get(nextTaskId)).nextCycle();
 			}
 		}
@@ -54,7 +54,7 @@ public class LSTSchedulingAlgorithm extends SchedulingAlgorithm {
 		int nextTaskId = -1;
 		int leastSlackTime = this.runEndTime;
 		for (int i = 0; i < taskSet.size(); ++i) {
-			if (taskSet.get(i).getClass() == pers.han.scheduler.task.PeriodicTask.class) {
+			if (taskSet.get(i).getClass() == PeriodicTask.class) {
 				// 周期性任务
 				PeriodicTask pTask = (PeriodicTask) taskSet.get(i);
 				int realseTime = pTask.getCycleStartTime() + pTask.getJobReleaseTime();

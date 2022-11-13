@@ -30,7 +30,7 @@ public class Tools {
 		Vector<Integer> list = new Vector<Integer>();
 		int maxDeadline = 0;
 		for (Task task : taskSet) {
-			if (task.getClass() == pers.han.scheduler.task.PeriodicTask.class) {
+			if (task.getClass() == PeriodicTask.class) {
 				list.add(((PeriodicTask) task).getTaskPeriodic());
 			} else {
 				maxDeadline = Math.max(maxDeadline, task.getJobDeadline());
@@ -57,7 +57,7 @@ public class Tools {
 		}
 		int leastRealseTime =  Integer.MAX_VALUE;
 		for (Task task : taskSet) {
-			if (task.getClass() == pers.han.scheduler.task.PeriodicTask.class) {
+			if (task.getClass() == PeriodicTask.class) {
 				// 周期性任务
 				leastRealseTime = Math.min(leastRealseTime, 
 						((PeriodicTask) task).getCycleStartTime() + ((PeriodicTask) task).getJobReleaseTime());

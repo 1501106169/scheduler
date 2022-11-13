@@ -83,8 +83,8 @@ public class PerformanceTest {
 		// 浅拷贝
 		Vector<TimeBlock> schedulingResult = this.algorithmCase.getSchedulingResult();
 		for (TimeBlock tb : schedulingResult) {
-			if (taskSet.get(tb.getTaskId()).getClass() == pers.han.scheduler.task.PeriodicTask.class) {
-				PeriodicTask pt = pers.han.scheduler.task.PeriodicTask.class.cast(taskSet.get(tb.getTaskId()));
+			if (taskSet.get(tb.getTaskId()).getClass() == PeriodicTask.class) {
+				PeriodicTask pt = PeriodicTask.class.cast(taskSet.get(tb.getTaskId()));
 				this.responseTime += tb.getStartTime() - pt.getCycleStartTime() - pt.getJobReleaseTime();
 				pt.nextCycle();
 			} else {
@@ -108,8 +108,8 @@ public class PerformanceTest {
 		// 浅拷贝
 		Vector<TimeBlock> schedulingResult = this.algorithmCase.getSchedulingResult();
 		for (TimeBlock tb : schedulingResult) {
-			if (taskSet.get(tb.getTaskId()).getClass() == pers.han.scheduler.task.PeriodicTask.class) {
-				PeriodicTask pt = pers.han.scheduler.task.PeriodicTask.class.cast(taskSet.get(tb.getTaskId()));
+			if (taskSet.get(tb.getTaskId()).getClass() == PeriodicTask.class) {
+				PeriodicTask pt = PeriodicTask.class.cast(taskSet.get(tb.getTaskId()));
 				reponseTimeList.add((double) (tb.getStartTime() - pt.getCycleStartTime() - pt.getJobReleaseTime()));
 				pt.nextCycle();
 			} else {
