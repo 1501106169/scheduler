@@ -15,7 +15,7 @@ import pers.han.scheduler.task.TimeBlock;
  * @version		1.0
  *
  */
-public class LSTSchedulingAlgorithmPreemptanle extends SchedulingAlgorithm {
+public class LSTSchedulingAlgorithmPreemptable extends SchedulingAlgorithm {
 
 	@Override
 	public Vector<TimeBlock> doSchedule() {
