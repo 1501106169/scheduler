@@ -10,7 +10,7 @@ import pers.han.scheduler.task.TimeBlock;
 /**
  * DM不可抢占调度算法
  * 周期性任务的固定优先级调度算法
- * 周期性任务的相对时限越早优先级越高
+ * 周期性任务的相对时限越短优先级越高
  * 
  * @author		hanYG
  * @createDate	2022年11月11日
@@ -22,6 +22,10 @@ public class DMPeriodicSchedulingAlgorithm extends SchedulingAlgorithm {
 
 	@Override
 	public Vector<TimeBlock> doSchedule() {
+		for (Task task : this.taskSet) {
+			// 数字越小优先级越高
+			task.setTaskPriority(task.getJobDeadline());
+		}
 		while (this.timeAxis < this.runEndTime) {
 			int earlistReleaseTime = Tools.getEarlistRealseTime(this.taskSet);
 			if (earlistReleaseTime > this.timeAxis) {
@@ -53,24 +57,13 @@ public class DMPeriodicSchedulingAlgorithm extends SchedulingAlgorithm {
 	 */
 	private int getEarlistTask(final Vector<Task> taskSet, final int nowTime) {
 		int nextTaskId = -1;
-		int leastDeadline = this.runEndTime;
+		int priority = this.runEndTime;
 		for (int i = 0; i < taskSet.size(); ++i) {
-			if (taskSet.get(i).getClass() == PeriodicTask.class) {
-				// 周期性任务
-				PeriodicTask pTask = (PeriodicTask) taskSet.get(i);
-				int realseTime = pTask.getCycleStartTime() + pTask.getJobReleaseTime();
-				int deadline = pTask.getCycleStartTime() + pTask.getJobDeadline();
-				if (realseTime <= nowTime && deadline <= leastDeadline) {
-					nextTaskId = i;
-					leastDeadline = deadline;
-				}
-			} else {
-				// 偶发任务和非周期性任务
-				if (taskSet.get(i).getJobDeadline() <= leastDeadline 
-						&& taskSet.get(i).getRunTime() < taskSet.get(i).getJobExecTime()) {
-					nextTaskId = i;
-					leastDeadline = taskSet.get(i).getJobDeadline();
-				}
+			PeriodicTask pTask = (PeriodicTask) taskSet.get(i);
+			int realseTime = pTask.getCycleStartTime() + pTask.getJobReleaseTime();
+			if (realseTime <= nowTime && pTask.getTaskPriority() < priority) {
+				nextTaskId = i;
+				priority = pTask.getTaskPeriodic();
 			}
 		}
 		return nextTaskId;

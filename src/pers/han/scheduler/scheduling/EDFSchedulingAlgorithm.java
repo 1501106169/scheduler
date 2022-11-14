@@ -9,6 +9,7 @@ import pers.han.scheduler.task.TimeBlock;
 
 /**
  * EDF不可抢占调度算法
+ * 动态优先级调度算法
  * 任务的时限越早优先级越高
  * 
  * @author		hanYG

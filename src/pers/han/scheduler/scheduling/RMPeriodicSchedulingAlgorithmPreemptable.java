@@ -20,6 +20,9 @@ public class RMPeriodicSchedulingAlgorithmPreemptable extends SchedulingAlgorith
 
 	@Override
 	public Vector<TimeBlock> doSchedule() {
+		for (Task task : this.taskSet) {
+			task.setTaskPriority(((PeriodicTask) task).getTaskPeriodic());
+		}
 		int nowTime = 0;
 		// 记录上次调度任务的开始时刻
 		int startTime = 0;
@@ -67,12 +70,12 @@ public class RMPeriodicSchedulingAlgorithmPreemptable extends SchedulingAlgorith
 	 */
 	private int getPeriodicMinTask(final Vector<Task> taskSet, final int nowTime) {
 		int nextTaskId = -1;
-		int minPeriodic = Integer.MAX_VALUE;
+		int minPriority = Integer.MAX_VALUE;
 		for (int i = 0; i < taskSet.size(); ++i) {
 			PeriodicTask task = (PeriodicTask) taskSet.get(i);
 			if (task.getCycleStartTime() + task.getJobReleaseTime() <= nowTime 
-					&& task.getTaskPeriodic() <= minPeriodic) {
-				minPeriodic = task.getTaskPeriodic();
+					&& task.getTaskPriority() <= minPriority) {
+				minPriority = task.getTaskPeriodic();
 				nextTaskId = i;
 			}
 		}

@@ -42,6 +42,15 @@ public abstract class Task {
 	}
 	
 	/**
+	 * 设置任务的优先级
+	 * @param priority
+	 */
+	public void setTaskPriority(int priority) {
+		this.taskPriority = priority;
+		return;
+	}
+	
+	/**
 	 * 获取作业可抢占
 	 * @return JobPreemption
 	 */

@@ -2,13 +2,14 @@ package pers.han.scheduler.scheduling;
 
 import java.util.Vector;
 
-import pers.han.scheduler.algroithms.Tools;
 import pers.han.scheduler.task.PeriodicTask;
 import pers.han.scheduler.task.Task;
 import pers.han.scheduler.task.TimeBlock;
 
 /**
  * EDF可抢占调度算法
+ * 动态优先级调度算法
+ * 任务的时限越早优先级越高
  * 
  * @author		hanYG
  * @createDate	2022年11月11日

@@ -4,7 +4,6 @@ import pers.han.scheduler.task.Task;
 import pers.han.scheduler.task.TimeBlock;
 import pers.han.scheduler.scheduling.SchedulingAlgorithm;
 import pers.han.scheduler.check.CheckAlgorithm;
-import pers.han.scheduler.algroithms.Numeric;
 import pers.han.scheduler.algroithms.Tools;
 
 import java.util.Vector;

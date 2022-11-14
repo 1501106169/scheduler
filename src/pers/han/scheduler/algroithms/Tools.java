@@ -1,9 +1,8 @@
 package pers.han.scheduler.algroithms;
 
-import pers.han.scheduler.task.*;
-import pers.han.scheduler.algroithms.Numeric;
-
 import java.util.Vector;
+
+import pers.han.scheduler.task.*;
 
 /**
  * 工具类，包含一组静态方法

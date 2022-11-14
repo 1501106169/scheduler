@@ -2,7 +2,6 @@ package pers.han.scheduler.scheduling;
 
 import java.util.Vector;
 
-import pers.han.scheduler.algroithms.Tools;
 import pers.han.scheduler.task.PeriodicTask;
 import pers.han.scheduler.task.Task;
 import pers.han.scheduler.task.TimeBlock;
@@ -21,6 +20,10 @@ public class DMPeriodicSchedulingAlgorithmPreemptable extends SchedulingAlgorith
 
 	@Override
 	public Vector<TimeBlock> doSchedule() {
+		for (Task task : this.taskSet) {
+			// 数字越小优先级越高
+			task.setTaskPriority(task.getJobDeadline());
+		}
 		int nowTime = 0;
 		// 记录上次调度任务的开始时刻
 		int startTime = 0;
@@ -68,24 +71,13 @@ public class DMPeriodicSchedulingAlgorithmPreemptable extends SchedulingAlgorith
 	 */
 	private int getEarlistTask(final Vector<Task> taskSet, final int nowTime) {
 		int nextTaskId = -1;
-		int leastDeadline = this.runEndTime;
+		int priority = this.runEndTime;
 		for (int i = 0; i < taskSet.size(); ++i) {
-			if (taskSet.get(i).getClass() == PeriodicTask.class) {
-				// 周期性任务
-				PeriodicTask pTask = (PeriodicTask) taskSet.get(i);
-				int realseTime = pTask.getCycleStartTime() + pTask.getJobReleaseTime();
-				int deadline = pTask.getCycleStartTime() + pTask.getJobDeadline();
-				if (realseTime <= nowTime && deadline <= leastDeadline) {
-					nextTaskId = i;
-					leastDeadline = deadline;
-				}
-			} else {
-				// 偶发任务和非周期性任务
-				if (taskSet.get(i).getJobDeadline() <= leastDeadline 
-						&& taskSet.get(i).getRunTime() < taskSet.get(i).getJobExecTime()) {
-					nextTaskId = i;
-					leastDeadline = taskSet.get(i).getJobDeadline();
-				}
+			PeriodicTask pTask = (PeriodicTask) taskSet.get(i);
+			int realseTime = pTask.getCycleStartTime() + pTask.getJobReleaseTime();
+			if (realseTime <= nowTime && pTask.getTaskPriority() < priority) {
+				nextTaskId = i;
+				priority = pTask.getTaskPeriodic();
 			}
 		}
 		return nextTaskId;

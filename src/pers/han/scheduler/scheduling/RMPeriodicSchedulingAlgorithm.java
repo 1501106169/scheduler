@@ -22,6 +22,10 @@ public class RMPeriodicSchedulingAlgorithm extends SchedulingAlgorithm {
 
 	@Override
 	public Vector<TimeBlock> doSchedule() {
+		// 设置任务的周期
+		for (Task task : this.taskSet) {
+			task.setTaskPriority(((PeriodicTask) task).getTaskPeriodic());
+		}
 		while (this.timeAxis < this.runEndTime) {
 			int earlistReleaseTime = Tools.getEarlistRealseTime(this.taskSet);
 			if (earlistReleaseTime > this.timeAxis) {
@@ -50,12 +54,12 @@ public class RMPeriodicSchedulingAlgorithm extends SchedulingAlgorithm {
 	 */
 	private int getPeriodicMinTask(final Vector<Task> taskSet, final int nowTime) {
 		int nextTaskId = -1;
-		int minPeriodic = Integer.MAX_VALUE;
+		int minPriority = Integer.MAX_VALUE;
 		for (int i = 0; i < taskSet.size(); ++i) {
 			PeriodicTask task = (PeriodicTask) taskSet.get(i);
 			if (task.getCycleStartTime() + task.getJobReleaseTime() <= nowTime 
-					&& task.getTaskPeriodic() <= minPeriodic) {
-				minPeriodic = task.getTaskPeriodic();
+					&& task.getTaskPriority() <= minPriority) {
+				minPriority = task.getTaskPeriodic();
 				nextTaskId = i;
 			}
 		}
