@@ -53,7 +53,7 @@ public class LSTSchedulingAlgorithm extends SchedulingAlgorithm {
 	 */
 	private int getLeastSlackTimeTask(final Vector<Task> taskSet, final int nowTime) {
 		int nextTaskId = -1;
-		int leastSlackTime = this.runEndTime;
+		int leastSlackTime = Integer.MAX_VALUE;
 		for (int i = 0; i < taskSet.size(); ++i) {
 			if (taskSet.get(i).getClass() == PeriodicTask.class) {
 				// 周期性任务

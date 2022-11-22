@@ -20,6 +20,9 @@ public class InputTasksetsFromFile implements InputTasksets {
 	/** 包含实时任务文件的文件夹路径 */
 	String dirPath;
 	
+	/** 偶发任务分隔符 */
+	private String sporadicTaskSplitStr = "SporadicTask";
+	
 	/**
 	 * 构造函数
 	 * @param dirPath 文件夹路径
@@ -58,11 +61,26 @@ public class InputTasksetsFromFile implements InputTasksets {
 		try {
 			br = new BufferedReader(new FileReader(filePath));
 			String s = null;
-			while ((s = br.readLine()) != null) {
+			while ((s = br.readLine()) != null && s.indexOf(this.sporadicTaskSplitStr) < 0) {
+				if (s.length() == 0) {
+					continue;
+				}
 				// 正则表达式匹配空格或Tab或空格和Tan
 				String[] strList = s.split("\t|\s|\t\s");
 				// 工厂模式，需要工厂帮我创建任务子类对象的实例
 				Task task = TaskFactory.createTask(strList);
+				if (task != null) {
+					taskSet.add(task);
+				}
+			}
+			while ((s = br.readLine()) != null) {
+				if (s.length() == 0) {
+					continue;
+				}
+				// 正则表达式匹配空格或Tab或空格和Tan
+				String[] strList = s.split("\t|\s|\t\s");
+				// 工厂模式，需要工厂帮我创建任务子类对象的实例
+				Task task = TaskFactory.createSporadicTask(strList);
 				if (task != null) {
 					taskSet.add(task);
 				}
@@ -79,6 +97,14 @@ public class InputTasksetsFromFile implements InputTasksets {
 			}
 		}
 		return taskSet;
+	}
+	
+	/**
+	 * 设置偶发任务分隔符
+	 * @param splitStr
+	 */
+	public void setSporadicTaskSplitStr(String splitStr) {
+		this.sporadicTaskSplitStr = splitStr;
 	}
 	
 	

@@ -24,32 +24,31 @@ public class DMPeriodicSchedulingAlgorithmPreemptable extends SchedulingAlgorith
 			// 数字越小优先级越高
 			task.setTaskPriority(task.getJobDeadline());
 		}
-		int nowTime = 0;
 		// 记录上次调度任务的开始时刻
 		int startTime = 0;
 		// 记录上次调度任务的索引
 		int index = -1;
-		for (nowTime = 0 ; nowTime < this.runEndTime; ++nowTime) {
-			int taskIndex = getEarlistTask(taskSet, nowTime);
+		for ( ; this.timeAxis < this.runEndTime; ++this.timeAxis) {
+			int taskIndex = getEarlistTask(taskSet, this.timeAxis);
 			if (taskIndex == -1) {
 				if (index != -1) {
-					this.schedulingResult.add(new TimeBlock(index, startTime, nowTime - startTime));
+					this.schedulingResult.add(new TimeBlock(index, startTime, this.timeAxis - startTime));
 					index = -1;
 				}
 				continue;
 			}
 			if (index == -1) {
 				index = taskIndex;
-				startTime = nowTime;
+				startTime = this.timeAxis;
 			} else if (index != taskIndex) {
-				this.schedulingResult.add(new TimeBlock(index, startTime, nowTime - startTime));
-				startTime = nowTime;
+				this.schedulingResult.add(new TimeBlock(index, startTime, this.timeAxis - startTime));
+				startTime = this.timeAxis;
 				index = taskIndex;
 			}
 			this.taskSet.get(taskIndex).run();
 			Task task = this.taskSet.get(taskIndex);
 			if (task.getRunTime() == task.getJobExecTime()) {
-				this.schedulingResult.add(new TimeBlock(index, startTime, nowTime - startTime + 1));
+				this.schedulingResult.add(new TimeBlock(index, startTime, this.timeAxis - startTime + 1));
 				index = -1;
 				if (task.getClass() == PeriodicTask.class) {
 					// 周期性任务
@@ -58,7 +57,7 @@ public class DMPeriodicSchedulingAlgorithmPreemptable extends SchedulingAlgorith
 			}
 		}
 		if (index != -1) {
-			this.schedulingResult.add(new TimeBlock(index, startTime, nowTime - startTime));
+			this.schedulingResult.add(new TimeBlock(index, startTime, this.timeAxis - startTime));
 		}
 		return this.schedulingResult;
 	}
@@ -71,7 +70,7 @@ public class DMPeriodicSchedulingAlgorithmPreemptable extends SchedulingAlgorith
 	 */
 	private int getEarlistTask(final Vector<Task> taskSet, final int nowTime) {
 		int nextTaskId = -1;
-		int priority = this.runEndTime;
+		int priority = Integer.MAX_VALUE;
 		for (int i = 0; i < taskSet.size(); ++i) {
 			PeriodicTask pTask = (PeriodicTask) taskSet.get(i);
 			int realseTime = pTask.getCycleStartTime() + pTask.getJobReleaseTime();

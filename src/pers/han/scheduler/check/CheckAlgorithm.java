@@ -3,6 +3,7 @@ package pers.han.scheduler.check;
 import java.util.Vector;
 
 import pers.han.scheduler.framework.CheckResultEnum;
+import pers.han.scheduler.task.SporadicTask;
 import pers.han.scheduler.task.Task;
 import pers.han.scheduler.task.TimeBlock;
 
@@ -35,12 +36,33 @@ public abstract class CheckAlgorithm {
 	
 	/**
 	 * 初始化成员变量，在doCheck方法前执行
-	 * @param taskSet
-	 * @param schedulingResult
+	 * @param taskSet 周期性任务和非周期性任务
+	 * @param schedulingResult 调度结果
 	 */
 	public void setUp(final Vector<Task> taskSet, final Vector<TimeBlock> schedulingResult, final int deadline) {
 		this.taskSet = new Vector<Task>();
 		for (Task task : taskSet) {
+			this.taskSet.add(task.clone());
+		}
+		this.schedulingResult = new Vector<TimeBlock>();
+		for (TimeBlock tBlock : schedulingResult) {
+			this.schedulingResult.add(tBlock.clone());
+		}
+		this.deadline = deadline;
+	}
+	
+	/**
+	 * 初始化成员变量，在doCheck方法前执行
+	 * @param taskSet 周期性任务和非周期性任务
+	 * @param sporadicTaskSet 偶发任务
+	 * @param schedulingResult 调度结果
+	 */
+	public void setUp(final Vector<Task> taskSet, final Vector<SporadicTask> sporadicTaskSet, final Vector<TimeBlock> schedulingResult, final int deadline) {
+		this.taskSet = new Vector<Task>();
+		for (Task task : taskSet) {
+			this.taskSet.add(task.clone());
+		}
+		for (Task task : sporadicTaskSet) {
 			this.taskSet.add(task.clone());
 		}
 		this.schedulingResult = new Vector<TimeBlock>();

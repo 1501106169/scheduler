@@ -21,32 +21,31 @@ public class LSTSchedulingAlgorithmPreemptable extends SchedulingAlgorithm {
 
 	@Override
 	public Vector<TimeBlock> doSchedule() {
-		int nowTime = 0;
 		// 记录上次调度任务的开始时刻
 		int startTime = 0;
 		// 记录上次调度任务的索引
 		int index = -1;
-		for (nowTime = 0 ; nowTime < this.runEndTime; ++nowTime) {
-			int taskIndex = getLeastSlackTimeTask(taskSet, nowTime);
+		for ( ; this.timeAxis < this.runEndTime; ++this.timeAxis) {
+			int taskIndex = getLeastSlackTimeTask(taskSet, this.timeAxis);
 			if (taskIndex == -1) {
 				if (index != -1) {
-					this.schedulingResult.add(new TimeBlock(index, startTime, nowTime - startTime));
+					this.schedulingResult.add(new TimeBlock(index, startTime, this.timeAxis - startTime));
 					index = -1;
 				}
 				continue;
 			}
 			if (index == -1) {
 				index = taskIndex;
-				startTime = nowTime;
+				startTime = this.timeAxis;
 			} else if (index != taskIndex) {
-				this.schedulingResult.add(new TimeBlock(index, startTime, nowTime - startTime));
-				startTime = nowTime;
+				this.schedulingResult.add(new TimeBlock(index, startTime, this.timeAxis - startTime));
+				startTime = this.timeAxis;
 				index = taskIndex;
 			}
 			this.taskSet.get(taskIndex).run();
 			Task task = this.taskSet.get(taskIndex);
 			if (task.getRunTime() == task.getJobExecTime()) {
-				this.schedulingResult.add(new TimeBlock(index, startTime, nowTime - startTime + 1));
+				this.schedulingResult.add(new TimeBlock(index, startTime, this.timeAxis - startTime + 1));
 				index = -1;
 				if (task.getClass() == PeriodicTask.class) {
 					// 周期性任务
@@ -55,7 +54,7 @@ public class LSTSchedulingAlgorithmPreemptable extends SchedulingAlgorithm {
 			}
 		}
 		if (index != -1) {
-			this.schedulingResult.add(new TimeBlock(index, startTime, nowTime - startTime));
+			this.schedulingResult.add(new TimeBlock(index, startTime, this.timeAxis - startTime));
 		}
 		return this.schedulingResult;
 	}
@@ -68,7 +67,7 @@ public class LSTSchedulingAlgorithmPreemptable extends SchedulingAlgorithm {
 	 */
 	private int getLeastSlackTimeTask(final Vector<Task> taskSet, final int nowTime) {
 		int nextTaskId = -1;
-		int leastSlackTime = this.runEndTime;
+		int leastSlackTime = Integer.MAX_VALUE;
 		for (int i = 0; i < taskSet.size(); ++i) {
 			if (taskSet.get(i).getClass() == PeriodicTask.class) {
 				// 周期性任务

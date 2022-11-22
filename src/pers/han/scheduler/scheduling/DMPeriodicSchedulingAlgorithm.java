@@ -57,7 +57,7 @@ public class DMPeriodicSchedulingAlgorithm extends SchedulingAlgorithm {
 	 */
 	private int getEarlistTask(final Vector<Task> taskSet, final int nowTime) {
 		int nextTaskId = -1;
-		int priority = this.runEndTime;
+		int priority = Integer.MAX_VALUE;
 		for (int i = 0; i < taskSet.size(); ++i) {
 			PeriodicTask pTask = (PeriodicTask) taskSet.get(i);
 			int realseTime = pTask.getCycleStartTime() + pTask.getJobReleaseTime();

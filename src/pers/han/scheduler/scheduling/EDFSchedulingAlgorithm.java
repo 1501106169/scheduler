@@ -53,7 +53,7 @@ public class EDFSchedulingAlgorithm extends SchedulingAlgorithm {
 	 */
 	private int getMinDeadlineTask(final Vector<Task> taskSet, final int nowTime) {
 		int nextTaskId = -1;
-		int leastDeadline = this.runEndTime;
+		int leastDeadline = Integer.MAX_VALUE;
 		for (int i = 0; i < taskSet.size(); ++i) {
 			if (taskSet.get(i).getClass() == PeriodicTask.class) {
 				// 周期性任务

@@ -12,6 +12,7 @@ import pers.han.scheduler.io.InputTasksets;
 import pers.han.scheduler.io.InputTasksetsFromFile;
 import pers.han.scheduler.io.OutputForTerminal;
 import pers.han.scheduler.io.OutputSchedulingResult;
+import pers.han.scheduler.task.SporadicTask;
 import pers.han.scheduler.task.Task;
 
 public class Test {
@@ -20,11 +21,11 @@ public class Test {
 		// 输入数据
 		InputTasksets in = new InputTasksetsFromFile("./fileData/periodic_task");
 		Vector<Vector<Task>> taskSuit = in.getTaskData();
-
+		
 		// 执行算法
-		RunAlgorithm algorithmCase = new RunAlgorithmTestCase(taskSuit.get(1), Tools.hyperperiod((taskSuit.get(1))));
+		RunAlgorithm algorithmCase = new RunAlgorithmTestCase(taskSuit.get(0), Tools.hyperperiod((taskSuit.get(1))));
 		// 设置调度算法和校验算法
-		SchedulingAlgorithm schedulingAlgorithm = new DMPeriodicSchedulingAlgorithmPreemptable();
+		SchedulingAlgorithm schedulingAlgorithm = new EDFSchedulingAlgorithmPreemptbale();
 		CheckAlgorithm checkAlgorithm = new CheckAlgorithmPreemptable();
 		algorithmCase.setSchedulingAlgorithm(schedulingAlgorithm);
 		algorithmCase.setCheckAlgorithm(checkAlgorithm);

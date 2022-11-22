@@ -39,9 +39,27 @@ public final class TaskFactory {
 		if (intList.length == 4) {
 			task = new PeriodicTask(intList[0], intList[1], intList[2], intList[3]);
 		} else if (intList.length == 3) {
-			task = new AperiodicTask(intList[0], intList[1], intList[3]);
+			task = new AperiodicTask(intList[0], intList[1], intList[2]);
 		}
 		return task;
+	}
+	
+	/**
+	 * 创建Task子类偶发任务
+	 * @param list 参数int
+	 * @return Task
+	 */
+	public static Task createSporadicTask(int[] intList) {
+		return new SporadicTask(intList[0], intList[1], intList[2]);
+	}
+	
+	/**
+	 * 创建Task子类偶发任务
+	 * @param strList 参数string
+	 * @return Task
+	 */
+	public static Task createSporadicTask(String[] strList) {
+		return new SporadicTask(Integer.parseInt(strList[0]), Integer.parseInt(strList[1]), Integer.parseInt(strList[2]));
 	}
 	
 }

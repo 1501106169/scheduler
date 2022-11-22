@@ -80,6 +80,9 @@ public class PerformanceTest {
 		for (Task t : this.algorithmCase.getTaskSet()) {
 			taskSet.add(t.clone());
 		}
+		for (Task t : this.algorithmCase.getSporadicTaskSet()) {
+			taskSet.add(t.clone());
+		}
 		// 浅拷贝
 		Vector<TimeBlock> schedulingResult = this.algorithmCase.getSchedulingResult();
 		for (TimeBlock tb : schedulingResult) {
@@ -103,6 +106,9 @@ public class PerformanceTest {
 		Vector<Double> reponseTimeList = new Vector<Double>();
 		Vector<Task> taskSet = new Vector<Task>();
 		for (Task t : this.algorithmCase.getTaskSet()) {
+			taskSet.add(t.clone());
+		}
+		for (Task t : this.algorithmCase.getSporadicTaskSet()) {
 			taskSet.add(t.clone());
 		}
 		// 浅拷贝
