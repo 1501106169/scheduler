@@ -35,7 +35,7 @@ docker build -t scheduler-container: latest .
 
 ### 文件挂载
 
-1. 将测试数据和实时调度算法源代码挂载到容器的指定目录下，并以交互式模式启动容器。命令格式如下
+1. 将测试数据和实时调度算法源代码挂载到容器的指定目录下，并以交互式模式启动容器。命令格式如下。
 ```
 docker run -it -v [local_directory]:[container_directory] [image]:[tag]
 ```
