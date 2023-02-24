@@ -9,20 +9,19 @@
 scheduler使用Java编程语言开发实现。它的核心代码是一个jar包，名为scheduler.jar。
 
 ### 目录简介
-
-docs 文档
-fileData 部分测试数据
-src 源代码
-    pers.han.scheduler.algorithms
-    pers.han.scheduler.check
-    pers.han.scheduler.compiler
-    pers.han.scheduler.framework
-    pers.han.scheduler.io
-    pers.han.scheduler.runner
-    pers.han.scheduler.scheduling
-    pers.han.scheduler.task
-
-
+```
+  - docs        文档
+  - fileData    部分测试数据
+  - src         源代码
+     - pers.han.scheduler.algorithms    通用算法和工具
+     - pers.han.scheduler.check         校验算法和性能指标
+     - pers.han.scheduler.compiler      动态编译部分
+     - pers.han.scheduler.framework     核心框架
+     - pers.han.scheduler.io            输入输出
+     - pers.han.scheduler.runner        程序启动器
+     - pers.han.scheduler.scheduling    调度算法
+     - pers.han.scheduler.task          任务模型
+```
 
 ## 输入输出
 
@@ -48,12 +47,12 @@ src 源代码
 2. 非周期任务（Aperiodic Task）
 3. 偶发任务（Sporadic Task）
 
-`scheduler`采用上述分类方式，建立实时任务模型。详细介绍见[任务模型](https://github.com/1501106169/scheduler/blob/master/docs/taskModel.md)
+`scheduler`采用上述分类方式，建立实时任务模型。详细介绍见[任务模型](https://github.com/1501106169/scheduler/blob/master/docs/taskModel.md)。
 
 ### 实时调度算法模型
 
 基于实时任务模型，建立实时调度算法模型。用户实现的实时调度算法需要符合模型约束。
-具体信息见[实时调度算法模型](https://github.com/1501106169/scheduler/blob/master/docs/schedulerAlgorithmModel.md)
+具体信息见[实时调度算法模型](https://github.com/1501106169/scheduler/blob/master/docs/schedulerAlgorithmModel.md)。
 
 ### 公共接口方法
 
