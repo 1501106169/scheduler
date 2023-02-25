@@ -10,6 +10,8 @@
 
 # Deployment Process
 
+ * [中文部署手册](https://github.com/1501106169/scheduler/tree/master/docs/deployment)
+
 In the following description this software is called `scheduler`.
 
 ## Install Docker

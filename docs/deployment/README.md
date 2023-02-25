@@ -10,6 +10,8 @@
 
 # 部署流程
 
+ * [英文部署手册](https://github.com/1501106169/scheduler/tree/master/docs/deployment-en)
+
 本项目下面全部称之为`scheduler`。
 
 ## 安装Docker

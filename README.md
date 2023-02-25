@@ -37,6 +37,7 @@ scheduler使用Java编程语言开发实现。它的核心代码是一个jar包�
 * `调度方案`。
 * `验证结果`和 `性能指标`。
 
+
 ## 用户手册
 
 ### 实时任务模型
@@ -55,6 +56,13 @@ scheduler使用Java编程语言开发实现。它的核心代码是一个jar包�
 具体信息见[实时调度算法模型](https://github.com/1501106169/scheduler/blob/master/docs/schedulerAlgorithmModel.md)。
 
 ### 公共接口方法
+
+
+### 部署方案
+
+ * [中文部署手册](https://github.com/1501106169/scheduler/tree/master/docs/deployment)
+ * [英文部署手册](https://github.com/1501106169/scheduler/tree/master/docs/deployment-en)
+
 
 ## 原创声明
 
