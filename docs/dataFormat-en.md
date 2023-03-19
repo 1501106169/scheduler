@@ -36,7 +36,7 @@ Example
 
 #### Sporadic Task
 
-Sporadic task can also be represented using the triple $ (r, \; e, \; d) $. And, introduce `splitters` to write occasional tasks under `splitters`.
+Sporadic task can also be represented using the triple($r$, $e$, $d$). And, introduce `splitters` to write occasional tasks under `splitters`.
 
  * The `splitters` is `------SporadicTask------`.
 
