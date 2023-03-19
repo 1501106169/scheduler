@@ -1,12 +1,16 @@
 # scheduler
 
 本软件名为 `scheduler`。
+另外，文档末尾附上一种搭配`scheduler`使用的代码提交子系统的项目。
+
+ * [中文文档](https://github.com/1501106169/scheduler)
+ * [英文文档](https://github.com/1501106169/scheduler/blob/master/README-en.md)
 
 ## 简介
 
 * `scheduler`是一款用于验证和试验实时调度算法的模拟器。
 
-scheduler使用Java编程语言开发实现。它的核心代码是一个jar包，名为scheduler.jar。
+`scheduler`使用`Java`编程语言开发实现。它的核心代码是一个jar包，名为`scheduler.jar`。
 
 ### 目录简介
 ```
@@ -63,6 +67,10 @@ scheduler使用Java编程语言开发实现。它的核心代码是一个jar包�
  * [中文部署手册](https://github.com/1501106169/scheduler/tree/master/docs/deployment)
  * [英文部署手册](https://github.com/1501106169/scheduler/tree/master/docs/deployment-en)
 
+
+## 代码提交子系统
+
+[代码提交子系统仓库链接](https://github.com/1501106169/codeSubSystem)
 
 ## 原创声明
 
