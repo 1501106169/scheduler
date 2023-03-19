@@ -9,12 +9,12 @@
 
 #### Periodic Task
 
-Periodic tasks are represented using the quaternion $ (\Phi, \; P, \; e, \; D) $. The meaning of each of these symbols is as follows
+Periodic tasks are represented using the quaternion ($\Phi$, $P$, $e$, $D$). The meaning of each of these symbols is as follows
 
- * $ \Phi $ indicates the `phase` of the periodic task. `phase`refers to the `release time` of the first job in the task.
- * $ P $ indicates the `periodic`. `periodic` refers to the minimum length of time between the release times of two jobs that are connected in a task.
- * $ e $ refers to the `execution time` of a periodic task.
- * $ D $ refers to the `relative deadline` of a periodic task. 
+ * $\Phi$ indicates the `phase` of the periodic task. `phase`refers to the `release time` of the first job in the task.
+ * $P$ indicates the `periodic`. `periodic` refers to the minimum length of time between the release times of two jobs that are connected in a task.
+ * $e$ refers to the `execution time` of a periodic task.
+ * $D$ refers to the `relative deadline` of a periodic task. 
 
 Example
 ```
@@ -25,9 +25,9 @@ Example
 
 Aperiodic task are rpresented using the triplet $ (r, \; e, \; d) $. The meaning of each of these symbols is as follows
 
- * $ r $ indicates the `release time` of job. 
- * $ e $ indicates the `execution time` of job. 
- * $ d $ indicates the `absolute deadline` of job. 
+ * $r$ indicates the `release time` of job. 
+ * $e$ indicates the `execution time` of job. 
+ * $d$ indicates the `absolute deadline` of job. 
 
 Example
 ```
