@@ -1,5 +1,8 @@
 # Test Data Format
 
+[Chinese Manual](https://github.com/1501106169/scheduler/blob/master/docs/dataFormat.md)
+[English Manual](https://github.com/1501106169/scheduler/blob/master/docs/dataFormat-en.md)
+
 ## Rules
 
 ### Real-Time Task

@@ -1,5 +1,8 @@
 # 测试数据格式
 
+[中文文档](https://github.com/1501106169/scheduler/blob/master/docs/dataFormat.md)
+[英文文档](https://github.com/1501106169/scheduler/blob/master/docs/dataFormat-en.md)
+
 ## 规则
 
 ### 任务表示
