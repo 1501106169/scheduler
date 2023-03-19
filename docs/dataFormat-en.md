@@ -23,7 +23,7 @@ Example
 
 #### Aperiodic Task
 
-Aperiodic task are rpresented using the triplet $ (r, \; e, \; d) $. The meaning of each of these symbols is as follows
+Aperiodic task are rpresented using the triplet($r$, $e$, $d$). The meaning of each of these symbols is as follows
 
  * $r$ indicates the `release time` of job. 
  * $e$ indicates the `execution time` of job. 
